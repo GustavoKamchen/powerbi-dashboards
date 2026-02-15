@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Apple Stock Prices"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "8e1ecb02-83d5-42be-9a38-e4c2a8a15c2c"
+  }
+}

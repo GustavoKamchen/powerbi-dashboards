@@ -1,0 +1,105 @@
+table historicalLocalMarkets
+	lineageTag: a251c6ad-9224-43fb-ad2e-8046ddc1231f
+
+	column Company
+		dataType: string
+		lineageTag: 3fe986c3-f8ef-4e8e-8173-1ca0dd655763
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: e3401d28-2817-48dc-a2ae-cda6db1dc2bc
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ticker
+		dataType: string
+		lineageTag: dcb2697e-29ea-40c9-9d59-b0675c8164e0
+		summarizeBy: none
+		sourceColumn: Ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column Market
+		dataType: string
+		lineageTag: 788cbf29-5bbd-4a74-938d-7bec38d9085e
+		summarizeBy: none
+		sourceColumn: Market
+
+		annotation SummarizationSetBy = Automatic
+
+	column Currency
+		dataType: string
+		lineageTag: af592e86-4411-4a79-b9f0-3fe6c44db2fd
+		summarizeBy: none
+		sourceColumn: Currency
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: string
+		lineageTag: bd6a76ce-4b86-4301-be86-16141bc504dd
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Open
+		dataType: string
+		lineageTag: 7f288f58-f932-4ca4-9183-ffff66de2915
+		summarizeBy: none
+		sourceColumn: Open
+
+		annotation SummarizationSetBy = Automatic
+
+	column High
+		dataType: string
+		lineageTag: f8c613d4-72f2-4417-aa42-bd8c69df4a67
+		summarizeBy: none
+		sourceColumn: High
+
+		annotation SummarizationSetBy = Automatic
+
+	column Low
+		dataType: string
+		lineageTag: 70bb91be-de22-4088-89bb-45bca94620df
+		summarizeBy: none
+		sourceColumn: Low
+
+		annotation SummarizationSetBy = Automatic
+
+	column Close
+		dataType: string
+		lineageTag: 5412288c-6d30-493c-b744-6757fa5e4275
+		summarizeBy: none
+		sourceColumn: Close
+
+		annotation SummarizationSetBy = Automatic
+
+	column Volume
+		dataType: string
+		lineageTag: 8c5d3eab-0674-48ee-b63e-5d1b54f56595
+		summarizeBy: none
+		sourceColumn: Volume
+
+		annotation SummarizationSetBy = Automatic
+
+	partition historicalLocalMarkets = m
+		mode: import
+		source =
+				let
+				    fileName = "Global_Tech_Historical_Local_Markets_20260206_045434.csv",
+				    Source = Csv.Document(Web.Contents(sourceDatasetBaseUrl & fileName),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

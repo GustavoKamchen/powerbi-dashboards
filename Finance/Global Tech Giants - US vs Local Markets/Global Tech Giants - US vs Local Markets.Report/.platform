@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Global Tech Giants - US vs Local Markets"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "27446299-bf9c-4659-b08f-28852ab241bd"
+  }
+}

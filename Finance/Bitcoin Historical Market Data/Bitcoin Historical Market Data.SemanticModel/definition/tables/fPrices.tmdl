@@ -1,0 +1,61 @@
+table fPrices
+	lineageTag: f4344940-b412-48be-92cc-9b33884e7f0c
+
+	column snapped_at
+		dataType: dateTime
+		formatString: Short Date
+		lineageTag: d6f541fe-205d-41dd-8e1b-da18bbebaefd
+		summarizeBy: none
+		sourceColumn: snapped_at
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column price
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 189e6e34-5e6d-437c-9955-c5b152cf6492
+		summarizeBy: sum
+		sourceColumn: price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column market_cap
+		dataType: double
+		lineageTag: c5710896-9c18-4347-ba94-ceb6d8c316d3
+		summarizeBy: sum
+		sourceColumn: market_cap
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column total_volume
+		dataType: double
+		lineageTag: 4af170e3-9c26-4792-b273-ee85ecf2baba
+		summarizeBy: sum
+		sourceColumn: total_volume
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fPrices = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=4, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Extracted Text Before Delimiter" = Table.TransformColumns(#"Promoted Headers", {{"snapped_at", each Text.BeforeDelimiter(_, " "), type text}}),
+				    #"Changed Type with Locale" = Table.TransformColumnTypes(#"Extracted Text Before Delimiter", {{"price", Currency.Type}, {"market_cap", type number}, {"total_volume", type number}}, "en-US"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Changed Type with Locale",{{"snapped_at", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

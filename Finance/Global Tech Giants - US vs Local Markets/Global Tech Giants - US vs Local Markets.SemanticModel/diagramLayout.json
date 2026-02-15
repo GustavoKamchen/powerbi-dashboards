@@ -1,0 +1,87 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 0,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 1377,
+            "y": 85
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "61f9e928-6e69-4f35-a55e-22c04089c833",
+          "size": {
+            "height": 72,
+            "width": 234
+          },
+          "zIndex": 1,
+          "expandedHeight": 104
+        },
+        {
+          "location": {
+            "x": 852,
+            "y": 0
+          },
+          "nodeIndex": "dCalendar",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "historicalLocalMarkets",
+          "nodeLineageTag": "a251c6ad-9224-43fb-ad2e-8046ddc1231f",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 284,
+            "y": 0
+          },
+          "nodeIndex": "historicalUsMarkets",
+          "nodeLineageTag": "6fbe4525-373d-44d9-baf7-ae7068127d79",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 568,
+            "y": 0
+          },
+          "nodeIndex": "leadersStocks",
+          "nodeLineageTag": "556a8bc9-13ef-4d24-9bb1-3b34822cfe47",
+          "size": {
+            "height": 300,
+            "width": 234
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

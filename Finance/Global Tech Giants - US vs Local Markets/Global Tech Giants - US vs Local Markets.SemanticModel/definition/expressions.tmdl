@@ -1,0 +1,7 @@
+expression sourceDatasetBaseUrl = "https://github.com/GustavoKamchen/powerbi-datasets/raw/refs/heads/main/Finance/Global%20Tech%20Giants%20-%20US%20vs%20Local%20Markets/" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 9d2dfcff-9235-4420-8395-ba197ad89a5a
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

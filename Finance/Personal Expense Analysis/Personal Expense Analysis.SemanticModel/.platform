@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Personal Expense Analysis"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "96359f6d-5ddd-4af4-a936-a5b18f5b7dd7"
+  }
+}

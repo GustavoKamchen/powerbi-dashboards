@@ -1,0 +1,88 @@
+table fPrices
+	lineageTag: 6be1c387-1585-4b4b-addc-21f362c15d16
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c2586966-b1e5-4004-9253-8d938de48be8
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Open
+		dataType: double
+		lineageTag: 39a01b6d-aaa7-45c9-bc56-75b07db92689
+		summarizeBy: sum
+		sourceColumn: Open
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column High
+		dataType: double
+		lineageTag: 9b3476f0-907b-4bfc-9b67-4656cbd03940
+		summarizeBy: sum
+		sourceColumn: High
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Low
+		dataType: double
+		lineageTag: ec11be05-096c-4c46-abb7-37792444f2d4
+		summarizeBy: sum
+		sourceColumn: Low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Close
+		dataType: double
+		lineageTag: 624ff998-c3b0-45c4-a2d1-dfcbd9fe7249
+		summarizeBy: sum
+		sourceColumn: Close
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Adj Close'
+		dataType: double
+		lineageTag: 1984799d-f2e8-4ef4-abf9-ffffd1de2002
+		summarizeBy: sum
+		sourceColumn: Adj Close
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Volume
+		dataType: int64
+		formatString: 0
+		lineageTag: f577bc08-9083-426e-905f-23ea51f7bc28
+		summarizeBy: sum
+		sourceColumn: Volume
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fPrices = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Date", type date}, {"Volume", Int64.Type}}),
+				    #"Changed Type with Locale" = Table.TransformColumnTypes(#"Changed Type", {{"Open", type number}, {"High", type number}, {"Low", type number}, {"Close", type number}, {"Adj Close", type number}}, "en-US")
+				in
+				    #"Changed Type with Locale"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,4 @@
+relationship b6ff0f01-0a9e-6334-8c3c-18ca5e63bdec
+	fromColumn: fPrices.snapped_at
+	toColumn: dCalendar.Date
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Apple Stock Prices"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "a2463d82-c4f9-4c30-804d-ac7481db08bb"
+  }
+}

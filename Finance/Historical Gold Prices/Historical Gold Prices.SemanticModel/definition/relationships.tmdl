@@ -1,0 +1,4 @@
+relationship a9a21443-a033-ede2-5a91-e2a4f3b5ccb0
+	fromColumn: fPrices.Date
+	toColumn: dCalendar.Date
+

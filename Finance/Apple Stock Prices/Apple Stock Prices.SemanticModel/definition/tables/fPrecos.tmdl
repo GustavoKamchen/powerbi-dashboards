@@ -1,0 +1,108 @@
+table fPrecos
+	lineageTag: 0672cc65-fc6e-48b6-b0f1-c43a0b43ba11
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c7c64813-3a5f-4c95-a54f-e20850c7402b
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Open
+		dataType: double
+		lineageTag: e19b33ff-4fc4-444d-ba59-eb6ca8c07e82
+		summarizeBy: sum
+		sourceColumn: Open
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column High
+		dataType: double
+		lineageTag: a57376b3-1bcf-4911-ab15-a559011b3f10
+		summarizeBy: sum
+		sourceColumn: High
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Low
+		dataType: double
+		lineageTag: 15b16057-f3d2-4c45-9324-9c3bbe376456
+		summarizeBy: sum
+		sourceColumn: Low
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Close
+		dataType: double
+		lineageTag: b0db59dc-fcaf-4457-8784-fdbcf2e5c877
+		summarizeBy: sum
+		sourceColumn: Close
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Volume
+		dataType: int64
+		formatString: 0
+		lineageTag: e7faa2a6-a52c-4543-82b8-1a5f6fee9488
+		summarizeBy: sum
+		sourceColumn: Volume
+
+		annotation SummarizationSetBy = Automatic
+
+	column Daily_Return
+		dataType: double
+		lineageTag: 11940d70-2f9c-4580-a5c4-89604dbf4e34
+		summarizeBy: sum
+		sourceColumn: Daily_Return
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Price_Range
+		dataType: double
+		lineageTag: 0a635600-0024-4a7b-b88b-f07ddceb6766
+		summarizeBy: sum
+		sourceColumn: Price_Range
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column Price_Change
+		dataType: double
+		lineageTag: 96e203cf-1438-42c0-909b-0fbb61459c75
+		summarizeBy: sum
+		sourceColumn: Price_Change
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fPrecos = m
+		mode: import
+		source =
+				let
+				    Fonte = Csv.Document(Web.Contents(sourceUrl),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Cabeçalhos Promovidos" = Table.PromoteHeaders(Fonte, [PromoteAllScalars=true]),
+				    #"Tipo Alterado com Localidade" = Table.TransformColumnTypes(#"Cabeçalhos Promovidos", {{"Open", type number}, {"High", type number}, {"Low", type number}, {"Close", type number}, {"Daily_Return", type number}, {"Price_Range", type number}, {"Price_Change", type number}}, "en-US"),
+				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Tipo Alterado com Localidade",{{"Volume", Int64.Type}, {"Date", type date}})
+				in
+				    #"Tipo Alterado"
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Table
+

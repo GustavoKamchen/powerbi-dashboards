@@ -1,0 +1,7 @@
+expression sourceUrl = "https://github.com/GustavoKamchen/datasets/raw/refs/heads/main/Finance/Apple%20Stock%20Prices/AAPL_Stock_Price_Dataset.csv" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: f1eada64-ab3b-4578-9e26-05225f0c6158
+
+	annotation PBI_NavigationStepName = Navegação
+
+	annotation PBI_ResultType = Text
+

@@ -1,0 +1,1561 @@
+table dCalendar
+	lineageTag: 809d004b-60b7-49a8-a6c4-720a1f30db62
+	dataCategory: Time
+
+	column Date
+		dataType: dateTime
+		isKey
+		formatString: Short Date
+		lineageTag: 27795653-9551-4271-a7b4-17bf5c86acc1
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column DateIndex
+		dataType: int64
+		formatString: 0
+		displayFolder: Date
+		lineageTag: dc7437e1-b5c5-4c06-8fca-0120c9d813b2
+		summarizeBy: none
+		sourceColumn: DateIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column DaysToToday
+		dataType: int64
+		formatString: 0
+		displayFolder: Date
+		lineageTag: 93ebf777-0d21-44b0-8727-d1ffe229b5f4
+		summarizeBy: none
+		sourceColumn: DaysToToday
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentDate
+		dataType: string
+		displayFolder: Date
+		lineageTag: e611d835-9157-4845-a34f-61bb88dd34fa
+		summarizeBy: none
+		sourceColumn: CurrentDate
+		sortByColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: int64
+		formatString: 0
+		displayFolder: Year
+		lineageTag: 07558176-5c34-4214-9173-e82ac67e4d06
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearStart
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Year
+		lineageTag: 7ffc50ae-9d56-4cea-af58-faea228dfdc1
+		summarizeBy: none
+		sourceColumn: YearStart
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column YearEnd
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Year
+		lineageTag: eaeb2270-e44b-4c44-a9e2-810e2588e227
+		summarizeBy: none
+		sourceColumn: YearEnd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column YearIndex
+		dataType: int64
+		formatString: 0
+		displayFolder: Year
+		lineageTag: 4d86a660-b09f-4d05-8453-28641e3bf8a1
+		summarizeBy: none
+		sourceColumn: YearIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearDescendingName
+		dataType: int64
+		formatString: 0
+		displayFolder: Year
+		lineageTag: 5f1f4cf6-2318-46b9-ae56-2f266fbdf423
+		summarizeBy: none
+		sourceColumn: YearDescendingName
+		sortByColumn: YearDescendingNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearDescendingNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Year
+		lineageTag: bd123717-d16d-4fbd-92e6-67df2df463c2
+		summarizeBy: none
+		sourceColumn: YearDescendingNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearsToToday
+		dataType: int64
+		formatString: 0
+		displayFolder: Year
+		lineageTag: 8a26a2f8-d180-4fa7-b626-7d83afdce9a3
+		summarizeBy: none
+		sourceColumn: YearsToToday
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentYear
+		dataType: string
+		displayFolder: Year
+		lineageTag: ddf20786-4e4d-44bb-8f3a-6f6d935b630b
+		summarizeBy: none
+		sourceColumn: CurrentYear
+		sortByColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfMonth
+		dataType: int64
+		formatString: 0
+		displayFolder: Day
+		lineageTag: c928418d-0561-4398-8db2-9d3647c337c4
+		summarizeBy: none
+		sourceColumn: DayOfMonth
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfYear
+		dataType: int64
+		formatString: 0
+		displayFolder: Day
+		lineageTag: de91186a-494a-4a37-a13a-a733339dc62f
+		summarizeBy: none
+		sourceColumn: DayOfYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeekNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Day
+		lineageTag: 579af7de-9cc4-4da6-ab87-183a78deb798
+		summarizeBy: none
+		sourceColumn: DayOfWeekNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeekName
+		dataType: string
+		displayFolder: Day
+		lineageTag: b74a8081-690d-4bf7-ad09-f4c63ada7026
+		summarizeBy: none
+		sourceColumn: DayOfWeekName
+		sortByColumn: DayOfWeekNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeekNameShort
+		dataType: string
+		displayFolder: Day
+		lineageTag: ccf9c3c7-0180-4793-b3b1-1f36c6df6476
+		summarizeBy: none
+		sourceColumn: DayOfWeekNameShort
+		sortByColumn: DayOfWeekNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfWeekNameInitials
+		dataType: string
+		displayFolder: Day
+		lineageTag: e6651e28-1531-49dd-b8e9-435742d28013
+		summarizeBy: none
+		sourceColumn: DayOfWeekNameInitials
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Month
+		lineageTag: 8772abd5-d0d0-472c-8606-999ddf7af90b
+		summarizeBy: none
+		sourceColumn: MonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthName
+		dataType: string
+		displayFolder: Month
+		lineageTag: 2e965337-0cc9-400a-a77d-98a9204dde31
+		summarizeBy: none
+		sourceColumn: MonthName
+		sortByColumn: MonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNameShort
+		dataType: string
+		displayFolder: Month
+		lineageTag: 2ad143a1-b04a-4f0c-9a8a-42c87c112a78
+		summarizeBy: none
+		sourceColumn: MonthNameShort
+		sortByColumn: MonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthNameInitials
+		dataType: string
+		displayFolder: Month
+		lineageTag: e414e70b-3f3a-42b1-92ba-cba90bf15a3c
+		summarizeBy: none
+		sourceColumn: MonthNameInitials
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthYearName
+		dataType: string
+		displayFolder: Month
+		lineageTag: 06bf4357-6287-4e9f-a056-29fc208d68dc
+		summarizeBy: none
+		sourceColumn: MonthYearName
+		sortByColumn: MonthYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthYearNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Month
+		lineageTag: d2571fce-c50d-41aa-be57-17ded608585c
+		summarizeBy: none
+		sourceColumn: MonthYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthDayNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Month
+		lineageTag: 09ee52ba-1e7c-4465-b87a-7f683b1dfb97
+		summarizeBy: none
+		sourceColumn: MonthDayNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthDayName
+		dataType: string
+		displayFolder: Month
+		lineageTag: 385a8eef-d88f-4a4a-afe6-2f4ff826bc3e
+		summarizeBy: none
+		sourceColumn: MonthDayName
+		sortByColumn: MonthDayNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthStart
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Month
+		lineageTag: 05b0c6f4-dd81-41ce-b176-6a03d6622f22
+		summarizeBy: none
+		sourceColumn: MonthStart
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column MonthEnd
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Month
+		lineageTag: 434e79af-1e91-4a39-a31a-4b5b79071ae3
+		summarizeBy: none
+		sourceColumn: MonthEnd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column MonthIndex
+		dataType: int64
+		formatString: 0
+		displayFolder: Month
+		lineageTag: a11759f7-0e12-4cd6-8447-7fc9044830ae
+		summarizeBy: none
+		sourceColumn: MonthIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthsToToday
+		dataType: int64
+		formatString: 0
+		displayFolder: Month
+		lineageTag: ec7d52f2-41f9-448b-a74c-1951b4ae6dfd
+		summarizeBy: none
+		sourceColumn: MonthsToToday
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentMonthName
+		dataType: string
+		displayFolder: Month
+		lineageTag: 0eddabab-94df-4d61-a964-79ab67b12a26
+		summarizeBy: none
+		sourceColumn: CurrentMonthName
+		sortByColumn: MonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentMonthNameShort
+		dataType: string
+		displayFolder: Month
+		lineageTag: 7e1af74a-97b4-43af-bcb0-47e258eb30b2
+		summarizeBy: none
+		sourceColumn: CurrentMonthNameShort
+		sortByColumn: MonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentMonthYearName
+		dataType: string
+		displayFolder: Month
+		lineageTag: 53fee671-2d17-4088-b074-58f9ed859941
+		summarizeBy: none
+		sourceColumn: CurrentMonthYearName
+		sortByColumn: MonthYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Quarter
+		lineageTag: 5d0ae5cf-a64d-40e7-aba3-19a55aa6d7bf
+		summarizeBy: none
+		sourceColumn: QuarterNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterName
+		dataType: string
+		displayFolder: Quarter
+		lineageTag: c6267683-a5a2-409c-8956-208704533fbe
+		summarizeBy: none
+		sourceColumn: QuarterName
+		sortByColumn: QuarterNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterYearName
+		dataType: string
+		displayFolder: Quarter
+		lineageTag: 5cf96351-53bf-47a6-a71b-eeb50f2948ae
+		summarizeBy: none
+		sourceColumn: QuarterYearName
+		sortByColumn: QuarterYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterYearNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Quarter
+		lineageTag: b698eae4-6a6f-4a90-9102-0a6b7899b566
+		summarizeBy: none
+		sourceColumn: QuarterYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterStart
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Quarter
+		lineageTag: 2bc06600-288d-465b-b2d8-39c2f79e6dd2
+		summarizeBy: none
+		sourceColumn: QuarterStart
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column QuarterEnd
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Quarter
+		lineageTag: 94a8e781-188b-4b28-891c-2ff821a53994
+		summarizeBy: none
+		sourceColumn: QuarterEnd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column QuarterIndex
+		dataType: int64
+		formatString: 0
+		displayFolder: Quarter
+		lineageTag: f50e08f4-78e0-45e5-aafd-518a38b76852
+		summarizeBy: none
+		sourceColumn: QuarterIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuartersToToday
+		dataType: int64
+		formatString: 0
+		displayFolder: Quarter
+		lineageTag: e5f0058c-dce2-4b1d-91f1-b148ff23fe28
+		summarizeBy: none
+		sourceColumn: QuartersToToday
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentQuarter
+		dataType: string
+		displayFolder: Quarter
+		lineageTag: 1058c9d7-4d93-45fb-9d0b-848b2806a57e
+		summarizeBy: none
+		sourceColumn: CurrentQuarter
+		sortByColumn: QuarterNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentQuarterYear
+		dataType: string
+		displayFolder: Quarter
+		lineageTag: f2332dd2-4aab-4f66-bd1f-95beff9ccd93
+		summarizeBy: none
+		sourceColumn: CurrentQuarterYear
+		sortByColumn: QuarterYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthOfQuarterNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Month
+		lineageTag: 1f18455a-a1ce-47c3-8d55-48363e2a7bfd
+		summarizeBy: none
+		sourceColumn: MonthOfQuarterNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekOfYearNumberISO
+		dataType: int64
+		formatString: 0
+		displayFolder: Week
+		lineageTag: e73ccaa3-09c0-4609-b2ca-4d2536f4bb0f
+		summarizeBy: none
+		sourceColumn: WeekOfYearNumberISO
+
+		annotation SummarizationSetBy = Automatic
+
+	column YearISO
+		dataType: int64
+		formatString: 0
+		displayFolder: Week
+		lineageTag: db61d006-7890-46e0-9ebc-af5ddfb489c3
+		summarizeBy: none
+		sourceColumn: YearISO
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekYearNumberISO
+		dataType: int64
+		formatString: 0
+		displayFolder: Week
+		lineageTag: 7a1581c4-a5eb-4434-b006-1a7777c15d5c
+		summarizeBy: none
+		sourceColumn: WeekYearNumberISO
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekYearNameISO
+		dataType: string
+		displayFolder: Week
+		lineageTag: f0262617-c7b8-4291-ba13-14355fa06a47
+		summarizeBy: none
+		sourceColumn: WeekYearNameISO
+		sortByColumn: WeekYearNumberISO
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekStartISO
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Week
+		lineageTag: e0e150b4-446a-43b5-b130-a7af97c35549
+		summarizeBy: none
+		sourceColumn: WeekStartISO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column WeekEndISO
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Week
+		lineageTag: d6e75b7e-9cbf-4082-9b4f-2f331f6cd435
+		summarizeBy: none
+		sourceColumn: WeekEndISO
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column WeekIndexISO
+		dataType: int64
+		formatString: 0
+		displayFolder: Week
+		lineageTag: 4930668f-7828-4d0a-85a5-22d5ea3f9550
+		summarizeBy: none
+		sourceColumn: WeekIndexISO
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeeksToTodayISO
+		dataType: int64
+		formatString: 0
+		displayFolder: Week
+		lineageTag: 3585d3f8-2c7b-4541-a452-9ee5787ff2dd
+		summarizeBy: none
+		sourceColumn: WeeksToTodayISO
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentWeekISO
+		dataType: string
+		displayFolder: Week
+		lineageTag: 9814aa4f-2349-4465-82bb-8f7222545abc
+		summarizeBy: none
+		sourceColumn: CurrentWeekISO
+		sortByColumn: WeekYearNumberISO
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekPeriodName
+		dataType: string
+		displayFolder: Week
+		lineageTag: 81500d83-3228-42f0-9801-f8c4430f9d10
+		summarizeBy: none
+		sourceColumn: WeekPeriodName
+		sortByColumn: WeekYearNumberISO
+
+		annotation SummarizationSetBy = Automatic
+
+	column WeekOfMonthNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Week
+		lineageTag: 61a190c5-5a25-4eda-9c13-ac223a9f19d6
+		summarizeBy: none
+		sourceColumn: WeekOfMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column HalfNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Half
+		lineageTag: d4efd6b5-4021-423d-9eea-b7f6920d8c28
+		summarizeBy: none
+		sourceColumn: HalfNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column HalfYearName
+		dataType: string
+		displayFolder: Half
+		lineageTag: 42f49fd6-b67e-4fd7-ad7f-e842b96ae101
+		summarizeBy: none
+		sourceColumn: HalfYearName
+		sortByColumn: HalfYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column HalfYearNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Half
+		lineageTag: 895c7756-4e32-43b1-9918-0b086a4f6304
+		summarizeBy: none
+		sourceColumn: HalfYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column HalfIndex
+		dataType: int64
+		formatString: 0
+		displayFolder: Half
+		lineageTag: 11bb30b8-db90-4c99-8d85-9a46cc359724
+		summarizeBy: none
+		sourceColumn: HalfIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column HalfsToToday
+		dataType: int64
+		formatString: 0
+		displayFolder: Half
+		lineageTag: d2d41fef-1b8d-422b-8266-85bbf92b2c57
+		summarizeBy: none
+		sourceColumn: HalfsToToday
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentHalf
+		dataType: string
+		displayFolder: Half
+		lineageTag: 95f7c5b2-935c-4f7b-822d-70f83387388e
+		summarizeBy: none
+		sourceColumn: CurrentHalf
+		sortByColumn: HalfYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column BimesterNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Bimester
+		lineageTag: 6649ed99-add9-4102-9739-96f0cb970064
+		summarizeBy: none
+		sourceColumn: BimesterNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column BimesterYearName
+		dataType: string
+		displayFolder: Bimester
+		lineageTag: ac51dbbf-8c46-4dcf-8aa7-9ca5acfb0f25
+		summarizeBy: none
+		sourceColumn: BimesterYearName
+		sortByColumn: BimesterYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column BimesterYearNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Bimester
+		lineageTag: 734db6ce-175f-4af6-8f8f-9d16dc0632d9
+		summarizeBy: none
+		sourceColumn: BimesterYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column BimesterIndex
+		dataType: int64
+		formatString: 0
+		displayFolder: Bimester
+		lineageTag: fcc648be-140b-48e3-8aac-9d436683cc0f
+		summarizeBy: none
+		sourceColumn: BimesterIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column BimestersToToday
+		dataType: int64
+		formatString: 0
+		displayFolder: Bimester
+		lineageTag: f4e62c7d-7b54-42c1-ad0b-72baed6b8556
+		summarizeBy: none
+		sourceColumn: BimestersToToday
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentBimester
+		dataType: string
+		displayFolder: Bimester
+		lineageTag: 1f20894f-6c4f-472f-802c-a14d526d25e0
+		summarizeBy: none
+		sourceColumn: CurrentBimester
+		sortByColumn: BimesterYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FortnightOfMonthNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Fortnight
+		lineageTag: 3d3492a2-db5d-42f2-aa7e-62ab7a34a8b0
+		summarizeBy: none
+		sourceColumn: FortnightOfMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FortnightMonthNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Fortnight
+		lineageTag: e630f8cd-b3b4-4dab-8f5f-36191f0cee22
+		summarizeBy: none
+		sourceColumn: FortnightMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FortnightMonthName
+		dataType: string
+		displayFolder: Fortnight
+		lineageTag: 02d0b499-d768-443d-b1e0-61e7034780a8
+		summarizeBy: none
+		sourceColumn: FortnightMonthName
+		sortByColumn: FortnightMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FortnightMonthYearNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Fortnight
+		lineageTag: 74a35176-dc81-4fed-a779-7588ae85e020
+		summarizeBy: none
+		sourceColumn: FortnightMonthYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FortnightMonthYearName
+		dataType: string
+		displayFolder: Fortnight
+		lineageTag: b020a271-8ca6-401b-b51f-0c53af1de1e9
+		summarizeBy: none
+		sourceColumn: FortnightMonthYearName
+		sortByColumn: FortnightMonthYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FortnightIndex
+		dataType: int64
+		formatString: 0
+		displayFolder: Fortnight
+		lineageTag: 3455b842-2b85-418d-b917-3a7831f6ecde
+		summarizeBy: none
+		sourceColumn: FortnightIndex
+
+		annotation SummarizationSetBy = Automatic
+
+	column FortnightsToToday
+		dataType: int64
+		formatString: 0
+		displayFolder: Fortnight
+		lineageTag: 3199459c-94c7-4f7c-8387-47823c09f5a3
+		summarizeBy: none
+		sourceColumn: FortnightsToToday
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentFortnight
+		dataType: string
+		displayFolder: Fortnight
+		lineageTag: 0c6a07f9-90d1-4576-b83e-f1fc85804b1a
+		summarizeBy: none
+		sourceColumn: CurrentFortnight
+		sortByColumn: FortnightMonthYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClosingDateRef
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: Closing
+		lineageTag: ceb771c8-9de0-4b94-a650-19c2bc103b29
+		summarizeBy: none
+		sourceColumn: ClosingDateRef
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column ClosingYear
+		dataType: int64
+		formatString: 0
+		displayFolder: Closing
+		lineageTag: e92831af-a372-44be-afcb-150d7b99b6ad
+		summarizeBy: none
+		sourceColumn: ClosingYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClosingMonthName
+		dataType: string
+		displayFolder: Closing
+		lineageTag: aead76f0-d6ff-4794-80b4-7af7990fa5ed
+		summarizeBy: none
+		sourceColumn: ClosingMonthName
+		sortByColumn: ClosingMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClosingMonthNameShort
+		dataType: string
+		displayFolder: Closing
+		lineageTag: 4e271a24-76b2-4fe4-872b-397b751f3716
+		summarizeBy: none
+		sourceColumn: ClosingMonthNameShort
+		sortByColumn: ClosingMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClosingMonthNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Closing
+		lineageTag: fcad7653-f580-4de5-ac8e-7c26d7e1c104
+		summarizeBy: none
+		sourceColumn: ClosingMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClosingMonthYearName
+		dataType: string
+		displayFolder: Closing
+		lineageTag: f80191a7-dfaf-4dea-ba3f-fb167b4093c3
+		summarizeBy: none
+		sourceColumn: ClosingMonthYearName
+		sortByColumn: ClosingMonthYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column ClosingMonthYearNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Closing
+		lineageTag: 478ff979-f19b-4eed-a60b-7053e085fa18
+		summarizeBy: none
+		sourceColumn: ClosingMonthYearNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column SeasonNorthNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Season
+		lineageTag: 66105d3a-0013-4d51-be1d-c0b6699e8304
+		summarizeBy: none
+		sourceColumn: SeasonNorthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column SeasonNorthName
+		dataType: string
+		displayFolder: Season
+		lineageTag: 5c25f324-7c08-4e58-8406-b87d419524ae
+		summarizeBy: none
+		sourceColumn: SeasonNorthName
+		sortByColumn: SeasonNorthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column SeasonSouthNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: Season
+		lineageTag: 87bf544c-ddc4-46ce-a311-afea309152f5
+		summarizeBy: none
+		sourceColumn: SeasonSouthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column SeasonSouthName
+		dataType: string
+		displayFolder: Season
+		lineageTag: e9a8e6cb-3678-448d-afdc-fc77e27fc1dd
+		summarizeBy: none
+		sourceColumn: SeasonSouthName
+		sortByColumn: SeasonSouthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column Holiday
+		dataType: string
+		displayFolder: BusinessDays_Holidays
+		lineageTag: fc684c2c-6b95-4e57-b9f3-556566d83a92
+		summarizeBy: none
+		sourceColumn: Holiday
+
+		annotation SummarizationSetBy = Automatic
+
+	column BusinessDayNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: BusinessDays_Holidays
+		lineageTag: 1614b8b4-e813-4e1a-bb61-e12179604d5a
+		summarizeBy: none
+		sourceColumn: BusinessDayNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column BusinessDayName
+		dataType: string
+		displayFolder: BusinessDays_Holidays
+		lineageTag: 5580a3cc-238f-4293-8af5-c9007de07ddc
+		summarizeBy: none
+		sourceColumn: BusinessDayName
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearStartNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: FiscalYear
+		lineageTag: f4af17e0-4561-4af8-99c4-75f385a12eab
+		summarizeBy: none
+		sourceColumn: FiscalYearStartNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearEndNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: FiscalYear
+		lineageTag: 14170dc0-254e-4839-a665-9de0fd971739
+		summarizeBy: none
+		sourceColumn: FiscalYearEndNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYear
+		dataType: string
+		displayFolder: FiscalYear
+		lineageTag: 926acd8c-d93a-48e3-bdb6-e685b0810dc5
+		summarizeBy: none
+		sourceColumn: FiscalYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearStart
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: FiscalYear
+		lineageTag: 8a19d8f3-86a0-4821-af7a-54d49687bb7b
+		summarizeBy: none
+		sourceColumn: FiscalYearStart
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FiscalYearEnd
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: FiscalYear
+		lineageTag: 1c947cd7-afdc-4e35-8d84-4ba933575602
+		summarizeBy: none
+		sourceColumn: FiscalYearEnd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column CurrentFiscalYear
+		dataType: string
+		displayFolder: FiscalYear
+		lineageTag: 254f1da0-a449-4ab9-85c7-c806965a1fd8
+		summarizeBy: none
+		sourceColumn: CurrentFiscalYear
+		sortByColumn: FiscalYear
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearsToToday
+		dataType: int64
+		formatString: 0
+		displayFolder: FiscalYear
+		lineageTag: 338ade85-ae77-4a87-b75b-631886f4eae8
+		summarizeBy: none
+		sourceColumn: FiscalYearsToToday
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: FiscalMonth
+		lineageTag: 7339dfb6-726a-48c6-a144-ca42175a4c96
+		summarizeBy: none
+		sourceColumn: FiscalMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthName
+		dataType: string
+		displayFolder: FiscalMonth
+		lineageTag: 09bfb7f2-345d-4634-8f61-1e52ef1c12ac
+		summarizeBy: none
+		sourceColumn: FiscalMonthName
+		sortByColumn: FiscalMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthNameShort
+		dataType: string
+		displayFolder: FiscalMonth
+		lineageTag: cfa9b53a-0e8d-4984-96e2-a34cc8b1507a
+		summarizeBy: none
+		sourceColumn: FiscalMonthNameShort
+		sortByColumn: FiscalMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentFiscalMonth
+		dataType: string
+		displayFolder: FiscalMonth
+		lineageTag: 2a37791c-6987-47fe-8362-aec6ad5b1a44
+		summarizeBy: none
+		sourceColumn: CurrentFiscalMonth
+		sortByColumn: FiscalMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearMonthName
+		dataType: string
+		displayFolder: FiscalMonth
+		lineageTag: e82258ab-90d1-4890-b191-e97fc6e051a4
+		summarizeBy: none
+		sourceColumn: FiscalYearMonthName
+		sortByColumn: FiscalYearMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearMonthNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: FiscalMonth
+		lineageTag: 8c13bb10-af9e-461c-b2fb-7ad5504a1e90
+		summarizeBy: none
+		sourceColumn: FiscalYearMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearMonthCurrent
+		dataType: string
+		displayFolder: FiscalMonth
+		lineageTag: e79ef186-b7ad-41a9-87b8-39e11ebc836a
+		summarizeBy: none
+		sourceColumn: FiscalYearMonthCurrent
+		sortByColumn: FiscalYearMonthNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthsToToday
+		dataType: int64
+		formatString: 0
+		displayFolder: FiscalMonth
+		lineageTag: 3d386e9e-3b23-4730-afa1-a59e980d27c4
+		summarizeBy: none
+		sourceColumn: FiscalMonthsToToday
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalQuarterNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: FiscalQuarter
+		lineageTag: 4c47a21e-fbd6-4442-bc37-e2c551678682
+		summarizeBy: none
+		sourceColumn: FiscalQuarterNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalQuarterName
+		dataType: string
+		displayFolder: FiscalQuarter
+		lineageTag: d04a3a8d-c5be-480b-b40f-3f9aaba1b23b
+		summarizeBy: none
+		sourceColumn: FiscalQuarterName
+		sortByColumn: FiscalQuarterNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalMonthOfQuarterNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: FiscalQuarter
+		lineageTag: 85d69e5e-37c7-40a2-b696-dbd2d83be58e
+		summarizeBy: none
+		sourceColumn: FiscalMonthOfQuarterNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearQuarterName
+		dataType: string
+		displayFolder: FiscalQuarter
+		lineageTag: 5700221e-b69a-483c-972c-0b80d0c7bf9a
+		summarizeBy: none
+		sourceColumn: FiscalYearQuarterName
+		sortByColumn: FiscalYearQuarterNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalYearQuarterNumber
+		dataType: int64
+		formatString: 0
+		displayFolder: FiscalQuarter
+		lineageTag: 3a7b06c0-286b-4d05-8895-7cce77438569
+		summarizeBy: none
+		sourceColumn: FiscalYearQuarterNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column FiscalQuarterStart
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: FiscalQuarter
+		lineageTag: 46bd81c7-4da1-4ed7-af70-780e27aa6949
+		summarizeBy: none
+		sourceColumn: FiscalQuarterStart
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FiscalQuarterEnd
+		dataType: dateTime
+		formatString: Short Date
+		displayFolder: FiscalQuarter
+		lineageTag: a59e8889-0dab-4486-91cb-693b38ef1d91
+		summarizeBy: none
+		sourceColumn: FiscalQuarterEnd
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column FiscalQuartersToToday
+		dataType: int64
+		formatString: 0
+		displayFolder: FiscalQuarter
+		lineageTag: f7f86d5b-e304-4f3a-8294-0c28a234fa46
+		summarizeBy: none
+		sourceColumn: FiscalQuartersToToday
+
+		annotation SummarizationSetBy = Automatic
+
+	column CurrentFiscalQuarter
+		dataType: string
+		displayFolder: FiscalQuarter
+		lineageTag: 77cec8ed-db92-4cd1-9f04-b2c57c756610
+		summarizeBy: none
+		sourceColumn: CurrentFiscalQuarter
+		sortByColumn: FiscalYearQuarterNumber
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfFiscalQuarter
+		dataType: int64
+		formatString: 0
+		displayFolder: FiscalQuarter
+		lineageTag: 95396a74-59bf-4e62-9ad4-31be1cb89add
+		summarizeBy: none
+		sourceColumn: DayOfFiscalQuarter
+
+		annotation SummarizationSetBy = Automatic
+
+	partition dCalendar = m
+		mode: import
+		source = ```
+				let
+				
+				    #"-----PARAMETERS-----" = "",
+				
+				    // Specify the start date 
+				    startDate = #date(2020, 1, 1),
+				
+				    // Years ahead today
+				    yearsAhead = 1,
+				            
+				    // Specify the start of the week. Default: Day.Monday 
+				    startOfWeek = Day.Monday,
+				    
+				    // Specify the month of the fiscal year end. Default: 3 (March)
+				    monthOfFiscalYearEnd = 3,
+				    
+				    /* Start day of the closing month. 
+				       Default: 16 (it means the closing month goes from the 16th of the current month 
+				       to the 15th of the next month) */
+				    closingMonthStartDay = 16,
+				    
+				    // Available: "en-US", "pt-BR", "es-ES"
+				    language = "en-US",
+				
+				    #"-----INTERNAL USE-----" = "",
+				  
+				    endDate = Date.AddYears(Date.EndOfYear(Date.From(DateTime.LocalNow())), yearsAhead),
+				    currentDate = Date.From(DateTime.LocalNow()),
+					currentYear = Date.Year(currentDate),
+					currentMonth = Date.Month(currentDate),  
+				    startYear = Date.Year(startDate),
+					startMonth = Date.Month(startDate),
+				    currentFiscalYear = Date.Year(Date.AddMonths(currentDate, 12-monthOfFiscalYearEnd)), 
+				    
+				
+				    // The table with auxiliary texts cross the languages
+				    auxiliaryTextTable = Table.UnpivotOtherColumns(
+				        #table(
+				            type table [Class=text, #"en-US"=text, #"pt-BR"=text, #"es-ES"=text],
+				            {
+				                  { "current"        , "Current"        , "Atual"       , "Actual"              }
+				                , { "quarter"        , "Q"              , "T"           , "T"                   }
+				                , { "week"           , "W"              , "S"           , "S"                   }
+				                , { "half"           , "H"              , "S"           , "S"                   }
+				                , { "bimester"       , "B"              , "B"           , "B"                   }
+				                , { "fortnight"      , "FN"             , "Q"           , "Q"                   }
+				                , { "summer"         , "Summer"         , "Verão"       , "Verano"              }
+				                , { "spring"         , "Spring"         , "Primavera"   , "Primavera"           }
+				                , { "autumn"         , "Autumn"         , "Outono"      , "Otoño"               }
+				                , { "winter"         , "Winter"         , "Inverno"     , "Invierno"            }
+				                , { "businessDay"    , "BusinessDay"    , "Dia Útil"    , "Dia Laborable"       }
+				                , { "non-businessDay", "Non-BusinessDay", "Dia Não Útil", "Dia No Laborable"    }
+				            }
+				        ),
+				        {"Class"}, "Language", "Value"
+				    ),
+				    
+				    // Filtered table on selected language
+				    auxiliaryTextTableOnLanguage = Table.Buffer(Table.SelectRows(auxiliaryTextTable, each [Language]=language)),
+				    currentText = auxiliaryTextTableOnLanguage{[Class="current"]}[Value], 
+				    quarterPrefix = auxiliaryTextTableOnLanguage{[Class="quarter"]}[Value], 
+				    weekPrefix = auxiliaryTextTableOnLanguage{[Class="week"]}[Value],
+				    halfPrefix = auxiliaryTextTableOnLanguage{[Class="half"]}[Value],
+				    bimesterPrefix = auxiliaryTextTableOnLanguage{[Class="bimester"]}[Value],
+				    fortnightPrefix = auxiliaryTextTableOnLanguage{[Class="fortnight"]}[Value],
+				    summerText = auxiliaryTextTableOnLanguage{[Class="summer"]}[Value],
+				    springText = auxiliaryTextTableOnLanguage{[Class="spring"]}[Value],
+				    autumnText = auxiliaryTextTableOnLanguage{[Class="autumn"]}[Value],
+				    winterText = auxiliaryTextTableOnLanguage{[Class="winter"]}[Value],
+				    businessDayText = auxiliaryTextTableOnLanguage{[Class="businessDay"]}[Value],
+				    nonBusinessDayText = auxiliaryTextTableOnLanguage{[Class="non-businessDay"]}[Value],
+				    
+				    // Invisible character (zero-width spacing)
+				    zws = Character.FromNumber(8203),  
+				
+				    // List with all dates 
+				    datesList = List.Dates(startDate, Duration.Days(endDate-startDate)+1, #duration(1, 0, 0, 0)),
+				
+				    // List with all years 
+				    yearRange = List.Buffer({Date.Year(startDate)..Date.Year(endDate)}),
+				            
+				
+				    #"-----GENERATE HOLIDAYS-----" = "", 
+				
+				    // Fixed holidays that occur every year 
+				    fixedHolidaysList = #table(
+				        type table [Day=Int64.Type, Month=Int64.Type, Holiday=text],
+				        
+				        if language="pt-BR" then
+				            {
+				                // Day, Month, Holiday
+				                  { 01, 01, "Confraternização Universal"   }
+				                , { 25, 01, "Aniversário da Cidade"        } 
+				                , { 21, 04, "Tiradentes"                   } 
+				                , { 01, 05, "Dia do Trabalhador"           } 
+				                , { 09, 07, "Revolução Constitucionalista" } 
+				                , { 07, 09, "Independência do Brasil"      } 
+				                , { 12, 10, "N. Srª Aparecida"             } 
+				                , { 02, 11, "Finados"                      } 
+				                , { 15, 11, "Proclamação da República"     } 
+				                , { 20, 11, "Consciência Negra"            } 
+				                , { 24, 12, "Véspera de Natal"             } 
+				                , { 25, 12, "Natal"                        } 
+				                , { 31, 12, "Véspera de Ano Novo"          } 
+				            }
+				
+				        else if language="en-US" then
+				            {
+				                // Day, Month, Holiday
+				                  { 1,  1, "New Year's Day"}
+				                , { 4,  7, "Independence Day"}
+				                , {11, 11, "Veterans Day"}
+				                , {25, 12, "Christmas Day"}
+				            }
+				
+				        else if language="es-ES" then
+				            {
+				                // Day, Month, Holiday
+				                  { 1, 1, "Año Nuevo"}
+				                , { 1, 5, "Día del Trabajo" } 
+				            }
+				        else null
+				    ),
+				
+				    // Function that generates the fixed holidays for all years 
+				    fxGenerateFixedHolidays = (year)=>
+				        Table.AddColumn(
+				            fixedHolidaysList,
+				            "Date",
+				            each #date(year, [Month], [Day]),
+				            type date
+				        )[[Date], [Holiday]],
+				            
+				    // Generate the fixed holiday table 
+				    fixedHolidays = Table.Combine(List.Transform(yearRange, fxGenerateFixedHolidays)),
+				    
+				    // Function that generates the moving holidays 
+				    fxGenerateMovingHolidays = (year) =>
+				    let
+				        modExcel = (x, y) =>
+				            let
+				                m = Number.Mod(x, y)
+				            in
+				                if m < 0 then m + y else m,
+				        easter = Date.From(
+				            Number.Round(
+				                Number.From(#date(year, 4, 1))
+				                    / 7
+				                    + modExcel(19 * modExcel(year, 19) - 7, 30) * 0.14,
+				                0,
+				                RoundingMode.Up
+				            )
+				                * 7
+				                - 6
+				        ),
+				        movingHolidays = #table(
+				            type table [Date = date, Holiday = text],
+				            {
+				                  { Date.AddDays(easter, -2  ), if language = "pt-BR" then "Sexta-Feira Santa" else if language = "en-US" then "Good Friday" else if language = "es-ES" then "Viernes Santo" else null } 
+				                , { easter                    , if language = "pt-BR" then "Páscoa" else if language = "en-US" then "Easter" else if language = "es-ES" then "Pascua" else null }
+				                , { Date.AddDays(easter, 60  ), "Corpus Christi"             }
+				            //  , { Date.AddDays(easter, -48 ), "Segunda-feira de Carnaval"  }
+				            //  , { Date.AddDays(easter, -47 ), "Terça-feira de Carnaval"    }
+				            //  , { Date.AddDays(easter, -46 ), "Quarta-feira de Cinzas"     }
+				            }
+				        )
+				    in
+				        movingHolidays,
+				            
+				    // Generate the moving holiday table 
+				    movingHolidays = Table.Combine(List.Transform(yearRange, fxGenerateMovingHolidays)),
+				            
+				    // Table containing all holidays 
+				    holidays = Table.Group(Table.Combine({fixedHolidays, movingHolidays}), {"Date"}, {{"Holiday", each Text.Combine(_[Holiday], "/"), type text}}),
+				    
+				    #"-----GENERATE DATA-----" = "",
+				
+				    #"-----DATE-----" = "",
+				    datesTable = Table.FromList(datesList, Splitter.SplitByNothing(), type table [ Date = date ]),
+				    add_DateIndex = Table.AddIndexColumn(datesTable, "DateIndex", 1, 1, Int64.Type),
+				    add_DaysToToday = Table.AddColumn(add_DateIndex, "DaysToToday", each Number.From([Date] - currentDate), Int64.Type),
+				    add_CurrentDate = Table.AddColumn(add_DaysToToday, "CurrentDate", each if [DaysToToday] = 0 then currentText else Date.ToText([Date], "dd/MM/yyyy"), type text),
+				
+				    #"-----YEAR-----" = "",    
+				    add_Year = Table.AddColumn(add_CurrentDate, "Year", each Date.Year([Date]), Int64.Type),
+				    add_YearStart = Table.AddColumn(add_Year, "YearStart", each Date.StartOfYear([Date]), type date),
+				    add_YearEnd = Table.AddColumn(add_YearStart, "YearEnd", each Date.EndOfYear([Date]), type date),
+				    add_YearIndex = Table.AddColumn(add_YearEnd, "YearIndex", each [Year] - startYear + 1, Int64.Type),
+				    add_YearDescendingName = Table.AddColumn(add_YearIndex, "YearDescendingName", each [Year], Int64.Type),
+				    add_YearDescendingNumber = Table.AddColumn(add_YearDescendingName, "YearDescendingNumber", each [Year] * -1, Int64.Type),
+				    add_YearsToToday = Table.AddColumn(add_YearDescendingNumber, "YearsToToday", each [Year] - Date.Year(currentDate), Int64.Type),
+				    add_CurrentYear = Table.AddColumn(add_YearsToToday, "CurrentYear", each if [YearsToToday] = 0 then currentText else Text.From([Year]), type text),
+				
+				    #"-----DAY-----" = "",
+				    add_DayOfMonth = Table.AddColumn(add_CurrentYear, "DayOfMonth", each Date.Day([Date]), Int64.Type),
+				    add_DayOfYear = Table.AddColumn(add_DayOfMonth, "DayOfYear", each Date.DayOfYear([Date]), Int64.Type),
+				    add_DayOfWeekNumber = Table.AddColumn(add_DayOfYear, "DayOfWeekNumber", each Date.DayOfWeek([Date], startOfWeek), Int64.Type),
+				    add_DayOfWeekName = Table.AddColumn(add_DayOfWeekNumber, "DayOfWeekName", each Text.Proper(Date.DayOfWeekName([Date], language)), type text),
+				    add_DayOfWeekNameShort = Table.AddColumn(add_DayOfWeekName, "DayOfWeekNameShort", each Text.Start([DayOfWeekName], 3), type text),
+				    add_DayOfWeekNameInitials = Table.AddColumn(add_DayOfWeekNameShort, "DayOfWeekNameInitials", each Text.Repeat(zws, 7-[DayOfWeekNumber]) & Text.Start([DayOfWeekName], 1), type text),
+				
+				    #"-----MONTH-----" = "",
+				    add_MonthNumber = Table.AddColumn(add_DayOfWeekNameInitials, "MonthNumber", each Date.Month([Date]), Int64.Type),
+				    add_MonthName = Table.AddColumn(add_MonthNumber, "MonthName", each Text.Proper(Date.MonthName([Date], language)), type text), 
+				    add_MonthNameShort = Table.AddColumn(add_MonthName, "MonthNameShort", each Text.Start([MonthName], 3), type text), 
+				    add_MonthNameInitials = Table.AddColumn(add_MonthNameShort, "MonthNameInitials", each Text.Repeat(zws, 12-[MonthNumber]) & Text.Start([MonthName], 1), type text),
+				    add_MonthYearName = Table.AddColumn(add_MonthNameInitials, "MonthYearName", each Text.Proper(Date.ToText([Date], [Format="MMM/yy", Culture=language])), type text),
+				    add_MonthYearNumber = Table.AddColumn(add_MonthYearName, "MonthYearNumber", each [Year] * 100 + [MonthNumber], Int64.Type),
+				    add_MonthDayNumber = Table.AddColumn(add_MonthYearNumber, "MonthDayNumber", each [MonthNumber] * 100 + [DayOfMonth], Int64.Type),
+				    add_MonthDayName = Table.AddColumn(add_MonthDayNumber, "MonthDayName", each [MonthNameShort] & " " & Text.From([DayOfMonth]), type text), 
+				    add_MonthStart = Table.AddColumn(add_MonthDayName, "MonthStart", each Date.StartOfMonth([Date]), type date),
+				    add_MonthEnd = Table.AddColumn(add_MonthStart, "MonthEnd", each Date.EndOfMonth([Date]), type date),
+				    add_MonthIndex = Table.AddColumn(add_MonthEnd, "MonthIndex", each 12 * ([Year]-Date.Year(startDate)) + [MonthNumber], Int64.Type),
+				    add_MonthsToToday = Table.AddColumn(add_MonthIndex, "MonthsToToday", each ([Year] * 12 - 1 + [MonthNumber]) - (currentYear * 12 - 1 + Date.Month(currentDate)), Int64.Type),
+				    add_CurrentMonthName = Table.AddColumn(add_MonthsToToday, "CurrentMonthName", each if currentMonth = [MonthNumber] then currentText else [MonthName], type text),
+				    add_CurrentMonthNameShort = Table.AddColumn(add_CurrentMonthName, "CurrentMonthNameShort", each if currentMonth = [MonthNumber] then currentText else [MonthNameShort], type text),
+				    add_CurrentMonthYearName = Table.AddColumn(add_CurrentMonthNameShort, "CurrentMonthYearName", each if [MonthsToToday] = 0 then currentText else [MonthYearName], type text),
+				
+				    #"-----QUARTER-----" = "",
+				    add_QuarterNumber = Table.AddColumn(add_CurrentMonthYearName, "QuarterNumber", each Date.QuarterOfYear([Date]), Int64.Type), 
+				    add_QuarterName = Table.AddColumn(add_QuarterNumber, "QuarterName", each quarterPrefix & Text.From([QuarterNumber]), type text),
+				    add_QuarterYearName = Table.AddColumn(add_QuarterName, "QuarterYearName", each [QuarterName] & " " & Text.End(Text.From([Year]), 2), type text),
+				    add_QuarterYearNumber = Table.AddColumn(add_QuarterYearName, "QuarterYearNumber", each [Year] * 100 + [QuarterNumber], Int64.Type), 
+				    add_QuarterStart = Table.AddColumn(add_QuarterYearNumber, "QuarterStart", each Date.StartOfQuarter([Date]), type date),
+				    add_QuarterEnd = Table.AddColumn(add_QuarterStart, "QuarterEnd", each Date.EndOfQuarter([Date]), type date),
+				    add_QuarterIndex = Table.AddColumn(add_QuarterEnd, "QuarterIndex", each 4 * ([Year] - Date.Year(startDate)) + [QuarterNumber], Int64.Type),
+				    add_QuartersToToday = Table.AddColumn(add_QuarterIndex, "QuartersToToday", each ([Year] * 4 - 1 + [QuarterNumber]) - (currentYear * 4 - 1 + Date.QuarterOfYear(currentDate)), Int64.Type),
+				    add_CurrentQuarter = Table.AddColumn(add_QuartersToToday, "CurrentQuarter", each if Date.QuarterOfYear(currentDate) = [QuarterNumber] then currentText else [QuarterName], type text),
+				    add_CurrentQuarterYear = Table.AddColumn(add_CurrentQuarter, "CurrentQuarterYear", each if [QuartersToToday] = 0 then currentText else [QuarterYearName], type text),
+				    add_MonthOfQuarterNumber = Table.AddColumn(add_CurrentQuarterYear, "MonthOfQuarterNumber", each Number.Mod([MonthNumber] - 1, 3) + 1, Int64.Type),
+				
+				    #"-----WEEK-----" = "",
+				    add_WeekOfYearNumberISO = Table.AddColumn(
+				        add_MonthOfQuarterNumber, 
+				        "WeekOfYearNumberISO", 
+				        each let
+				            thursdayInWeek = Date.AddDays(
+				                [Date],
+				                3 - Date.DayOfWeek([Date], Day.Monday)
+				            ),
+				            startYearThursdayInWeek = #date(Date.Year(thursdayInWeek), 1, 1),
+				            diffDays = Duration.Days(thursdayInWeek - startYearThursdayInWeek)
+				        in
+				            Number.IntegerDivide(diffDays, 7, 0) + 1,
+				        Int64.Type
+				    ),
+				
+				    add_YearISO = Table.AddColumn(add_WeekOfYearNumberISO, "YearISO", each Date.Year(Date.AddDays([Date], 26 - [WeekOfYearNumberISO])), Int64.Type),
+				    add_WeekYearNumberISO = Table.AddColumn(add_YearISO, "WeekYearNumberISO", each [YearISO] * 100 + [WeekOfYearNumberISO], Int64.Type),
+				    add_WeekYearNameISO = Table.AddColumn(add_WeekYearNumberISO, "WeekYearNameISO", each weekPrefix & Text.PadStart(Text.From([WeekOfYearNumberISO]), 2, "0") & " " & Text.From([YearISO]), type text),
+				    add_WeekStartISO = Table.AddColumn(add_WeekYearNameISO, "WeekStartISO", each Date.StartOfWeek([Date], Day.Monday), type date), 
+				    add_WeekEndISO = Table.AddColumn(add_WeekStartISO, "WeekEndISO", each Date.EndOfWeek([Date], Day.Monday), type date), 
+				    add_WeekIndexISO = Table.AddColumn(add_WeekEndISO, "WeekIndexISO", each Number.From([WeekStartISO] - Date.StartOfWeek(startDate, Day.Monday)) / 7 + 1, Int64.Type),
+				    add_WeeksToTodayISO = Table.AddColumn(add_WeekIndexISO, "WeeksToTodayISO", each Number.From([WeekStartISO] - Date.StartOfWeek(currentDate, Day.Monday)) / 7, Int64.Type),
+				    add_CurrentWeekISO = Table.AddColumn(add_WeeksToTodayISO, "CurrentWeekISO", each if [WeeksToTodayISO] = 0 then currentText else [WeekYearNameISO], type text),
+				    add_WeekPeriodName = Table.AddColumn(add_CurrentWeekISO, "WeekPeriodName", each [WeekYearNameISO] & ": " & Date.ToText([WeekStartISO], [Format="dd/MM/yyyy"]) & "~" & Date.ToText([WeekEndISO], [Format="dd/MM/yyyy"]), type text),
+				    add_WeekOfMonthNumber = Table.AddColumn(add_WeekPeriodName, "WeekOfMonthNumber", each Date.WeekOfMonth([Date], startOfWeek), Int64.Type),
+				    
+				    #"-----HALF-----" = "",
+				    add_HalfNumber = Table.AddColumn(add_WeekOfMonthNumber, "HalfNumber", each if [MonthNumber] <= 6 then 1 else 2, Int64.Type),
+				    add_HalfYearName = Table.AddColumn(add_HalfNumber, "HalfYearName", each halfPrefix & Text.From([HalfNumber]) & " " & Text.From([Year]), type text),
+				    add_HalfYearNumber = Table.AddColumn(add_HalfYearName, "HalfYearNumber", each [Year] * 100 + [HalfNumber], Int64.Type),
+				    add_HalfIndex = Table.AddColumn(add_HalfYearNumber, "HalfIndex", each (2*([Year] - Date.Year(startDate))) + [HalfNumber], Int64.Type),
+				    add_HalfsToToday = Table.AddColumn(add_HalfIndex, "HalfsToToday", each [HalfIndex] - ( 2 * ( currentYear - startYear ) + ( if currentMonth <= 6 then 1 else 2 )), Int64.Type),
+				    add_CurrentHalf = Table.AddColumn(add_HalfsToToday, "CurrentHalf", each if [HalfsToToday] = 0 then currentText else [HalfYearName], type text), 
+				
+				    #"-----BIMESTER-----" = "",
+				    add_BimesterNumber = Table.AddColumn(add_CurrentHalf, "BimesterNumber", each Number.RoundUp([MonthNumber]/ 2), Int64.Type),
+				    add_BimesterYearName = Table.AddColumn(add_BimesterNumber, "BimesterYearName", each bimesterPrefix & Text.From([BimesterNumber]) & " " & Text.From([Year]), type text),
+				    add_BimesterYearNumber = Table.AddColumn(add_BimesterYearName, "BimesterYearNumber", each [Year] * 100 + [BimesterNumber], Int64.Type),
+				    add_BimesterIndex = Table.AddColumn(add_BimesterYearNumber, "BimesterIndex", each (6*([Year] - Date.Year(startDate))) + [BimesterNumber], Int64.Type),
+				    add_BimestersToToday = Table.AddColumn(add_BimesterIndex, "BimestersToToday", each ( 6 * ( [Year] - startYear ) + [BimesterNumber])  - (( 6 * ( currentYear - startYear ) ) + Number.RoundUp ( currentMonth / 2, 0 )), Int64.Type),
+				    add_CurrentBimester = Table.AddColumn(add_BimestersToToday, "CurrentBimester", each if [BimestersToToday] = 0 then currentText else [BimesterYearName], type text),
+				
+				    #"-----FORTNIGHT-----" = "",
+				    add_FortnightOfMonthNumber = Table.AddColumn(add_CurrentBimester, "FortnightOfMonthNumber", each if [DayOfMonth] <= 15 then 1 else 2, Int64.Type),
+				    add_FortnightMonthNumber = Table.AddColumn(add_FortnightOfMonthNumber, "FortnightMonthNumber", each [MonthNumber] * 10 + [FortnightOfMonthNumber], Int64.Type),
+				    add_FortnightMonthName = Table.AddColumn(add_FortnightMonthNumber, "FortnightMonthName", each [MonthNameShort] & " " & Text.From([FortnightOfMonthNumber]), type text),
+				    add_FortnightMonthYearNumber = Table.AddColumn(add_FortnightMonthName, "FortnightMonthYearNumber", each [Year] * 10000 + [MonthNumber] * 100 + [FortnightMonthNumber], Int64.Type),
+				    add_FortnightMonthYearName = Table.AddColumn(add_FortnightMonthYearNumber, "FortnightMonthYearName", each fortnightPrefix & Text.From([FortnightOfMonthNumber]) & " " & [MonthNameShort] & " " & Text.From([Year]), type text),
+				    add_FortnightIndex = Table.AddColumn(add_FortnightMonthYearName, "FortnightIndex", each 24 * ([Year] - Date.Year(startDate)) + 2 * ([MonthNumber]-Date.Month(startDate)) + [FortnightOfMonthNumber] , Int64.Type),
+				    add_FortnightsToToday = Table.AddColumn(add_FortnightIndex, "FortnightsToToday", each [FortnightIndex] - ( (24 * (currentYear - Date.Year(startDate))) + (2 * (Date.Month(currentDate)-Date.Month(startDate))) + (if Date.Day(currentDate) <= 15 then 1 else 2)), Int64.Type),
+				    add_CurrentFortnight = Table.AddColumn(add_FortnightsToToday, "CurrentFortnight", each if [FortnightsToToday] = 0 then currentText else [FortnightMonthName], type text),
+				    
+				    #"-----CLOSING-----" = "",
+				    add_ClosingDateRef = Table.AddColumn(add_CurrentFortnight, "ClosingDateRef", each if [DayOfMonth] <= closingMonthStartDay then [Date] else Date.AddMonths([Date], 1), type date),
+				    add_ClosingYear = Table.AddColumn(add_ClosingDateRef, "ClosingYear", each Date.Year([ClosingDateRef]), Int64.Type),
+				    add_ClosingMonthName = Table.AddColumn(add_ClosingYear, "ClosingMonthName", each Text.Proper(Date.MonthName([ClosingDateRef], language)), type text),
+				    add_ClosingMonthNameShort = Table.AddColumn(add_ClosingMonthName, "ClosingMonthNameShort", each Text.Start([ClosingMonthName], 3), type text), 
+				    add_ClosingMonthNumber = Table.AddColumn(add_ClosingMonthNameShort, "ClosingMonthNumber", each Date.Month([ClosingDateRef]), Int64.Type),
+				    add_ClosingMonthYearName = Table.AddColumn(add_ClosingMonthNumber, "ClosingMonthYearName", each [ClosingMonthNameShort] & "/" & Text.End(Text.From([ClosingYear]), 2), type text), 
+				    add_ClosingMonthYearNumber = Table.AddColumn(add_ClosingMonthYearName, "ClosingMonthYearNumber", each [ClosingYear] * 100 + [ClosingMonthNumber], Int64.Type),
+				
+				    #"-----SEASONS-----" = "",
+				    add_SeasonNorthNumber = Table.AddColumn(
+				        add_ClosingMonthYearNumber, 
+				        "SeasonNorthNumber", 
+				        each if [MonthDayNumber] >= 321 and [MonthDayNumber] <= 620  then 1 else 
+				             if [MonthDayNumber] >= 621 and [MonthDayNumber] <= 921  then 2 else 
+				             if [MonthDayNumber] >= 922 and [MonthDayNumber] <= 1221 then 3 else 4,
+				        Int64.Type
+				    ),
+				
+				    add_SeasonNorthName = Table.AddColumn(
+				        add_SeasonNorthNumber, 
+				        "SeasonNorthName", 
+				        each if [SeasonNorthNumber] = 1 then springText else 
+				             if [SeasonNorthNumber] = 2 then summerText else 
+				             if [SeasonNorthNumber] = 3 then autumnText else winterText, 
+				        type text
+				    ),
+				
+				    add_SeasonSouthNumber = Table.AddColumn(
+				        add_SeasonNorthName, 
+				        "SeasonSouthNumber", 
+				        each if [MonthDayNumber] >= 321 and [MonthDayNumber] <= 620  then 1 else 
+				             if [MonthDayNumber] >= 621 and [MonthDayNumber] <= 921  then 2 else 
+				             if [MonthDayNumber] >= 922 and [MonthDayNumber] <= 1221 then 3 else 4,
+				        Int64.Type
+				    ),
+				
+				    add_SeasonSouthName = Table.AddColumn(
+				        add_SeasonSouthNumber, 
+				        "SeasonSouthName", 
+				        each if [SeasonNorthNumber] = 1 then autumnText else 
+				             if [SeasonNorthNumber] = 2 then winterText else 
+				             if [SeasonNorthNumber] = 3 then springText else summerText, 
+				        type text
+				    ),
+				
+				    #"-----BUSINESS-----" = "",
+				    add_Holiday = Table.RenameColumns(Table.RemoveColumns(Table.Join(add_SeasonSouthName, "Date", Table.PrefixColumns(holidays, "h"), "h.Date", JoinKind.LeftOuter, JoinAlgorithm.LeftIndex), "h.Date"), {{"h.Holiday", "Holiday"}}),
+				    add_BusinessDayNumber = Table.AddColumn(add_Holiday, "BusinessDayNumber", each if [Holiday] <> null or Date.DayOfWeek([Date], Day.Monday) > 4 then 0 else 1, Int64.Type),
+				    add_BusinessDayName = Table.AddColumn(add_BusinessDayNumber, "BusinessDayName", each if [BusinessDayNumber] = 1 then businessDayText else nonBusinessDayText, type text),
+				
+				
+				    #"-----FISCAL COLUMNS-----" = "", 
+				    #"-----FISCAL YEAR-----" = "", 
+				    add_FiscalYearStartNumber = Table.AddColumn(add_BusinessDayName, "FiscalYearStartNumber", each Date.Year(Date.AddMonths([Date], -monthOfFiscalYearEnd)), Int64.Type),
+				    add_FiscalYearEndNumber = Table.AddColumn(add_FiscalYearStartNumber, "FiscalYearEndNumber", each [FiscalYearStartNumber] + 1, Int64.Type),
+				    add_FiscalYear = Table.AddColumn(add_FiscalYearEndNumber, "FiscalYear", each "FY " & Text.From([FiscalYearStartNumber]) & "-" &Text.From([FiscalYearEndNumber]), type text),
+				    add_FiscalYearStart = Table.AddColumn( add_FiscalYear, "FiscalYearStart", each #date( [FiscalYearStartNumber], if monthOfFiscalYearEnd = 12 then 1 else  monthOfFiscalYearEnd + 1 , 1), type date ),
+				    add_FiscalYearEnd = Table.AddColumn( add_FiscalYearStart, "FiscalYearEnd", each Date.EndOfMonth(#date([FiscalYearEndNumber], monthOfFiscalYearEnd, 1)), type date),
+				    add_CurrentFiscalYear = Table.AddColumn(add_FiscalYearEnd, "CurrentFiscalYear", each if [FiscalYearStartNumber] = currentFiscalYear then currentText else [FiscalYear], type text),
+				    add_FiscalYearsToToday = Table.AddColumn(add_CurrentFiscalYear, "FiscalYearsToToday", each [FiscalYearStartNumber] - currentFiscalYear, Int64.Type),
+				    
+				    #"-----FISCAL MONTH-----" = "", 
+				    add_FiscalMonthNumber = Table.AddColumn(add_FiscalYearsToToday, "FiscalMonthNumber", each Date.Month( Date.AddMonths([Date], - monthOfFiscalYearEnd ) ), Int64.Type),
+				    add_FiscalMonthName = Table.AddColumn( add_FiscalMonthNumber, "FiscalMonthName", each Text.Proper(Date.ToText([Date], [Format="MMMM", Culture = language])), type text ),
+				    add_FiscalMonthNameShort = Table.AddColumn(add_FiscalMonthName, "FiscalMonthNameShort", each Text.Start([FiscalMonthName], 3), type text),
+				    add_CurrentFiscalMonth = Table.AddColumn( add_FiscalMonthNameShort, "CurrentFiscalMonth", each if Date.IsInCurrentMonth([Date]) then currentText else [FiscalMonthName], Text.Type),
+				    add_FiscalYearMonthName = Table.AddColumn(add_CurrentFiscalMonth, "FiscalYearMonthName", each [FiscalMonthNameShort] & " " & [FiscalYear], type text),
+				    add_FiscalYearMonthNumber = Table.AddColumn( add_FiscalYearMonthName, "FiscalYearMonthNumber", each [FiscalYearStartNumber] * 100 + [FiscalMonthNumber], Int64.Type ),
+				    add_FiscalYearMonthCurrent = Table.AddColumn( add_FiscalYearMonthNumber, "FiscalYearMonthCurrent", each if [CurrentFiscalYear] = currentText and [CurrentFiscalMonth] = currentText then currentText else [FiscalYearMonthName], type text),
+				    add_FiscalMonthsToToday = Table.AddColumn(add_FiscalYearMonthCurrent, "FiscalMonthsToToday", each [ CurrentFiscalMonth = Date.Month( Date.AddMonths( currentDate, - monthOfFiscalYearEnd ) ), FiscalQuartersToToday = (([FiscalYearStartNumber] - currentFiscalYear) * 12) + ([FiscalMonthNumber] - CurrentFiscalMonth)][FiscalQuartersToToday], Int64.Type ),
+				    
+				    #"-----FISCAL QUARTER-----" = "", 
+				    add_FiscalQuarterNumber = Table.AddColumn(add_FiscalMonthsToToday, "FiscalQuarterNumber", each Number.RoundUp( [FiscalMonthNumber] / 3), Int64.Type),
+				    add_FiscalQuarterName = Table.AddColumn(add_FiscalQuarterNumber, "FiscalQuarterName", each "FQ " & Text.From([FiscalQuarterNumber]), Text.Type),
+				    add_FiscalMonthOfQuarterNumber = Table.AddColumn(add_FiscalQuarterName, "FiscalMonthOfQuarterNumber", each [FiscalMonthNumber] - 3 * ([FiscalQuarterNumber] - 1) , Int64.Type ),
+				    add_FiscalYearQuarterName = Table.AddColumn(add_FiscalMonthOfQuarterNumber, "FiscalYearQuarterName", each [FiscalQuarterName] & " | " & [FiscalYear], type text),
+				    add_FiscalYearQuarterNumber = Table.AddColumn(add_FiscalYearQuarterName, "FiscalYearQuarterNumber", each [FiscalYearStartNumber] * 100 + [FiscalQuarterNumber], Int64.Type),
+				    add_FiscalQuarterStart = Table.AddColumn(add_FiscalYearQuarterNumber, "FiscalQuarterStart", each Date.StartOfMonth( Date.AddMonths( [Date] , 1-[FiscalMonthOfQuarterNumber] )), Date.Type),
+				    add_FiscalQuarterEnd = Table.AddColumn(add_FiscalQuarterStart, "FiscalQuarterEnd", each Date.EndOfMonth( Date.AddMonths( [Date] , 3-[FiscalMonthOfQuarterNumber] )), Date.Type),
+				    add_FiscalQuartersToToday = Table.AddColumn(
+				        add_FiscalQuarterEnd, 
+				        "FiscalQuartersToToday", 
+				        each [
+				            CurrentFiscalMonth = Date.Month(Date.AddMonths(currentDate, - monthOfFiscalYearEnd)),  
+				            CurrentFiscalQuarter = Number.RoundUp(CurrentFiscalMonth / 3),
+				            FiscalQuartersToToday = (([FiscalYearStartNumber] - currentFiscalYear) * 4) + ([FiscalQuarterNumber] - CurrentFiscalQuarter)
+				        ][FiscalQuartersToToday], 
+				        Int64.Type 
+				    ),
+				    add_CurrentFiscalQuarter = Table.AddColumn(add_FiscalQuartersToToday, "CurrentFiscalQuarter", each if [FiscalQuartersToToday] = 0 then currentText else [FiscalYearQuarterName], type text),
+				    add_DayOfFiscalQuarter = Table.AddColumn(add_CurrentFiscalQuarter, "DayOfFiscalQuarter", each Number.From( [Date] - [FiscalQuarterStart] ) + 1, Int64.Type ),
+				
+				    #"-----RENAME COLUMNS----" = "",
+				    columnNamesDictionary = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("jVjbbtw4DP2XPPcnMpkGCdAm7U6KYlHkQXGUxrseC7A9xWa/fnUjeURx0n2ZkY54aIo6omz9+HGxd5u/+JD+XPy79sOru3j8UPDb+dn/Uwdjexw8mdReMXxbH8JDeHZvyXR06xe3uJvwl6/dG7dusf+Wra9Oy+LnDZ56uZ3cRH4vh9xLln96t0T4cg71l8DD5patYLfzOIyhaZPVx/m54NfjkRozj9LMMq9OTNpktffr4CM0/7xzx2qy98OS4c3fBQGzYQWfFtPF6fjkl97J6eiXAPAwAkxuIMPRDjOculaGJX2U4NSU9MZlu3/5HObttSzTPnz2a236KbXZqrrKRmU5ihEtSjb67v3fPMU07g7+6GbH88ucTy3askuOkRsYEabkt2EeXkNWhaJfRuNfo3vuI8h+riLJCCNqaRvdtPb+ssrcuNruyuhUk5ezyzmJKeVcSFvsyuzTSIAWzZVtaJ7VEOfHDJkV02BGlQkzYaIRf1p8iS0uuYRXOk2E2RpmnExg0tJlRsw7EmJSkSDdhsDxpPHQdpp4qFbEUa4V0mazUiziQCkWuTHLMFWLzKzVQtpsBps0jnrcpblvbVO19nmvQoaH2qdJaRaogalKEuhDhIGOuiXWUVDhgEC+nmJivaz1wzIe/botUs80gqzyMLEIRh/sIUC2ESUqSEXYKLIx7QJt1Vn5pCC2Yh1pBEhFT2xQVAXdGY1JXeCvaqwiHoRWOSA1pqHeBLREV500c6+HhAByVLSsehpg1npyc9Rkkd2/aMmkHRt63STYT5Z6UnUup1HxcXu4j/al/uaTqdg2cD6lBOfzP9ukEx8b9BD7EeYDOu/MT0VXGQYLSmUXuFlvaFXUZSNEinpDg6i3tjujcdZb6y/JC5GRESKR4NCKBdeAJDhiV/XkJ+PkkzwaYCCEnvnFL2N4rhu/GBWIdr7GaOsXobTHL8kEj2HWSHse37jpBXmtPhVABKhRZCElqkUoTKbpZ2F16jGiUt0gCy4bCiB7qBlkgSWDMatiJD4GUzc892Wz70rJkknt9Abf9TubSJDEXVfnd2aZb6j6mZjIHkM6JXOna7ACkAMJ3Rk1ePdeCSYfGFhN6q6vwNfx3J7Hn6+bVvXX0zj/67WuEzp4Q9nsx/Zi+XjXQVkqpAdGBkZoqVpys2DgAtcM/LTLZrjqYhHlKDdGRLT8ROflJyosP5Ng/YmH609Uc/3ZCZBJAETEI3gKa/yGTJ/Nf/i0E9OX897nb+ZjdBcKmvt7fzX6+JAEAVc+CIVV+sUcbdVbqRDkpbCQ8NVUUeHVtOWr91N0BO+n6A3eGMAVvDBUH6IPpHevt9Z0OA1nZmR82NihiCOJ5uDdGua7ODmZy8eoicGFBEppNEDNLxNpDIMF0SQK9xBO/bMPp0k/WSDNbZ6bzEIP8MEWprHsi+t4NvPH93Usa+OvWndPMbV+XfHzL5p820aJKfY/uaewuKepOSyAylcGmcjXBUKDvT6ug5v4AgmvY8pQ/fjFCxlroPUV37x6T/GFy/KDcOsFrUr7pbSNwLvI+liNINs4jiqspjKZUcElUgXgdGKGuqbKA6O+rSrm6lgsYL/dM4z7q0E0UypWsQpdv1WDWayYqgoV+ug+pMEfWlPaBLDSpi8BKMdNeTozBeGr6tRlToOGjzoZZQ+TOL/85g1ILwCBbQWcvVdQ87Hx3o+6NWjy2qOGOn733drnGb9e30l4G2FMrB2kOdBLQAdp0KAe/c/sdXcfquoQnmqIWXzOXYdIFerAuaeblx29tNSY1lezUY0bkFbrGlYX59pLvhtXnAu6J9f44+N/", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [#"en-US" = _t, #"pt-BR" = _t, #"es-ES" = _t]),
+				    
+				    fromToColumnNames = if language <> "en-US" then List.Zip(Table.ToColumns(Table.SelectColumns(columnNamesDictionary, {"en-US", language}))) else null,
+				    renamedColumns = if language <> "en-US" then Table.RenameColumns(add_DayOfFiscalQuarter, fromToColumnNames) else add_DayOfFiscalQuarter
+				in
+				    renamedColumns
+				```
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

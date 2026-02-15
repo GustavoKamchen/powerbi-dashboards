@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "Bitcoin Historical Market Data"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "37e00865-c5d1-494f-a601-14b65be5d086"
+  }
+}

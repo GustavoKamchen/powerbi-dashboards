@@ -1,0 +1,129 @@
+table fPrices
+	lineageTag: c71b4d51-de60-433c-8d68-178f31871dff
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0c41ff6e-3d6a-440b-9e1f-84101db170df
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column AAPL
+		dataType: double
+		lineageTag: 76b4086e-d6bb-46fb-9486-a4fbd1ba31bf
+		summarizeBy: sum
+		sourceColumn: AAPL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column AMZN
+		dataType: double
+		lineageTag: 4b0fef86-80ab-4887-9755-9a28e66aac46
+		summarizeBy: sum
+		sourceColumn: AMZN
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GOOGL
+		dataType: double
+		lineageTag: 3cada90a-d008-49ca-9bf8-47b0b01c0c83
+		summarizeBy: sum
+		sourceColumn: GOOGL
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column JNJ
+		dataType: double
+		lineageTag: cbd96e0c-566d-4b70-8340-d5f3ba992c47
+		summarizeBy: sum
+		sourceColumn: JNJ
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column JPM
+		dataType: double
+		lineageTag: 1c79d6b5-a520-401a-9ce0-bffef36c276f
+		summarizeBy: sum
+		sourceColumn: JPM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column META
+		dataType: double
+		lineageTag: 90562067-a41b-46c8-b611-82709f3b2434
+		summarizeBy: sum
+		sourceColumn: META
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MSFT
+		dataType: double
+		lineageTag: 623cedce-55ef-4718-90b6-8d724fa21a59
+		summarizeBy: sum
+		sourceColumn: MSFT
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column NVDA
+		dataType: double
+		lineageTag: ca69a809-41c7-404f-8e4b-d0eb5a83165e
+		summarizeBy: sum
+		sourceColumn: NVDA
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column PG
+		dataType: double
+		lineageTag: eb37e293-2e53-4115-a6e1-a8e0875f16b2
+		summarizeBy: sum
+		sourceColumn: PG
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column XOM
+		dataType: double
+		lineageTag: 2c21666c-fdf4-4844-be79-28d83bc25620
+		summarizeBy: sum
+		sourceColumn: XOM
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fPrices = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type with Locale" = Table.TransformColumnTypes(#"Promoted Headers", {{"AAPL", type number}, {"AMZN", type number}, {"GOOGL", type number}, {"JNJ", type number}, {"JPM", type number}, {"META", type number}, {"MSFT", type number}, {"NVDA", type number}, {"PG", type number}, {"XOM", type number}}, "en-US"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Changed Type with Locale",{{"Date", type date}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

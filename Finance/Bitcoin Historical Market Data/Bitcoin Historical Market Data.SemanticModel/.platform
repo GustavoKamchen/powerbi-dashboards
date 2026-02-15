@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "Bitcoin Historical Market Data"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "00b1ac76-4a93-4949-9558-da8758ebb07a"
+  }
+}

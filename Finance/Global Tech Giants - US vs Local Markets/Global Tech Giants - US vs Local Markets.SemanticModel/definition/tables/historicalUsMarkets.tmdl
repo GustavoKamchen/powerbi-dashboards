@@ -1,0 +1,97 @@
+table historicalUsMarkets
+	lineageTag: 6fbe4525-373d-44d9-baf7-ae7068127d79
+
+	column Company
+		dataType: string
+		lineageTag: efebd22e-0f75-4a1a-852d-9b8c577c10f7
+		summarizeBy: none
+		sourceColumn: Company
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: 5f3351e5-4506-431a-b018-69c16da21be2
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ticker
+		dataType: string
+		lineageTag: 940180b2-eebd-4c47-878d-42a53e61c71b
+		summarizeBy: none
+		sourceColumn: Ticker
+
+		annotation SummarizationSetBy = Automatic
+
+	column Market
+		dataType: string
+		lineageTag: 914bb09c-1082-4c26-8149-617f0a48b9d4
+		summarizeBy: none
+		sourceColumn: Market
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: string
+		lineageTag: 14623a7b-a699-4011-ad72-47b759281a81
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Open
+		dataType: string
+		lineageTag: f300f822-0377-4b65-a410-8fbc9cfb32b7
+		summarizeBy: none
+		sourceColumn: Open
+
+		annotation SummarizationSetBy = Automatic
+
+	column High
+		dataType: string
+		lineageTag: d587d52d-a2a3-4a79-acce-3847356062ad
+		summarizeBy: none
+		sourceColumn: High
+
+		annotation SummarizationSetBy = Automatic
+
+	column Low
+		dataType: string
+		lineageTag: b0ba16c7-3fa6-4d1a-bb38-234b8582c054
+		summarizeBy: none
+		sourceColumn: Low
+
+		annotation SummarizationSetBy = Automatic
+
+	column Close
+		dataType: string
+		lineageTag: 591d2fe5-eeb7-472d-a070-f9c8c1aa85de
+		summarizeBy: none
+		sourceColumn: Close
+
+		annotation SummarizationSetBy = Automatic
+
+	column Volume
+		dataType: string
+		lineageTag: e7b03db0-5e08-467a-93a8-6012afc64896
+		summarizeBy: none
+		sourceColumn: Volume
+
+		annotation SummarizationSetBy = Automatic
+
+	partition historicalUsMarkets = m
+		mode: import
+		source =
+				let
+				    fileName = "Global_Tech_Historical_US_Market_20260206_045434.csv",
+				    Source = Csv.Document(Web.Contents(sourceDatasetBaseUrl & fileName),[Delimiter=",", Columns=10, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,40 @@
+table fPrices
+	lineageTag: 243c6fa2-a6e7-4595-8282-228d4ec78d91
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 8cf13a5f-b221-47c2-ac6b-b9e423fce150
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Gold_Price_USD_YFinance
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: bec2adc6-a3f8-4e11-a2ec-7d8e2080b73c
+		summarizeBy: sum
+		sourceColumn: Gold_Price_USD_YFinance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	partition fPrices = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"Date", type date}}),
+				    #"Changed Type with Locale" = Table.TransformColumnTypes(#"Changed Type", {{"Gold_Price_USD_YFinance", Currency.Type}}, "en-US")
+				in
+				    #"Changed Type with Locale"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

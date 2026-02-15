@@ -1,0 +1,64 @@
+table fExpenses
+	lineageTag: afa57727-271f-4b71-8ee8-609743b76b22
+
+	column Date
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: fac4ba8e-2a17-4f0c-a047-020dc7d215a9
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column Category
+		dataType: string
+		lineageTag: bc6c5086-a8c6-4130-abd7-d27f0d8b43cc
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: decimal
+		formatString: "R$"\ #,0.###############;-"R$"\ #,0.###############;"R$"\ #,0.###############
+		lineageTag: 3eae0434-e0f2-4891-b180-c9b1881dd5ce
+		summarizeBy: sum
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"currencyCulture":"pt-BR"}
+
+	column Payment_Mode
+		dataType: string
+		lineageTag: fb5790d6-119d-4822-8373-8fd079172992
+		summarizeBy: none
+		sourceColumn: Payment_Mode
+
+		annotation SummarizationSetBy = Automatic
+
+	column Month
+		dataType: string
+		lineageTag: d39a90f7-cb65-4d98-9541-1a3fc6f8e75e
+		summarizeBy: none
+		sourceColumn: Month
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fExpenses = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=5, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type with Locale" = Table.TransformColumnTypes(#"Promoted Headers", {{"Date", type date}}, "en-US"),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Changed Type with Locale",{{"Amount", Currency.Type}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

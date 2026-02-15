@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "SP 500 Stock Prices"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "984d09e6-2a21-44b4-9b3f-5b144f56bd06"
+  }
+}
