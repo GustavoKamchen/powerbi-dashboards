@@ -1,0 +1,119 @@
+table fAnimals
+	lineageTag: 11f1d2c1-69da-48a9-a826-35f72d7b6038
+
+	column Column1
+		dataType: string
+		lineageTag: b1da8f4b-0f51-4b8a-bd0d-96fca6f99a4a
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 6bbe58cc-6844-4266-9eb6-3693dafb0158
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 0b6a3190-68e3-4407-909d-190a8db369b8
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: a2150975-f952-4842-8141-92df0e5d5778
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 3ef28af2-4183-4b06-8e45-60488da022da
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: e28ebe40-4ef9-4a1e-a0bc-fad6ff21e11c
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 614a4094-5e1c-4ed1-83e0-a9e453dfe27c
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: 28618bfa-578a-47a3-8845-41db39f26baf
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: c25fdfe9-6c45-492b-8e92-f011c3e69322
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column10
+		dataType: string
+		lineageTag: da20957b-d8f5-4c03-9303-6f42949f7cce
+		summarizeBy: none
+		sourceColumn: Column10
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column11
+		dataType: string
+		lineageTag: 42ced864-fb77-41d2-b709-318356b6bfbf
+		summarizeBy: none
+		sourceColumn: Column11
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column12
+		dataType: string
+		lineageTag: 52039ffd-2908-4c98-9d5e-f1febd529103
+		summarizeBy: none
+		sourceColumn: Column12
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column13
+		dataType: string
+		lineageTag: 39ceea9a-15e5-4ca7-8ac1-dc575fff3842
+		summarizeBy: none
+		sourceColumn: Column13
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fAnimals = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=13, Encoding=65001, QuoteStyle=QuoteStyle.None])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

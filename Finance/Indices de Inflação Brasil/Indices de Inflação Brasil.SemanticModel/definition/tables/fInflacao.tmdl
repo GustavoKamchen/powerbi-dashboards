@@ -1,0 +1,224 @@
+table fInflacao
+	lineageTag: 53d3e852-ce74-4c9d-a482-6e2dd0fec36f
+
+	column referencia
+		dataType: string
+		lineageTag: c02f1175-1e22-424c-a91b-95f42339f854
+		summarizeBy: none
+		sourceColumn: referencia
+
+		annotation SummarizationSetBy = Automatic
+
+	column ano
+		dataType: string
+		lineageTag: 1e6edd9c-d770-45ce-9567-c23ccb5029f6
+		summarizeBy: none
+		sourceColumn: ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column mes
+		dataType: string
+		lineageTag: a448a065-f3c8-4d23-961d-f4bc961b89e1
+		summarizeBy: none
+		sourceColumn: mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column ano_mes
+		dataType: string
+		lineageTag: 21287b18-64f4-400a-aab2-a46dd486844c
+		summarizeBy: none
+		sourceColumn: ano_mes
+
+		annotation SummarizationSetBy = Automatic
+
+	column ipca_variacao
+		dataType: string
+		lineageTag: 3d83807f-a200-4837-90f1-a9662cced35a
+		summarizeBy: none
+		sourceColumn: ipca_variacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column ipca_acumulado_ano
+		dataType: string
+		lineageTag: 0f52950e-29c5-4430-844a-699c68dd50e3
+		summarizeBy: none
+		sourceColumn: ipca_acumulado_ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column ipca_acumulado_doze_meses
+		dataType: string
+		lineageTag: 5675c428-bce7-4913-a04e-2c943c12c6a0
+		summarizeBy: none
+		sourceColumn: ipca_acumulado_doze_meses
+
+		annotation SummarizationSetBy = Automatic
+
+	column ipca15_variacao
+		dataType: string
+		lineageTag: 6446727b-b45c-45eb-a0b6-17f86fdc417d
+		summarizeBy: none
+		sourceColumn: ipca15_variacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column ipca15_acumulado_ano
+		dataType: string
+		lineageTag: 6f7c9570-c851-471f-b664-ab73d3d3bfe1
+		summarizeBy: none
+		sourceColumn: ipca15_acumulado_ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column ipca15_acumulado_doze_meses
+		dataType: string
+		lineageTag: 5e64042f-3d96-4493-b54d-69e2b1ac253f
+		summarizeBy: none
+		sourceColumn: ipca15_acumulado_doze_meses
+
+		annotation SummarizationSetBy = Automatic
+
+	column inpc_variacao
+		dataType: string
+		lineageTag: 202f1c57-e8eb-441e-8355-d5a75075c73a
+		summarizeBy: none
+		sourceColumn: inpc_variacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column inpc_acumulado_ano
+		dataType: string
+		lineageTag: 7db6d23f-54aa-43e1-85a8-2b4bec554b6d
+		summarizeBy: none
+		sourceColumn: inpc_acumulado_ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column inpc_acumulado_doze_meses
+		dataType: string
+		lineageTag: ee0b7c42-15ae-46e3-8547-b50e6c4abe62
+		summarizeBy: none
+		sourceColumn: inpc_acumulado_doze_meses
+
+		annotation SummarizationSetBy = Automatic
+
+	column ipa_variacao
+		dataType: string
+		lineageTag: 685b7434-76f0-41d0-b52e-fe60a87c721d
+		summarizeBy: none
+		sourceColumn: ipa_variacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column ipa_acumulado_ano
+		dataType: string
+		lineageTag: 00a96acf-68e8-4122-9510-a70619a25f06
+		summarizeBy: none
+		sourceColumn: ipa_acumulado_ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column ipc_fipe_variacao
+		dataType: string
+		lineageTag: 632d3ffd-db92-4ad4-aef8-0683b967ff3b
+		summarizeBy: none
+		sourceColumn: ipc_fipe_variacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column ipc_fipe_acumulado_ano
+		dataType: string
+		lineageTag: 10d82d04-f4eb-41ee-b003-44924f080d0b
+		summarizeBy: none
+		sourceColumn: ipc_fipe_acumulado_ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column incc_variacao
+		dataType: string
+		lineageTag: 7b6513d3-a90c-4e5a-af2a-b159bcfe903b
+		summarizeBy: none
+		sourceColumn: incc_variacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column incc_acumulado_ano
+		dataType: string
+		lineageTag: 907b5ba2-30ea-4664-9aa4-1f85153910bb
+		summarizeBy: none
+		sourceColumn: incc_acumulado_ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column incc_m_variacao
+		dataType: string
+		lineageTag: 1bb1d33a-24d3-4fc8-956a-46835246d917
+		summarizeBy: none
+		sourceColumn: incc_m_variacao
+
+		annotation SummarizationSetBy = Automatic
+
+	column incc_m_acumulado_ano
+		dataType: string
+		lineageTag: bba81bc2-1469-419a-9c2c-c710cf381887
+		summarizeBy: none
+		sourceColumn: incc_m_acumulado_ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column selic_meta
+		dataType: string
+		lineageTag: da7be0eb-705b-4479-bb3f-5e8f7ee21e82
+		summarizeBy: none
+		sourceColumn: selic_meta
+
+		annotation SummarizationSetBy = Automatic
+
+	column selic_ano
+		dataType: string
+		lineageTag: c0157580-ebf7-404f-9536-d27e7a27006c
+		summarizeBy: none
+		sourceColumn: selic_ano
+
+		annotation SummarizationSetBy = Automatic
+
+	column juros_reais
+		dataType: string
+		lineageTag: 4d71703e-5a4b-4699-974b-42a0632c34e3
+		summarizeBy: none
+		sourceColumn: juros_reais
+
+		annotation SummarizationSetBy = Automatic
+
+	column salario_minimo
+		dataType: string
+		lineageTag: af5249cc-d962-4c72-a030-1c786609ce42
+		summarizeBy: none
+		sourceColumn: salario_minimo
+
+		annotation SummarizationSetBy = Automatic
+
+	column consolidado_ano
+		dataType: string
+		lineageTag: 33194681-f0a0-4afd-af6c-368a384ebf8d
+		summarizeBy: none
+		sourceColumn: consolidado_ano
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fInflacao = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=26, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

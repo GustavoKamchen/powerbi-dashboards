@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../Share of population living in extreme poverty.SemanticModel"
+    }
+  }
+}

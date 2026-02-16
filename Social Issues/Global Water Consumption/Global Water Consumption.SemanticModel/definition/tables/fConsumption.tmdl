@@ -1,0 +1,95 @@
+table fConsumption
+	lineageTag: 46089768-3a1a-4d3d-9246-9169e1f7d621
+
+	column Column1
+		dataType: string
+		lineageTag: 0e72ebe8-bdd2-4fb2-825d-739224e1cb8e
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 3e00a691-eba8-417f-b816-7cbaf5af3d32
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 3cf8568b-3a20-4b79-961c-92f7f07ac830
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 2d43ac07-3a40-4fa8-b9f7-5d1c1274ee30
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: bf23562a-25f5-4da3-8d24-f8195a301cd4
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 0a21c292-73a2-4c45-84ef-e2991a3ee557
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 1c869181-75b1-41e1-97ad-193f500c730b
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: a836d6ce-0c70-437d-bb36-3cd370bd3fb4
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: 1fce9e94-34b2-40be-9557-549692385f39
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column10
+		dataType: string
+		lineageTag: 4b74e1ec-a554-4d24-95fe-e4ea02bd9d8e
+		summarizeBy: none
+		sourceColumn: Column10
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fConsumption = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=10, Encoding=65001, QuoteStyle=QuoteStyle.None])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

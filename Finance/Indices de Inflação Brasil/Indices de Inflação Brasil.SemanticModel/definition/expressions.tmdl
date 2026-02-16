@@ -1,0 +1,7 @@
+expression sourceDatasetUrl = "https://github.com/GustavoKamchen/powerbi-datasets/raw/refs/heads/main/Finance/Indices%20de%20Infla%C3%A7%C3%A3o%20Brasil/inflacao.csv" meta [IsParameterQuery=true, Type="Text", IsParameterQueryRequired=true]
+	lineageTag: 16bc0ddb-2582-4a67-b852-b66581f5610d
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Text
+

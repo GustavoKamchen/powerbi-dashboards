@@ -1,0 +1,119 @@
+table fHousing
+	lineageTag: b610140a-ce27-4f5f-9630-5deaf2363e75
+
+	column Column1
+		dataType: string
+		lineageTag: 39c69c9c-d89a-4936-a3cc-5d1acd3aa1da
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 3e7c48d1-6b0f-4403-a9f8-cd3776073beb
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: dd764158-00c9-4f5d-a615-35c94fbfce00
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 1dc203b9-9cfd-4f9b-a098-7d68d374d282
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: ee40d431-de95-483f-bc3f-71e338ed7fc6
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 4ef8d0a9-3553-49f7-b81f-a45073d29fcb
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: a395a04f-b4db-49b5-b46f-24450da270f3
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: 757f684c-0e2d-4576-b1fb-821fc0122634
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: 4ed1f7d5-fdc1-465a-87d9-4282f78382dd
+		summarizeBy: none
+		sourceColumn: Column9
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column10
+		dataType: string
+		lineageTag: b23a9be1-e0b2-4b8b-ad53-091e74b16b53
+		summarizeBy: none
+		sourceColumn: Column10
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column11
+		dataType: string
+		lineageTag: bd24b96c-eda2-4587-b657-cc9ac145f777
+		summarizeBy: none
+		sourceColumn: Column11
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column12
+		dataType: string
+		lineageTag: 799f2d8a-1f95-4275-b2f6-0f36614a6a5f
+		summarizeBy: none
+		sourceColumn: Column12
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column13
+		dataType: string
+		lineageTag: e7b065c2-077e-47f3-a0c9-9ade02ba4f11
+		summarizeBy: none
+		sourceColumn: Column13
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fHousing = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=13, Encoding=65001, QuoteStyle=QuoteStyle.None])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
