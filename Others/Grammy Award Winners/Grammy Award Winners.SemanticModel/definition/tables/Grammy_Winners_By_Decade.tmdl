@@ -1,0 +1,41 @@
+table Grammy_Winners_By_Decade
+	lineageTag: a584a3aa-f495-473d-8236-6947e9631d3b
+
+	column Decade
+		dataType: string
+		lineageTag: 1a31e72b-6e1a-465a-9d9b-599b641cdb06
+		summarizeBy: none
+		sourceColumn: Decade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 4a2f5a6b-c055-44de-abbe-545951190e4c
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_Winners
+		dataType: string
+		lineageTag: 62791877-fa2a-4bf4-be53-5e7b6a89260d
+		summarizeBy: none
+		sourceColumn: Total_Winners
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Grammy_Winners_By_Decade = m
+		mode: import
+		source =
+				let
+				    fileName = "Grammy_Winners_By_Decade_20260208_055452.csv",
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl & fileName),[Delimiter=",", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

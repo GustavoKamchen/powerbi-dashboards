@@ -1,0 +1,121 @@
+table Grammy_Awards_Winners
+	lineageTag: 6c34e566-c1c6-4478-aedd-455daf78534d
+
+	column Year
+		dataType: string
+		lineageTag: 2ee7c2da-c87e-4315-ab51-e4851a5235c9
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ceremony_Number
+		dataType: string
+		lineageTag: 9ae8e295-2e77-459f-9555-d1614ee1897a
+		summarizeBy: none
+		sourceColumn: Ceremony_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Decade
+		dataType: string
+		lineageTag: e4851a58-60e7-4582-b098-9d9f2905a99b
+		summarizeBy: none
+		sourceColumn: Decade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Era
+		dataType: string
+		lineageTag: 5e080410-b49a-483a-8b2e-aeba71ac9add
+		summarizeBy: none
+		sourceColumn: Era
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 45ec22ad-e0e7-4d3a-b66f-7a22b52e2c3f
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Award_Group
+		dataType: string
+		lineageTag: 84d3e82f-ab9c-4101-8197-b0d1cc2daa33
+		summarizeBy: none
+		sourceColumn: Award_Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Winner
+		dataType: string
+		lineageTag: 50b5fb28-6cdc-4062-83b3-d2033cbebe1b
+		summarizeBy: none
+		sourceColumn: Winner
+
+		annotation SummarizationSetBy = Automatic
+
+	column Artist
+		dataType: string
+		lineageTag: e338bcf8-9eb1-407b-ba7d-f3b9fdd41fc4
+		summarizeBy: none
+		sourceColumn: Artist
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 4aa11fcb-6f26-4a2e-a19a-00f9c8b1c38e
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_Wins
+		dataType: string
+		lineageTag: 4bdfb509-42f6-461a-8eb3-65718738f26e
+		summarizeBy: none
+		sourceColumn: Total_Wins
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category_Total_Winners
+		dataType: string
+		lineageTag: d5a9e84e-baf9-4203-b74b-6658c2cc56ee
+		summarizeBy: none
+		sourceColumn: Category_Total_Winners
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data_Source
+		dataType: string
+		lineageTag: 34b8869c-e7e6-44ac-87e0-48eeac188997
+		summarizeBy: none
+		sourceColumn: Data_Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column Collection_Date
+		dataType: string
+		lineageTag: d9b550e6-7177-444a-9bae-c9bfbcf6077e
+		summarizeBy: none
+		sourceColumn: Collection_Date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Grammy_Awards_Winners = m
+		mode: import
+		source =
+				let
+				    fileName = "Grammy_Awards_Winners_20260208_055452.csv",
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl & fileName),[Delimiter=",", Columns=13, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

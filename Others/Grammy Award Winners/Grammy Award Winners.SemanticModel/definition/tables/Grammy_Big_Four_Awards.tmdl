@@ -1,0 +1,73 @@
+table Grammy_Big_Four_Awards
+	lineageTag: bc68528d-426b-4bcc-88e7-f96f9a5598be
+
+	column Year
+		dataType: string
+		lineageTag: e7a77c0c-b807-463e-a6f0-0e767ec3f61b
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Ceremony_Number
+		dataType: string
+		lineageTag: f420245e-3e88-4b5a-94ae-baebf190be10
+		summarizeBy: none
+		sourceColumn: Ceremony_Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column Decade
+		dataType: string
+		lineageTag: 4b833f9e-13d1-4440-817d-cec2a3b12dae
+		summarizeBy: none
+		sourceColumn: Decade
+
+		annotation SummarizationSetBy = Automatic
+
+	column Era
+		dataType: string
+		lineageTag: 94393a55-3c7f-4cd2-a698-3542d0623d22
+		summarizeBy: none
+		sourceColumn: Era
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 297cf21b-bdb1-4022-8579-0d2d67aaa6eb
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Award_Group
+		dataType: string
+		lineageTag: d112dae3-f59b-474a-ba07-8c014715b6ed
+		summarizeBy: none
+		sourceColumn: Award_Group
+
+		annotation SummarizationSetBy = Automatic
+
+	column Winner
+		dataType: string
+		lineageTag: a9263de2-e6fa-48b8-b29b-ebf5bcb6cc48
+		summarizeBy: none
+		sourceColumn: Winner
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Grammy_Big_Four_Awards = m
+		mode: import
+		source =
+				let
+				    fileName = "Grammy_Big_Four_Awards_20260208_055452.csv",
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl & fileName),[Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

@@ -1,0 +1,104 @@
+table fMovies
+	lineageTag: 3dc0c373-0379-46cf-a785-1ab7f2283ff2
+
+	column id
+		dataType: string
+		lineageTag: df1a17f8-2b4d-48ce-a25c-63b9fbbeda87
+		summarizeBy: none
+		sourceColumn: id
+
+		annotation SummarizationSetBy = Automatic
+
+	column title
+		dataType: string
+		lineageTag: e0b94382-9a21-420d-b885-e6647fb704cb
+		summarizeBy: none
+		sourceColumn: title
+
+		annotation SummarizationSetBy = Automatic
+
+	column genre
+		dataType: string
+		lineageTag: 0fccb7db-0daa-46fa-8568-fe4ff32abc57
+		summarizeBy: none
+		sourceColumn: genre
+
+		annotation SummarizationSetBy = Automatic
+
+	column release_date
+		dataType: string
+		lineageTag: 9ea33f71-a10e-43e4-a776-6a5bb2e63240
+		summarizeBy: none
+		sourceColumn: release_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column release_year
+		dataType: string
+		lineageTag: 8a12969c-e9e5-475d-9b25-a345f2e06b84
+		summarizeBy: none
+		sourceColumn: release_year
+
+		annotation SummarizationSetBy = Automatic
+
+	column budget
+		dataType: string
+		lineageTag: 708780e1-192d-496c-834a-6636264a8ca9
+		summarizeBy: none
+		sourceColumn: budget
+
+		annotation SummarizationSetBy = Automatic
+
+	column revenue
+		dataType: string
+		lineageTag: c2011b50-13f4-4ee7-bdde-a6610a3c8860
+		summarizeBy: none
+		sourceColumn: revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	column runtime
+		dataType: string
+		lineageTag: 00831a6f-bb85-4a14-a086-7bcd87af4469
+		summarizeBy: none
+		sourceColumn: runtime
+
+		annotation SummarizationSetBy = Automatic
+
+	column vote_average
+		dataType: string
+		lineageTag: 7ae24118-5ade-41ea-8d90-ea82b7f530c9
+		summarizeBy: none
+		sourceColumn: vote_average
+
+		annotation SummarizationSetBy = Automatic
+
+	column vote_count
+		dataType: string
+		lineageTag: 7793fdb5-9e4f-41ef-9ba9-7a7b2e3186a8
+		summarizeBy: none
+		sourceColumn: vote_count
+
+		annotation SummarizationSetBy = Automatic
+
+	column production_country
+		dataType: string
+		lineageTag: 6478887f-ceb5-42a3-883f-bedc12455d80
+		summarizeBy: none
+		sourceColumn: production_country
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fMovies = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

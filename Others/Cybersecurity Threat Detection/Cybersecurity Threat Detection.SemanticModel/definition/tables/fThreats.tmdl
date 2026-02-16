@@ -1,0 +1,122 @@
+table fThreats
+	lineageTag: 32b8bec1-a736-4b8f-a5d7-a336db797b74
+
+	column timestamp
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 6fc82fd0-fefd-40a3-8461-af7b2f658817
+		summarizeBy: none
+		sourceColumn: timestamp
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_ip
+		dataType: string
+		lineageTag: b56280b0-3631-4a76-8684-06c1eca2398f
+		summarizeBy: none
+		sourceColumn: src_ip
+
+		annotation SummarizationSetBy = Automatic
+
+	column dst_ip
+		dataType: string
+		lineageTag: 5746db85-828e-4d21-90aa-d73388e08ee7
+		summarizeBy: none
+		sourceColumn: dst_ip
+
+		annotation SummarizationSetBy = Automatic
+
+	column src_port
+		dataType: string
+		lineageTag: d6a140de-c0c2-4ede-a4a1-103f096fb2a0
+		summarizeBy: none
+		sourceColumn: src_port
+
+		annotation SummarizationSetBy = Automatic
+
+	column dst_port
+		dataType: string
+		lineageTag: 1f40563d-9dca-4587-a7a7-b46088652a16
+		summarizeBy: none
+		sourceColumn: dst_port
+
+		annotation SummarizationSetBy = Automatic
+
+	column protocol
+		dataType: string
+		lineageTag: a93bcaf2-098e-4cb7-b06f-09267f47cb61
+		summarizeBy: none
+		sourceColumn: protocol
+
+		annotation SummarizationSetBy = Automatic
+
+	column bytes_sent
+		dataType: string
+		lineageTag: 18288b89-bd57-485e-b3b3-8ac77147efcf
+		summarizeBy: none
+		sourceColumn: bytes_sent
+
+		annotation SummarizationSetBy = Automatic
+
+	column bytes_received
+		dataType: string
+		lineageTag: 67baad18-9522-4be8-98fa-9a2d03a02341
+		summarizeBy: none
+		sourceColumn: bytes_received
+
+		annotation SummarizationSetBy = Automatic
+
+	column user_agent
+		dataType: string
+		lineageTag: 5cf8d34f-4129-4650-89c4-1b67947ff0d9
+		summarizeBy: none
+		sourceColumn: user_agent
+
+		annotation SummarizationSetBy = Automatic
+
+	column url
+		dataType: string
+		lineageTag: 81011039-8638-4069-ac24-e805b7bbcfb6
+		summarizeBy: none
+		sourceColumn: url
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_internal_traffic
+		dataType: string
+		lineageTag: 121141db-41f4-4896-9326-39ceb5faf86d
+		summarizeBy: none
+		sourceColumn: is_internal_traffic
+
+		annotation SummarizationSetBy = Automatic
+
+	column label
+		dataType: string
+		lineageTag: e6af6904-2908-41c9-9a4b-975baa9fb166
+		summarizeBy: none
+		sourceColumn: label
+
+		annotation SummarizationSetBy = Automatic
+
+	column attack_type
+		dataType: string
+		lineageTag: e68b350b-33aa-409f-bb75-7ab354bd7100
+		summarizeBy: none
+		sourceColumn: attack_type
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fThreats = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=13, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),
+				    #"Changed Type" = Table.TransformColumnTypes(#"Promoted Headers",{{"timestamp", type datetime}})
+				in
+				    #"Changed Type"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

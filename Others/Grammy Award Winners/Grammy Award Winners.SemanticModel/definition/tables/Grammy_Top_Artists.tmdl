@@ -1,0 +1,65 @@
+table Grammy_Top_Artists
+	lineageTag: 3f41582a-fa69-4968-a709-c0077d21b44b
+
+	column Artist
+		dataType: string
+		lineageTag: dff71145-5edf-402c-9841-7588b7ab4449
+		summarizeBy: none
+		sourceColumn: Artist
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_Wins
+		dataType: string
+		lineageTag: 79edaca6-ece4-45b5-b07c-eb9a9f22de50
+		summarizeBy: none
+		sourceColumn: Total_Wins
+
+		annotation SummarizationSetBy = Automatic
+
+	column First_Win_Year
+		dataType: string
+		lineageTag: 24f0424d-4358-4fed-bbb8-a8c347243681
+		summarizeBy: none
+		sourceColumn: First_Win_Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Last_Win_Year
+		dataType: string
+		lineageTag: ce5d4f12-db3f-401e-88c8-4562ab0b8721
+		summarizeBy: none
+		sourceColumn: Last_Win_Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sample_Categories
+		dataType: string
+		lineageTag: 1d5e8a3d-07fd-4c18-a8a5-8a8c431faa60
+		summarizeBy: none
+		sourceColumn: Sample_Categories
+
+		annotation SummarizationSetBy = Automatic
+
+	column Rank
+		dataType: string
+		lineageTag: 04fabb26-3a1e-47bb-ab63-58c99b3f6bf1
+		summarizeBy: none
+		sourceColumn: Rank
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Grammy_Top_Artists = m
+		mode: import
+		source =
+				let
+				    fileName = "Grammy_Top_Artists_20260208_055452.csv",
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl & fileName),[Delimiter=",", Columns=6, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

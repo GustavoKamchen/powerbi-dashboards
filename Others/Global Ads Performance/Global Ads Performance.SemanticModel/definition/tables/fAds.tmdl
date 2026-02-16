@@ -1,0 +1,120 @@
+table fAds
+	lineageTag: 32b8bec1-a736-4b8f-a5d7-a336db797b74
+
+	column date
+		dataType: string
+		lineageTag: a763bf6d-0a18-4ffe-a69d-b141e5096e18
+		summarizeBy: none
+		sourceColumn: date
+
+		annotation SummarizationSetBy = Automatic
+
+	column platform
+		dataType: string
+		lineageTag: 4ca1b2a9-8942-4896-87ad-c85095f66ae8
+		summarizeBy: none
+		sourceColumn: platform
+
+		annotation SummarizationSetBy = Automatic
+
+	column campaign_type
+		dataType: string
+		lineageTag: 673e414f-7511-48e9-b4bf-67cb73c8e3aa
+		summarizeBy: none
+		sourceColumn: campaign_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column industry
+		dataType: string
+		lineageTag: 7dfab795-b59b-4bf9-adb9-a02164c1cff0
+		summarizeBy: none
+		sourceColumn: industry
+
+		annotation SummarizationSetBy = Automatic
+
+	column country
+		dataType: string
+		lineageTag: 97f17161-0e4f-4215-abe1-e662682e1753
+		summarizeBy: none
+		sourceColumn: country
+
+		annotation SummarizationSetBy = Automatic
+
+	column impressions
+		dataType: string
+		lineageTag: 9e912151-5e38-4f8a-bdcc-efcfb8e9d587
+		summarizeBy: none
+		sourceColumn: impressions
+
+		annotation SummarizationSetBy = Automatic
+
+	column clicks
+		dataType: string
+		lineageTag: e5c9cae7-7412-47a8-b164-48c7db858163
+		summarizeBy: none
+		sourceColumn: clicks
+
+		annotation SummarizationSetBy = Automatic
+
+	column CTR
+		dataType: string
+		lineageTag: d8e72cf7-51f9-42ff-8b5d-b4b32790c681
+		summarizeBy: none
+		sourceColumn: CTR
+
+		annotation SummarizationSetBy = Automatic
+
+	column CPC
+		dataType: string
+		lineageTag: 4de6465c-7e44-42d6-85d7-4b6a80dc05b5
+		summarizeBy: none
+		sourceColumn: CPC
+
+		annotation SummarizationSetBy = Automatic
+
+	column ad_spend
+		dataType: string
+		lineageTag: 29140fb4-86b8-4f1d-92bc-89f81bdf7915
+		summarizeBy: none
+		sourceColumn: ad_spend
+
+		annotation SummarizationSetBy = Automatic
+
+	column conversions
+		dataType: string
+		lineageTag: 45c7ed5d-7ea1-482b-aabe-9248385948d3
+		summarizeBy: none
+		sourceColumn: conversions
+
+		annotation SummarizationSetBy = Automatic
+
+	column CPA
+		dataType: string
+		lineageTag: cb8cc3ca-b81c-4438-9f38-fb3efcab4dd0
+		summarizeBy: none
+		sourceColumn: CPA
+
+		annotation SummarizationSetBy = Automatic
+
+	column revenue
+		dataType: string
+		lineageTag: cb99555f-6ea6-4d2c-84a4-b7821d056349
+		summarizeBy: none
+		sourceColumn: revenue
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fAds = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=13, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

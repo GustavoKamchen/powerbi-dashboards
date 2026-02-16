@@ -1,0 +1,104 @@
+table fApps
+	lineageTag: 3dc0c373-0379-46cf-a785-1ab7f2283ff2
+
+	column App
+		dataType: string
+		lineageTag: 7050f72c-5b54-40e1-b6c4-58bf8ac59f3e
+		summarizeBy: none
+		sourceColumn: App
+
+		annotation SummarizationSetBy = Automatic
+
+	column Developer
+		dataType: string
+		lineageTag: 35a36e3b-dfdd-4c96-852d-f92a904b70ef
+		summarizeBy: none
+		sourceColumn: Developer
+
+		annotation SummarizationSetBy = Automatic
+
+	column Downloads
+		dataType: string
+		lineageTag: 43da7611-b62c-4eb0-b60c-c2a04d1de72c
+		summarizeBy: none
+		sourceColumn: Downloads
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_Reached
+		dataType: string
+		lineageTag: bc9ecc1c-c670-4169-8743-9e631fe29468
+		summarizeBy: none
+		sourceColumn: Date_Reached
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date_Published
+		dataType: string
+		lineageTag: 88736c72-edce-4a7e-94bd-848e9a897d3c
+		summarizeBy: none
+		sourceColumn: Date_Published
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 31836745-388b-4a24-a848-cff635d2944b
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column Pre_installed
+		dataType: string
+		lineageTag: 3033bfee-f0e6-4870-b870-ad825e98c2bb
+		summarizeBy: none
+		sourceColumn: Pre_installed
+
+		annotation SummarizationSetBy = Automatic
+
+	column Type
+		dataType: string
+		lineageTag: 28369cb0-5127-4ef9-8b48-51c21c64433a
+		summarizeBy: none
+		sourceColumn: Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Price
+		dataType: string
+		lineageTag: 27777faa-3f44-43e9-88f6-b4c01862beff
+		summarizeBy: none
+		sourceColumn: Price
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column1
+		dataType: string
+		lineageTag: 5d3363a2-4955-48d2-a26c-fea1661da2e7
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column _1
+		dataType: string
+		lineageTag: 5eb68459-fa75-4e90-80cf-272cabeba206
+		summarizeBy: none
+		sourceColumn: _1
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fApps = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

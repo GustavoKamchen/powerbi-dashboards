@@ -1,0 +1,49 @@
+table Grammy_Awards_Report
+	lineageTag: 32b8bec1-a736-4b8f-a5d7-a336db797b74
+
+	column Name
+		dataType: string
+		lineageTag: 4add5121-3e11-4e42-a162-bc42c067d6de
+		summarizeBy: none
+		sourceColumn: Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column Item
+		dataType: string
+		lineageTag: 926f6665-b3cc-4f28-984e-1b23b32306a2
+		summarizeBy: none
+		sourceColumn: Item
+
+		annotation SummarizationSetBy = Automatic
+
+	column Kind
+		dataType: string
+		lineageTag: 4ae970a6-04b8-41aa-ae68-101537847ec6
+		summarizeBy: none
+		sourceColumn: Kind
+
+		annotation SummarizationSetBy = Automatic
+
+	column Hidden
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 4e43757f-946b-4fd1-9745-1990c811a301
+		summarizeBy: none
+		sourceColumn: Hidden
+
+		annotation SummarizationSetBy = Automatic
+
+	partition Grammy_Awards_Report = m
+		mode: import
+		source =
+				let
+				    fileName = "Grammy_Awards_Report_20260208_055531.xlsx",
+				    Source = Excel.Workbook(Web.Contents(sourceDatasetUrl & fileName), null, true)
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

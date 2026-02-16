@@ -1,0 +1,4 @@
+relationship 0a23aeaa-992b-c318-3111-71732591680f
+	fromColumn: fAds.date
+	toColumn: dCalendar.Date
+

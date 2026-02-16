@@ -1,0 +1,26 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: pt-BR
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 0
+
+annotation PBIDesktopVersion = 2.140.1577.0 (25.02)+00af0910c5ca19a229c472b0dfc17a2c488f6b0a
+
+annotation PBI_QueryOrder = ["sourceDatasetUrl","_Measures","dCalendar","Grammy_Awards_Report","Grammy_Awards_Winners","Grammy_Big_Four_Awards","Grammy_Top_Artists","Grammy_Winners_By_Decade"]
+
+annotation PBI_ProTooling = ["TMDLView_Desktop","DevMode"]
+
+ref table _Measures
+ref table dCalendar
+ref table Grammy_Awards_Report
+ref table Grammy_Awards_Winners
+ref table Grammy_Big_Four_Awards
+ref table Grammy_Top_Artists
+ref table Grammy_Winners_By_Decade
+
+ref cultureInfo en-US
+
