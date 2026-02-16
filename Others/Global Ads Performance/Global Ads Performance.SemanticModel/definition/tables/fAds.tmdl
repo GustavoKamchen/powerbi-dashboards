@@ -1,107 +1,115 @@
 table fAds
-	lineageTag: 32b8bec1-a736-4b8f-a5d7-a336db797b74
+	lineageTag: a362d2dc-4b94-4fa9-8b6e-1f0ce879a017
 
-	column date
+	column Column1
 		dataType: string
-		lineageTag: a763bf6d-0a18-4ffe-a69d-b141e5096e18
+		lineageTag: c738e490-dcc9-4c6a-a81c-6ffad40c0c36
 		summarizeBy: none
-		sourceColumn: date
+		sourceColumn: Column1
 
 		annotation SummarizationSetBy = Automatic
 
-	column platform
+	column Column2
 		dataType: string
-		lineageTag: 4ca1b2a9-8942-4896-87ad-c85095f66ae8
+		lineageTag: 2536cef0-8b21-4dce-a169-fc6bfc2466ce
 		summarizeBy: none
-		sourceColumn: platform
+		sourceColumn: Column2
 
 		annotation SummarizationSetBy = Automatic
 
-	column campaign_type
+	column Column3
 		dataType: string
-		lineageTag: 673e414f-7511-48e9-b4bf-67cb73c8e3aa
+		lineageTag: b0638220-61ff-4f45-8d8d-e8dd8d16f38c
 		summarizeBy: none
-		sourceColumn: campaign_type
+		sourceColumn: Column3
 
 		annotation SummarizationSetBy = Automatic
 
-	column industry
+	column Column4
 		dataType: string
-		lineageTag: 7dfab795-b59b-4bf9-adb9-a02164c1cff0
+		lineageTag: d2ff8c66-6e6f-402b-bf50-f2e8057fd990
 		summarizeBy: none
-		sourceColumn: industry
+		sourceColumn: Column4
 
 		annotation SummarizationSetBy = Automatic
 
-	column country
+	column Column5
 		dataType: string
-		lineageTag: 97f17161-0e4f-4215-abe1-e662682e1753
+		lineageTag: 4e879742-4db5-4e5d-a6d7-a28ca8005033
 		summarizeBy: none
-		sourceColumn: country
+		sourceColumn: Column5
 
 		annotation SummarizationSetBy = Automatic
 
-	column impressions
+	column Column6
 		dataType: string
-		lineageTag: 9e912151-5e38-4f8a-bdcc-efcfb8e9d587
+		lineageTag: ecbd8eff-54e2-4978-b89c-ff0bf31869ae
 		summarizeBy: none
-		sourceColumn: impressions
+		sourceColumn: Column6
 
 		annotation SummarizationSetBy = Automatic
 
-	column clicks
+	column Column7
 		dataType: string
-		lineageTag: e5c9cae7-7412-47a8-b164-48c7db858163
+		lineageTag: 194e1a4c-1de8-4565-82cb-f7b9eff0dad3
 		summarizeBy: none
-		sourceColumn: clicks
+		sourceColumn: Column7
 
 		annotation SummarizationSetBy = Automatic
 
-	column CTR
+	column Column8
 		dataType: string
-		lineageTag: d8e72cf7-51f9-42ff-8b5d-b4b32790c681
+		lineageTag: 2a5924e8-c6f1-4f94-8054-94fa944be30d
 		summarizeBy: none
-		sourceColumn: CTR
+		sourceColumn: Column8
 
 		annotation SummarizationSetBy = Automatic
 
-	column CPC
+	column Column9
 		dataType: string
-		lineageTag: 4de6465c-7e44-42d6-85d7-4b6a80dc05b5
+		lineageTag: c2dff01f-aa1c-4a89-9be1-e8249c00475e
 		summarizeBy: none
-		sourceColumn: CPC
+		sourceColumn: Column9
 
 		annotation SummarizationSetBy = Automatic
 
-	column ad_spend
+	column Column10
 		dataType: string
-		lineageTag: 29140fb4-86b8-4f1d-92bc-89f81bdf7915
+		lineageTag: e73b8e8b-0002-4f1b-86dd-ddd4b7e97342
 		summarizeBy: none
-		sourceColumn: ad_spend
+		sourceColumn: Column10
 
 		annotation SummarizationSetBy = Automatic
 
-	column conversions
+	column Column11
 		dataType: string
-		lineageTag: 45c7ed5d-7ea1-482b-aabe-9248385948d3
+		lineageTag: 7e485a50-b258-4203-8a15-281d882909a6
 		summarizeBy: none
-		sourceColumn: conversions
+		sourceColumn: Column11
 
 		annotation SummarizationSetBy = Automatic
 
-	column CPA
+	column Column12
 		dataType: string
-		lineageTag: cb8cc3ca-b81c-4438-9f38-fb3efcab4dd0
+		lineageTag: 2d4c335d-3d3b-4839-8adb-3532ab316e27
 		summarizeBy: none
-		sourceColumn: CPA
+		sourceColumn: Column12
 
 		annotation SummarizationSetBy = Automatic
 
-	column revenue
+	column Column13
 		dataType: string
-		lineageTag: cb99555f-6ea6-4d2c-84a4-b7821d056349
+		lineageTag: 623610d0-036c-4e22-a3fd-ccf21d63b96a
 		summarizeBy: none
-		sourceColumn: revenue
+		sourceColumn: Column13
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column14
+		dataType: string
+		lineageTag: bd1762da-b1e1-454c-a0ca-883c9e21c53c
+		summarizeBy: none
+		sourceColumn: Column14
 
 		annotation SummarizationSetBy = Automatic
 
@@ -109,10 +117,9 @@ table fAds
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=13, Encoding=65001, QuoteStyle=QuoteStyle.None]),
-				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=14, Encoding=65001, QuoteStyle=QuoteStyle.None])
 				in
-				    #"Promoted Headers"
+				    Source
 
 	annotation PBI_NavigationStepName = Navigation
 

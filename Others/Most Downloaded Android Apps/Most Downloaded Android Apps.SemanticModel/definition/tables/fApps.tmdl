@@ -1,91 +1,75 @@
 table fApps
-	lineageTag: 3dc0c373-0379-46cf-a785-1ab7f2283ff2
-
-	column App
-		dataType: string
-		lineageTag: 7050f72c-5b54-40e1-b6c4-58bf8ac59f3e
-		summarizeBy: none
-		sourceColumn: App
-
-		annotation SummarizationSetBy = Automatic
-
-	column Developer
-		dataType: string
-		lineageTag: 35a36e3b-dfdd-4c96-852d-f92a904b70ef
-		summarizeBy: none
-		sourceColumn: Developer
-
-		annotation SummarizationSetBy = Automatic
-
-	column Downloads
-		dataType: string
-		lineageTag: 43da7611-b62c-4eb0-b60c-c2a04d1de72c
-		summarizeBy: none
-		sourceColumn: Downloads
-
-		annotation SummarizationSetBy = Automatic
-
-	column Date_Reached
-		dataType: string
-		lineageTag: bc9ecc1c-c670-4169-8743-9e631fe29468
-		summarizeBy: none
-		sourceColumn: Date_Reached
-
-		annotation SummarizationSetBy = Automatic
-
-	column Date_Published
-		dataType: string
-		lineageTag: 88736c72-edce-4a7e-94bd-848e9a897d3c
-		summarizeBy: none
-		sourceColumn: Date_Published
-
-		annotation SummarizationSetBy = Automatic
-
-	column Category
-		dataType: string
-		lineageTag: 31836745-388b-4a24-a848-cff635d2944b
-		summarizeBy: none
-		sourceColumn: Category
-
-		annotation SummarizationSetBy = Automatic
-
-	column Pre_installed
-		dataType: string
-		lineageTag: 3033bfee-f0e6-4870-b870-ad825e98c2bb
-		summarizeBy: none
-		sourceColumn: Pre_installed
-
-		annotation SummarizationSetBy = Automatic
-
-	column Type
-		dataType: string
-		lineageTag: 28369cb0-5127-4ef9-8b48-51c21c64433a
-		summarizeBy: none
-		sourceColumn: Type
-
-		annotation SummarizationSetBy = Automatic
-
-	column Price
-		dataType: string
-		lineageTag: 27777faa-3f44-43e9-88f6-b4c01862beff
-		summarizeBy: none
-		sourceColumn: Price
-
-		annotation SummarizationSetBy = Automatic
+	lineageTag: ff433c6e-1175-434c-b9a5-aaeed7bd08b4
 
 	column Column1
 		dataType: string
-		lineageTag: 5d3363a2-4955-48d2-a26c-fea1661da2e7
+		lineageTag: 35333126-cd6a-444e-83d1-a63bcfce4c7d
 		summarizeBy: none
 		sourceColumn: Column1
 
 		annotation SummarizationSetBy = Automatic
 
-	column _1
+	column Column2
 		dataType: string
-		lineageTag: 5eb68459-fa75-4e90-80cf-272cabeba206
+		lineageTag: f9f1e621-abe9-477c-892b-0785d5264080
 		summarizeBy: none
-		sourceColumn: _1
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: fbdc8d8e-49ea-4c3d-b68a-dd44edf1c8dd
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 9c042a0f-9511-4602-99a1-d37768162ea2
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: db944087-f5a9-4592-a668-46df2976dfa9
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 03e66a40-8631-4857-ac56-90992cfd1aa2
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 14939ebb-397f-4078-930f-4aa6f9b63183
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column8
+		dataType: string
+		lineageTag: 548791b1-1c0e-4429-b7ce-0590b3f42073
+		summarizeBy: none
+		sourceColumn: Column8
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column9
+		dataType: string
+		lineageTag: 8a01b46b-91ef-47d1-b260-98bd138a2a8c
+		summarizeBy: none
+		sourceColumn: Column9
 
 		annotation SummarizationSetBy = Automatic
 
@@ -93,10 +77,9 @@ table fApps
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
-				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=9, Encoding=65001, QuoteStyle=QuoteStyle.None])
 				in
-				    #"Promoted Headers"
+				    Source
 
 	annotation PBI_NavigationStepName = Navigation
 

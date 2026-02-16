@@ -1,91 +1,91 @@
 table fMovies
-	lineageTag: 3dc0c373-0379-46cf-a785-1ab7f2283ff2
+	lineageTag: f11b8a87-c714-4b5c-9c8f-82e7e4311c6a
 
-	column id
+	column Column1
 		dataType: string
-		lineageTag: df1a17f8-2b4d-48ce-a25c-63b9fbbeda87
+		lineageTag: 0192306c-ab69-4e29-8141-ffcd88c37669
 		summarizeBy: none
-		sourceColumn: id
+		sourceColumn: Column1
 
 		annotation SummarizationSetBy = Automatic
 
-	column title
+	column Column2
 		dataType: string
-		lineageTag: e0b94382-9a21-420d-b885-e6647fb704cb
+		lineageTag: f69f50ea-4bc9-44d8-bb82-b662f2a36ffb
 		summarizeBy: none
-		sourceColumn: title
+		sourceColumn: Column2
 
 		annotation SummarizationSetBy = Automatic
 
-	column genre
+	column Column3
 		dataType: string
-		lineageTag: 0fccb7db-0daa-46fa-8568-fe4ff32abc57
+		lineageTag: 17c60f25-d421-498f-b3fc-2eace911f882
 		summarizeBy: none
-		sourceColumn: genre
+		sourceColumn: Column3
 
 		annotation SummarizationSetBy = Automatic
 
-	column release_date
+	column Column4
 		dataType: string
-		lineageTag: 9ea33f71-a10e-43e4-a776-6a5bb2e63240
+		lineageTag: a5d88782-711d-4c69-bf06-2f54d460b297
 		summarizeBy: none
-		sourceColumn: release_date
+		sourceColumn: Column4
 
 		annotation SummarizationSetBy = Automatic
 
-	column release_year
+	column Column5
 		dataType: string
-		lineageTag: 8a12969c-e9e5-475d-9b25-a345f2e06b84
+		lineageTag: 5d9d0066-96c3-4258-91c8-da84f425a577
 		summarizeBy: none
-		sourceColumn: release_year
+		sourceColumn: Column5
 
 		annotation SummarizationSetBy = Automatic
 
-	column budget
+	column Column6
 		dataType: string
-		lineageTag: 708780e1-192d-496c-834a-6636264a8ca9
+		lineageTag: eb4b9629-9ae3-4fd0-9648-c5f54965850e
 		summarizeBy: none
-		sourceColumn: budget
+		sourceColumn: Column6
 
 		annotation SummarizationSetBy = Automatic
 
-	column revenue
+	column Column7
 		dataType: string
-		lineageTag: c2011b50-13f4-4ee7-bdde-a6610a3c8860
+		lineageTag: dca74c71-5e83-4c2a-95cc-042558138e27
 		summarizeBy: none
-		sourceColumn: revenue
+		sourceColumn: Column7
 
 		annotation SummarizationSetBy = Automatic
 
-	column runtime
+	column Column8
 		dataType: string
-		lineageTag: 00831a6f-bb85-4a14-a086-7bcd87af4469
+		lineageTag: 69ba8140-3e3b-417f-9fb3-dc10b435cb9a
 		summarizeBy: none
-		sourceColumn: runtime
+		sourceColumn: Column8
 
 		annotation SummarizationSetBy = Automatic
 
-	column vote_average
+	column Column9
 		dataType: string
-		lineageTag: 7ae24118-5ade-41ea-8d90-ea82b7f530c9
+		lineageTag: 803de765-a7d6-4989-9167-e990087014d0
 		summarizeBy: none
-		sourceColumn: vote_average
+		sourceColumn: Column9
 
 		annotation SummarizationSetBy = Automatic
 
-	column vote_count
+	column Column10
 		dataType: string
-		lineageTag: 7793fdb5-9e4f-41ef-9ba9-7a7b2e3186a8
+		lineageTag: 64d7f888-5e26-4a33-abbc-0c3a8c8bb923
 		summarizeBy: none
-		sourceColumn: vote_count
+		sourceColumn: Column10
 
 		annotation SummarizationSetBy = Automatic
 
-	column production_country
+	column Column11
 		dataType: string
-		lineageTag: 6478887f-ceb5-42a3-883f-bedc12455d80
+		lineageTag: 2d7d3844-84c1-4b22-a1b9-20860f018a2d
 		summarizeBy: none
-		sourceColumn: production_country
+		sourceColumn: Column11
 
 		annotation SummarizationSetBy = Automatic
 
@@ -93,10 +93,9 @@ table fMovies
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
-				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None])
 				in
-				    #"Promoted Headers"
+				    Source
 
 	annotation PBI_NavigationStepName = Navigation
 

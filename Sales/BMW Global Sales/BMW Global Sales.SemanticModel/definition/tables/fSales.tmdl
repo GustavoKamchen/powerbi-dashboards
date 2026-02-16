@@ -1,0 +1,104 @@
+table fSales
+	lineageTag: b1ad8565-05fe-4655-9782-a0e7b54ac564
+
+	column Model
+		dataType: string
+		lineageTag: a15117cf-e70e-4841-af0e-73b9e86b2734
+		summarizeBy: none
+		sourceColumn: Model
+
+		annotation SummarizationSetBy = Automatic
+
+	column Year
+		dataType: string
+		lineageTag: 6c34523d-8cdf-4cb0-a300-e5693e79a11a
+		summarizeBy: none
+		sourceColumn: Year
+
+		annotation SummarizationSetBy = Automatic
+
+	column Region
+		dataType: string
+		lineageTag: 7dcbe27e-e8cb-4637-9298-2ec2de6d1d69
+		summarizeBy: none
+		sourceColumn: Region
+
+		annotation SummarizationSetBy = Automatic
+
+	column Color
+		dataType: string
+		lineageTag: 3eddfe41-2388-4688-b4c0-e75bd776e71b
+		summarizeBy: none
+		sourceColumn: Color
+
+		annotation SummarizationSetBy = Automatic
+
+	column Fuel_Type
+		dataType: string
+		lineageTag: a16395f2-1274-400d-a455-62f1eada6cde
+		summarizeBy: none
+		sourceColumn: Fuel_Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column Transmission
+		dataType: string
+		lineageTag: bed7ae08-90e8-491e-9819-5ad0b56fd309
+		summarizeBy: none
+		sourceColumn: Transmission
+
+		annotation SummarizationSetBy = Automatic
+
+	column Engine_Size_L
+		dataType: string
+		lineageTag: 23556318-cccd-49c6-b3fa-72695d34eeab
+		summarizeBy: none
+		sourceColumn: Engine_Size_L
+
+		annotation SummarizationSetBy = Automatic
+
+	column Mileage_KM
+		dataType: string
+		lineageTag: 3144bb31-9904-4727-9514-40e23a08571b
+		summarizeBy: none
+		sourceColumn: Mileage_KM
+
+		annotation SummarizationSetBy = Automatic
+
+	column Price_USD
+		dataType: string
+		lineageTag: 89141dd4-f1f0-4812-8135-8147c056fe44
+		summarizeBy: none
+		sourceColumn: Price_USD
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales_Volume
+		dataType: string
+		lineageTag: 590d44ac-9c0b-448e-bdf7-64bfb0ccf8bc
+		summarizeBy: none
+		sourceColumn: Sales_Volume
+
+		annotation SummarizationSetBy = Automatic
+
+	column Sales_Classification
+		dataType: string
+		lineageTag: f5f2c30d-4de0-4923-a160-6f21ea345b19
+		summarizeBy: none
+		sourceColumn: Sales_Classification
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fSales = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+

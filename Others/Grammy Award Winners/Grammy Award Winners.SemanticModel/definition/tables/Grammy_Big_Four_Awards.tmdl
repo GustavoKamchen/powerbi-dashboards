@@ -57,12 +57,60 @@ table Grammy_Big_Four_Awards
 
 		annotation SummarizationSetBy = Automatic
 
+	column Artist
+		dataType: string
+		lineageTag: fb66f3f6-c6c5-48f3-81ce-44d8335ee797
+		summarizeBy: none
+		sourceColumn: Artist
+
+		annotation SummarizationSetBy = Automatic
+
+	column Status
+		dataType: string
+		lineageTag: 41a95f3e-ed31-44bb-994c-6adc57be7822
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+	column Total_Wins
+		dataType: string
+		lineageTag: 20fa43e2-488b-40ac-885c-b359ff041097
+		summarizeBy: none
+		sourceColumn: Total_Wins
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category_Total_Winners
+		dataType: string
+		lineageTag: 66417152-01b7-4ec2-b4c7-b9b10d00a5dc
+		summarizeBy: none
+		sourceColumn: Category_Total_Winners
+
+		annotation SummarizationSetBy = Automatic
+
+	column Data_Source
+		dataType: string
+		lineageTag: a2754e08-a822-4fbe-8be1-543f1b8af1bb
+		summarizeBy: none
+		sourceColumn: Data_Source
+
+		annotation SummarizationSetBy = Automatic
+
+	column Collection_Date
+		dataType: string
+		lineageTag: b48ca164-b568-42c9-93ba-765a85ca7ff5
+		summarizeBy: none
+		sourceColumn: Collection_Date
+
+		annotation SummarizationSetBy = Automatic
+
 	partition Grammy_Big_Four_Awards = m
 		mode: import
 		source =
 				let
 				    fileName = "Grammy_Big_Four_Awards_20260208_055452.csv",
-				    Source = Csv.Document(Web.Contents(sourceDatasetUrl & fileName),[Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl & fileName),[Delimiter=",", Columns=13, Encoding=65001, QuoteStyle=QuoteStyle.None]),
 				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
 				in
 				    #"Promoted Headers"

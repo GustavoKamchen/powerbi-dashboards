@@ -1,9 +1,9 @@
-table fThreats
-	lineageTag: fcd2ee13-d56c-49b4-8f67-7425beadc3fb
+table fSales
+	lineageTag: 320fc7e4-ed75-48ee-adc8-94d80d51641a
 
 	column Column1
 		dataType: string
-		lineageTag: 09b92974-1a1f-4bc5-9168-f4549ef76c15
+		lineageTag: 1eb5faca-95ad-46ad-99de-399d1ac8272f
 		summarizeBy: none
 		sourceColumn: Column1
 
@@ -11,7 +11,7 @@ table fThreats
 
 	column Column2
 		dataType: string
-		lineageTag: 41900c12-3255-4dc1-8d2e-802988c3edad
+		lineageTag: 05b219c5-3aa1-4649-8d53-1e13a58f331b
 		summarizeBy: none
 		sourceColumn: Column2
 
@@ -19,7 +19,7 @@ table fThreats
 
 	column Column3
 		dataType: string
-		lineageTag: b9b1bb06-1b29-48c8-b565-70e3a8f1293a
+		lineageTag: 064fe661-e172-47c8-b54f-98fffa4a6db6
 		summarizeBy: none
 		sourceColumn: Column3
 
@@ -27,7 +27,7 @@ table fThreats
 
 	column Column4
 		dataType: string
-		lineageTag: 5e3b307c-6206-44c6-a4fc-07d79973679d
+		lineageTag: ddee8f2b-1554-4e9a-b99a-6ca60adc9d9a
 		summarizeBy: none
 		sourceColumn: Column4
 
@@ -35,7 +35,7 @@ table fThreats
 
 	column Column5
 		dataType: string
-		lineageTag: 2284d9be-7e81-4da9-8fa0-638b58aa4826
+		lineageTag: bde1c090-c131-4719-a4ba-d76fe2c9e513
 		summarizeBy: none
 		sourceColumn: Column5
 
@@ -43,7 +43,7 @@ table fThreats
 
 	column Column6
 		dataType: string
-		lineageTag: 7f526df9-5996-4330-9639-c8601de5cf0c
+		lineageTag: 299f7539-f236-4a3a-996f-9ea6fe665fc5
 		summarizeBy: none
 		sourceColumn: Column6
 
@@ -51,7 +51,7 @@ table fThreats
 
 	column Column7
 		dataType: string
-		lineageTag: 3f45e590-fec8-4ed7-9d0d-1471b7e3ca74
+		lineageTag: d88e49cb-0003-4324-ba6d-43218d98ed67
 		summarizeBy: none
 		sourceColumn: Column7
 
@@ -59,7 +59,7 @@ table fThreats
 
 	column Column8
 		dataType: string
-		lineageTag: 97ed478c-9bcb-470f-a25e-076af354b98d
+		lineageTag: adfa9f8e-a9ce-41bb-927c-3be299df2830
 		summarizeBy: none
 		sourceColumn: Column8
 
@@ -67,7 +67,7 @@ table fThreats
 
 	column Column9
 		dataType: string
-		lineageTag: 60548ee7-93fc-405d-bf46-171116c53f26
+		lineageTag: c840bcd4-5557-40ee-9f1a-84e6dbabd87e
 		summarizeBy: none
 		sourceColumn: Column9
 
@@ -75,7 +75,7 @@ table fThreats
 
 	column Column10
 		dataType: string
-		lineageTag: 5ec74157-6f3e-4515-820c-6bbbfb9f3cfb
+		lineageTag: 888aa7c5-f162-4235-b61e-d5e7eb54b293
 		summarizeBy: none
 		sourceColumn: Column10
 
@@ -83,7 +83,7 @@ table fThreats
 
 	column Column11
 		dataType: string
-		lineageTag: 31131e28-7ee0-45ee-ae7d-e3d6b469d461
+		lineageTag: 8946353d-08af-4e3b-a84a-10e9448b078e
 		summarizeBy: none
 		sourceColumn: Column11
 
@@ -91,7 +91,7 @@ table fThreats
 
 	column Column12
 		dataType: string
-		lineageTag: 4f413243-484b-4f4e-82a9-69e511cd59fb
+		lineageTag: 7b5ae048-20e9-4224-9cbd-8ef74f0f719f
 		summarizeBy: none
 		sourceColumn: Column12
 
@@ -99,13 +99,13 @@ table fThreats
 
 	column Column13
 		dataType: string
-		lineageTag: 6ca0e9a7-c682-44c0-8c48-bdeb7cbe599c
+		lineageTag: 6467218b-858f-447e-948a-79abcfbf083c
 		summarizeBy: none
 		sourceColumn: Column13
 
 		annotation SummarizationSetBy = Automatic
 
-	partition fThreats = m
+	partition fSales = m
 		mode: import
 		source =
 				let

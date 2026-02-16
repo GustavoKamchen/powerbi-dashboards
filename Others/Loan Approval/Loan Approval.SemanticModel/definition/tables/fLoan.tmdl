@@ -1,91 +1,91 @@
 table fLoan
-	lineageTag: 3dc0c373-0379-46cf-a785-1ab7f2283ff2
+	lineageTag: e4554bd5-8337-4c8b-8f69-6f58016acf0d
 
-	column applicant_id
+	column Column1
 		dataType: string
-		lineageTag: 1acedc67-739e-4169-82af-f6a00beb21fa
+		lineageTag: da7f93e2-2030-4cbe-adad-b544f1b2bee7
 		summarizeBy: none
-		sourceColumn: applicant_id
+		sourceColumn: Column1
 
 		annotation SummarizationSetBy = Automatic
 
-	column age
+	column Column2
 		dataType: string
-		lineageTag: d623ec33-e379-4981-a641-d6f5931adad6
+		lineageTag: f6428b73-9d31-4d60-958e-c73e3dc8bddf
 		summarizeBy: none
-		sourceColumn: age
+		sourceColumn: Column2
 
 		annotation SummarizationSetBy = Automatic
 
-	column gender
+	column Column3
 		dataType: string
-		lineageTag: 587a02e9-9fca-453f-8731-6346c2230468
+		lineageTag: 287a2729-27a7-4f17-a6f7-ddf3e3fad7e1
 		summarizeBy: none
-		sourceColumn: gender
+		sourceColumn: Column3
 
 		annotation SummarizationSetBy = Automatic
 
-	column marital_status
+	column Column4
 		dataType: string
-		lineageTag: 313eee56-315f-4bdb-b03e-81e60212a386
+		lineageTag: 07ff7939-46a0-4865-8d0e-b3c3ffd4c9f6
 		summarizeBy: none
-		sourceColumn: marital_status
+		sourceColumn: Column4
 
 		annotation SummarizationSetBy = Automatic
 
-	column annual_income
+	column Column5
 		dataType: string
-		lineageTag: 26926f56-5ef6-4d6e-80b4-fe5dc31aca4f
+		lineageTag: f6ef5cd0-7dec-4f90-841d-0a02cbf21f35
 		summarizeBy: none
-		sourceColumn: annual_income
+		sourceColumn: Column5
 
 		annotation SummarizationSetBy = Automatic
 
-	column loan_amount
+	column Column6
 		dataType: string
-		lineageTag: ca442bdd-d7dc-4e20-af5f-e28ab25259ee
+		lineageTag: cbd1a833-f567-40a1-8272-28726f5ee170
 		summarizeBy: none
-		sourceColumn: loan_amount
+		sourceColumn: Column6
 
 		annotation SummarizationSetBy = Automatic
 
-	column credit_score
+	column Column7
 		dataType: string
-		lineageTag: 1563ef38-11e6-488e-8724-66176dd73adf
+		lineageTag: 8332f5ac-46ab-4759-b4f0-65252d93958d
 		summarizeBy: none
-		sourceColumn: credit_score
+		sourceColumn: Column7
 
 		annotation SummarizationSetBy = Automatic
 
-	column num_dependents
+	column Column8
 		dataType: string
-		lineageTag: 963310c0-0cdd-48a5-8a72-9693ae15400f
+		lineageTag: 80a01629-8dc0-45bb-b925-f24f0259c9a2
 		summarizeBy: none
-		sourceColumn: num_dependents
+		sourceColumn: Column8
 
 		annotation SummarizationSetBy = Automatic
 
-	column existing_loans_count
+	column Column9
 		dataType: string
-		lineageTag: 1c11c97b-cdb7-4901-8201-e3d159fe6a33
+		lineageTag: f3eff84a-b9e1-4a62-bac5-48223162553d
 		summarizeBy: none
-		sourceColumn: existing_loans_count
+		sourceColumn: Column9
 
 		annotation SummarizationSetBy = Automatic
 
-	column employment_status
+	column Column10
 		dataType: string
-		lineageTag: 87b8e235-6d53-4ae2-8aba-36c2b8b7efcb
+		lineageTag: e0766b8c-9b67-4bb3-a082-168438147740
 		summarizeBy: none
-		sourceColumn: employment_status
+		sourceColumn: Column10
 
 		annotation SummarizationSetBy = Automatic
 
-	column loan_approved
+	column Column11
 		dataType: string
-		lineageTag: 0406c51f-ad13-41f8-9f94-06c69850cd14
+		lineageTag: fa22d8eb-46a7-40d6-8f9e-69b149fb42d4
 		summarizeBy: none
-		sourceColumn: loan_approved
+		sourceColumn: Column11
 
 		annotation SummarizationSetBy = Automatic
 
@@ -93,10 +93,9 @@ table fLoan
 		mode: import
 		source =
 				let
-				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None]),
-				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=11, Encoding=65001, QuoteStyle=QuoteStyle.None])
 				in
-				    #"Promoted Headers"
+				    Source
 
 	annotation PBI_NavigationStepName = Navigation
 

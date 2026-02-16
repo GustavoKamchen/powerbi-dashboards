@@ -1,0 +1,64 @@
+table fSales
+	lineageTag: d962df3f-15bb-4491-a8a6-add04c4f98b4
+
+	column 'Sales Person'
+		dataType: string
+		lineageTag: 86bf5404-5cb2-4489-a764-8e2a32c53bf5
+		summarizeBy: none
+		sourceColumn: Sales Person
+
+		annotation SummarizationSetBy = Automatic
+
+	column Country
+		dataType: string
+		lineageTag: d06c1fc0-0958-455f-8e8a-78394e078c5b
+		summarizeBy: none
+		sourceColumn: Country
+
+		annotation SummarizationSetBy = Automatic
+
+	column Product
+		dataType: string
+		lineageTag: 9b4a0b69-f4bd-4500-9dae-fbc1ed7338b7
+		summarizeBy: none
+		sourceColumn: Product
+
+		annotation SummarizationSetBy = Automatic
+
+	column Date
+		dataType: string
+		lineageTag: 56a8576e-c366-4fa6-bfe3-16550f6e483b
+		summarizeBy: none
+		sourceColumn: Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column Amount
+		dataType: string
+		lineageTag: 5b714268-af80-4b58-9043-f1a8da8b4492
+		summarizeBy: none
+		sourceColumn: Amount
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Boxes Shipped'
+		dataType: string
+		lineageTag: 23a7accd-9bd6-4c7e-8f61-0a074b258f05
+		summarizeBy: none
+		sourceColumn: Boxes Shipped
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fSales = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=6, Encoding=65001, QuoteStyle=QuoteStyle.None]),
+				    #"Promoted Headers" = Table.PromoteHeaders(Source, [PromoteAllScalars=true])
+				in
+				    #"Promoted Headers"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
