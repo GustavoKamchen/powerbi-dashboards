@@ -1,0 +1,71 @@
+table fManufacturing
+	lineageTag: a706ef42-4be5-4c00-8b7f-6181f81efabb
+
+	column Column1
+		dataType: string
+		lineageTag: 428b5c68-ab6e-4ad3-b6dc-6032fe65e079
+		summarizeBy: none
+		sourceColumn: Column1
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column2
+		dataType: string
+		lineageTag: 14da2c8a-dc89-4992-b5f9-61552d97dc43
+		summarizeBy: none
+		sourceColumn: Column2
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column3
+		dataType: string
+		lineageTag: 34be63fc-1fe6-4d90-ac80-ffe245a8cc9c
+		summarizeBy: none
+		sourceColumn: Column3
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column4
+		dataType: string
+		lineageTag: 266c9955-de22-47f1-acba-6d66e6e131e1
+		summarizeBy: none
+		sourceColumn: Column4
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column5
+		dataType: string
+		lineageTag: 1e8e2b3a-9489-4440-9cb8-79a8aee9dc79
+		summarizeBy: none
+		sourceColumn: Column5
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column6
+		dataType: string
+		lineageTag: 47c2404d-348a-4636-9c07-60491785b4a3
+		summarizeBy: none
+		sourceColumn: Column6
+
+		annotation SummarizationSetBy = Automatic
+
+	column Column7
+		dataType: string
+		lineageTag: 58c366bf-c5ac-428b-8d9d-74e766546f06
+		summarizeBy: none
+		sourceColumn: Column7
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fManufacturing = m
+		mode: import
+		source =
+				let
+				    Source = Csv.Document(Web.Contents(sourceDatasetUrl),[Delimiter=",", Columns=7, Encoding=65001, QuoteStyle=QuoteStyle.None])
+				in
+				    Source
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
