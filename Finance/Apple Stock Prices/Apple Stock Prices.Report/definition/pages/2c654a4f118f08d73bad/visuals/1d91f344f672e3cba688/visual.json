@@ -56,7 +56,8 @@
                 }
               },
               "queryRef": "_Measures.Cumulative Return %",
-              "nativeQueryRef": "Cumulative Return %"
+              "nativeQueryRef": "Cumulative %",
+              "displayName": "Cumulative %"
             },
             {
               "field": {
@@ -70,7 +71,8 @@
                 }
               },
               "queryRef": "_Measures.Rolling 30d Volatility",
-              "nativeQueryRef": "Rolling 30d Volatility"
+              "nativeQueryRef": "30d Volatility",
+              "displayName": "30d Volatility"
             },
             {
               "field": {
@@ -84,7 +86,8 @@
                 }
               },
               "queryRef": "_Measures.Current Drawdown %",
-              "nativeQueryRef": "Current Drawdown %"
+              "nativeQueryRef": "Drawdown %",
+              "displayName": "Drawdown %"
             }
           ]
         }
@@ -374,21 +377,21 @@
             "shadowDistance": {
               "expr": {
                 "Literal": {
-                  "Value": "20D"
+                  "Value": "5D"
                 }
               }
             },
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "90D"
+                  "Value": "85D"
                 }
               }
             },
             "shadowSpread": {
               "expr": {
                 "Literal": {
-                  "Value": "2D"
+                  "Value": "3D"
                 }
               }
             }
@@ -713,6 +716,90 @@
             "id": "field-bd486f3c-8584-452a-41bd-719a0dda4ee6",
             "order": 0
           }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Cumulative % detail text"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "_Measures.Cumulative Return %",
+            "id": "field-4b1f3552-e58a-36c7-4f99-ad12d268a61b",
+            "order": 0
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Rolling 30d volatility detail text"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "_Measures.Rolling 30d Volatility",
+            "id": "field-505143f5-7845-aacb-d495-87e5af00541b",
+            "order": 0
+          }
+        },
+        {
+          "properties": {
+            "value": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "All time high price"
+                }
+              }
+            }
+          },
+          "selector": {
+            "data": [
+              {
+                "dataViewWildcard": {
+                  "matchingOption": 0
+                }
+              }
+            ],
+            "metadata": "_Measures.Current Drawdown %",
+            "id": "field-54cfc6e0-dddb-8f02-4577-9f6294c67884",
+            "order": 0
+          }
         }
       ],
       "referenceLabelLayout": [
@@ -772,7 +859,7 @@
             "titleFontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "8D"
                 }
               }
             },
@@ -840,6 +927,56 @@
             "metadata": "_Measures.Latest Close Price",
             "id": "field-bd486f3c-8584-452a-41bd-719a0dda4ee6"
           }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Cumulative Return %"
+          }
+        },
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Rolling 30d Volatility"
+          }
+        },
+        {
+          "properties": {
+            "titleContentType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'custom'"
+                }
+              }
+            },
+            "titleText": {
+              "expr": {
+                "Literal": {
+                  "Value": "'From ATH'"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Current Drawdown %",
+            "id": "field-54cfc6e0-dddb-8f02-4577-9f6294c67884"
+          }
         }
       ],
       "referenceLabelValue": [
@@ -867,7 +1004,7 @@
             "valueBold": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -1005,7 +1142,7 @@
             "bottom": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "5D"
                 }
               }
             }

@@ -155,6 +155,33 @@ table _Measures
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
+	measure 'Cumulative % detail text' = "Since " & YEAR(MIN(dCalendar[Date]))
+		lineageTag: 77293e81-267e-4525-a01f-2a5804bde4db
+
+	measure 'Rolling 30d volatility detail text' = ```
+			
+			VAR _VOL = [Rolling 30d Volatility]
+			
+			VAR _LVL = 
+			    SWITCH(
+			        TRUE,
+			        _VOL > 0.4, "High",
+			        _VOL > 0.2, "Medium",
+			        "Low"
+			    )
+			
+			RETURN
+			
+			_LVL & " Variance"
+			```
+		lineageTag: 21e2a612-7ce2-40a0-a2d4-e92d5004fec9
+
+	measure 'All time high price' = MAX(fPrices[Close])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: 5bd4b5b2-8d9a-448a-9a00-8fff96247ec4
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
 	partition _Measures = m
 		mode: import
 		source =
