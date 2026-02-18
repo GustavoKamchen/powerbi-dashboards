@@ -1,4 +1,4 @@
-table DimCalendar
+table dCalendar
 	lineageTag: b7c0deb7-22cd-4d6a-9c28-dc1338465943
 	dataCategory: Time
 
@@ -1166,7 +1166,7 @@ table DimCalendar
 
 		annotation SummarizationSetBy = Automatic
 
-	partition DimCalendar = m
+	partition dCalendar = m
 		mode: import
 		source = ```
 				let
@@ -1174,10 +1174,10 @@ table DimCalendar
 				    #"-----PARAMETERS-----" = "",
 				
 				    // Specify the start date 
-				    startDate = #date(2020, 1, 1),
+				    startDate = #date(1980, 1, 1),
 				
 				    // Years ahead today
-				    yearsAhead = 1,
+				    yearsAhead = -1,
 				            
 				    // Specify the start of the week. Default: Day.Monday 
 				    startOfWeek = Day.Monday,

@@ -11,25 +11,40 @@
         {
           "location": {
             "x": 0,
-            "y": 2
+            "y": 167
           },
-          "nodeIndex": "fPrecos",
+          "nodeIndex": "fPrices",
           "nodeLineageTag": "0672cc65-fc6e-48b6-b0f1-c43a0b43ba11",
           "size": {
-            "height": 296,
+            "height": 104,
             "width": 234
           },
-          "zIndex": 0
+          "zIndex": 0,
+          "expandedHeight": 296
         },
         {
           "location": {
-            "x": 284,
+            "x": 0,
             "y": 0
           },
-          "nodeIndex": "DimCalendar",
+          "nodeIndex": "dCalendar",
           "nodeLineageTag": "b7c0deb7-22cd-4d6a-9c28-dc1338465943",
           "size": {
-            "height": 300,
+            "height": 104,
+            "width": 234
+          },
+          "zIndex": 0,
+          "expandedHeight": 300
+        },
+        {
+          "location": {
+            "x": 292,
+            "y": 16
+          },
+          "nodeIndex": "_Measures",
+          "nodeLineageTag": "fbd129f1-40a3-44f0-b875-a72cfcfbf149",
+          "size": {
+            "height": 104,
             "width": 234
           },
           "zIndex": 0

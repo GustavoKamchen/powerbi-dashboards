@@ -10,12 +10,13 @@ annotation __PBI_TimeIntelligenceEnabled = 0
 
 annotation PBIDesktopVersion = 2.140.1577.0 (25.02)+00af0910c5ca19a229c472b0dfc17a2c488f6b0a
 
-annotation PBI_QueryOrder = ["sourceUrl","fPrecos","DimCalendar"]
+annotation PBI_QueryOrder = ["sourceUrl","_Measures","dCalendar","fPrices"]
 
 annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
 
-ref table fPrecos
-ref table DimCalendar
+ref table fPrices
+ref table dCalendar
+ref table _Measures
 
 ref cultureInfo pt-BR
 

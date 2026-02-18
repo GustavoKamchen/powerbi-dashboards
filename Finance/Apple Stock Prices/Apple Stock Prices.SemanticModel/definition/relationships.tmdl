@@ -1,4 +1,4 @@
 relationship 79f6e5c4-9bef-7cb0-655f-290147df7389
-	fromColumn: fPrecos.Date
-	toColumn: DimCalendar.Date
+	fromColumn: fPrices.Date
+	toColumn: dCalendar.Date
 

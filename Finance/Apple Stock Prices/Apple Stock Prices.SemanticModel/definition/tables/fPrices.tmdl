@@ -1,9 +1,9 @@
-table fPrecos
+table fPrices
 	lineageTag: 0672cc65-fc6e-48b6-b0f1-c43a0b43ba11
 
 	column Date
 		dataType: dateTime
-		formatString: Long Date
+		formatString: Short Date
 		lineageTag: c7c64813-3a5f-4c95-a54f-e20850c7402b
 		summarizeBy: none
 		sourceColumn: Date
@@ -91,7 +91,7 @@ table fPrecos
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
-	partition fPrecos = m
+	partition fPrices = m
 		mode: import
 		source =
 				let

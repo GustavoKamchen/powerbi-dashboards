@@ -1,0 +1,156 @@
+table _Measures
+	lineageTag: fbd129f1-40a3-44f0-b875-a72cfcfbf149
+
+	measure 'Latest Close Price' =
+			
+			CALCULATE(
+			    MAX(fPrices[Close]),
+			    LASTDATE(dCalendar[Date])
+			)
+		formatString: \$#,0.0000;(\$#,0.0000);\$#,0.0000
+		lineageTag: 56ce70a6-1222-44c6-b0d0-1f1c4bf1a667
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Daily Return %' =
+			
+			VAR PreviousClose =
+			    CALCULATE(
+			        MAX(fPrices[Close]),
+			        DATEADD(dCalendar[Date], -1, DAY)
+			    )
+			
+			RETURN
+			
+			DIVIDE(
+			    MAX(fPrices[Close]) - PreviousClose,
+			    PreviousClose
+			)
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: 4e43598e-aea3-46d1-825e-00ce6fe6c17d
+
+	measure 'Cumulative Return %' =
+			
+			VAR FirstPrice =
+			    CALCULATE(
+			        FIRSTNONBLANK(fPrices[Close], 1),
+			        ALL(dCalendar)
+			    )
+			
+			RETURN
+			
+			DIVIDE(
+			    MAX(fPrices[Close]) - FirstPrice,
+			    FirstPrice
+			)
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: ae7e1775-e13c-4756-b8aa-0bbc8f4aa8b8
+
+	measure 'Rolling 30d Volatility' =
+			
+			STDEVX.P(
+			    DATESINPERIOD(
+			        dCalendar[Date],
+			        MAX(dCalendar[Date]),
+			        -30,
+			        DAY
+			    ),
+			    [Daily Return %]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 8b3802bb-fe9a-4c7a-8d81-9aeca5cbc332
+
+	measure 'Running Max Price' =
+			
+			CALCULATE(
+			    MAX(fPrices[Close]),
+			    FILTER(
+			        ALL(dCalendar),
+			        dCalendar[Date] <= MAX(dCalendar[Date])
+			    )
+			)
+		formatString: \$#,0.0000;(\$#,0.0000);\$#,0.0000
+		lineageTag: 0ad7ba6c-0950-41fd-b691-e15f4afebcdf
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Drawdown %' =
+			
+			DIVIDE(
+			    MAX(fPrices[Close]) - [Running Max Price],
+			    [Running Max Price]
+			)
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: 5e4e5ea8-4ecc-4e01-8739-cbae807f92ac
+
+	measure 'YTD Return %' =
+			
+			VAR StartOfYearPrice =
+			    CALCULATE(
+			        MAX(fPrices[Close]),
+			        DATESYTD(dCalendar[Date])
+			    )
+			
+			VAR FirstPriceYTD =
+			    CALCULATE(
+			        FIRSTNONBLANK(fPrices[Close], 1),
+			        DATESYTD(dCalendar[Date])
+			    )
+			
+			RETURN
+			
+			DIVIDE(
+			    [Latest Close Price] - FirstPriceYTD,
+			    FirstPriceYTD
+			)
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: 2f2479d6-eb62-4b69-a4ff-1c37939c8343
+
+	measure 'Current Drawdown %' =
+			
+			CALCULATE(
+			    [Drawdown %],
+			    LASTDATE(dCalendar[Date])
+			)
+		formatString: #,0.00%;-#,0.00%;#,0.00%
+		lineageTag: 7ae8741a-9693-414b-b977-efe5f25ff01a
+
+	measure 'Close Price' = SUM(fPrices[Close])
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: e615fd18-aa3c-40d6-8db6-06d0f263d30e
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure Volume = SUM(fPrices[Volume])
+		formatString: #,0
+		lineageTag: 3ebf9713-c8f7-4591-8c1f-20a047672287
+
+	measure 'Rolling 30d Avg Volume' =
+			
+			AVERAGEX(
+			    DATESINPERIOD(
+			        dCalendar[Date],
+			        MAX(dCalendar[Date]),
+			        -30,
+			        DAY
+			    ),
+			    CALCULATE(SUM(fPrices[Volume]))
+			)
+		formatString: #,0
+		lineageTag: 1d42bdfe-be28-40d1-b1ba-dfe1abac13ab
+
+		annotation PBI_FormatHint = {"isDecimal":true}
+
+	partition _Measures = m
+		mode: import
+		source =
+				let
+				    Source = Table.FromRows(Json.Document(Binary.Decompress(Binary.FromText("i44FAA==", BinaryEncoding.Base64), Compression.Deflate)), let _t = ((type nullable text) meta [Serialized.Text = true]) in type table [Column1 = _t]),
+				    #"Removed Columns" = Table.RemoveColumns(Source,{"Column1"})
+				in
+				    #"Removed Columns"
+
+	annotation PBI_NavigationStepName = Navigation
+
+	annotation PBI_ResultType = Table
+
