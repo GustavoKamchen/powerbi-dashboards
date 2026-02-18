@@ -7,7 +7,7 @@ table _Measures
 			    MAX(fPrices[Close]),
 			    LASTDATE(dCalendar[Date])
 			)
-		formatString: \$#,0.0000;(\$#,0.0000);\$#,0.0000
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		lineageTag: 56ce70a6-1222-44c6-b0d0-1f1c4bf1a667
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
@@ -43,7 +43,7 @@ table _Measures
 			    MAX(fPrices[Close]) - FirstPrice,
 			    FirstPrice
 			)
-		formatString: #,0.00%;-#,0.00%;#,0.00%
+		formatString: #,0.0%;-#,0.0%;#,0.0%
 		lineageTag: ae7e1775-e13c-4756-b8aa-0bbc8f4aa8b8
 
 	measure 'Rolling 30d Volatility' =
@@ -57,7 +57,7 @@ table _Measures
 			    ),
 			    [Daily Return %]
 			)
-		formatString: 0.00%;-0.00%;0.00%
+		formatString: #,0.00%;-#,0.00%;#,0.00%
 		lineageTag: 8b3802bb-fe9a-4c7a-8d81-9aeca5cbc332
 
 	measure 'Running Max Price' =
@@ -69,7 +69,7 @@ table _Measures
 			        dCalendar[Date] <= MAX(dCalendar[Date])
 			    )
 			)
-		formatString: \$#,0.0000;(\$#,0.0000);\$#,0.0000
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		lineageTag: 0ad7ba6c-0950-41fd-b691-e15f4afebcdf
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
@@ -140,6 +140,20 @@ table _Measures
 		lineageTag: 1d42bdfe-be28-40d1-b1ba-dfe1abac13ab
 
 		annotation PBI_FormatHint = {"isDecimal":true}
+
+	measure Teste = "Teste"
+		lineageTag: 80de55b8-cc4e-4eb8-84f2-e6cb285b25e6
+
+	measure 'Previous Latest Close Price' =
+			
+			CALCULATE(
+			    [Latest Close Price],
+			    DATEADD(dCalendar[Date], -1, DAY)
+			)
+		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
+		lineageTag: d0787bc4-845c-4c66-b29f-aced359940e5
+
+		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
 	partition _Measures = m
 		mode: import
