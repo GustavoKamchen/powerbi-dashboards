@@ -12255,22 +12255,6 @@ cultureInfo pt-BR
 			        }
 			      ]
 			    },
-			    "entity__measure.teste": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Teste"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "teste": {
-			            "State": "Generated"
-			          }
-			        }
-			      ]
-			    },
 			    "entity__measure.previous_latest_close_price": {
 			      "Definition": {
 			        "Binding": {

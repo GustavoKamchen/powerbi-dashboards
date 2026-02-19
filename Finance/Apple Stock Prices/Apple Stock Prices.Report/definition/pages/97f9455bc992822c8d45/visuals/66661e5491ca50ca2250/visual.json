@@ -1,0 +1,17 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "name": "66661e5491ca50ca2250",
+  "position": {
+    "x": 1180,
+    "y": 10,
+    "z": 7502,
+    "height": 30,
+    "width": 90,
+    "tabOrder": 3000
+  },
+  "visualGroup": {
+    "displayName": "Filter menu button",
+    "groupMode": "ScaleMode"
+  },
+  "parentGroupName": "84d25da9978e0190173f"
+}

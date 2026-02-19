@@ -3,11 +3,11 @@
   "name": "d2c5daa1b650ec2192c3",
   "position": {
     "x": 285.55555555555554,
-    "y": 507.77777777777777,
-    "z": 3,
+    "y": 510,
+    "z": 3000,
     "height": 200,
-    "width": 981.11111111111109,
-    "tabOrder": 2001
+    "width": 985,
+    "tabOrder": 3000
   },
   "visual": {
     "visualType": "lineChart",
@@ -52,21 +52,6 @@
         }
       },
       "sortDefinition": {
-        "sort": [
-          {
-            "field": {
-              "Column": {
-                "Expression": {
-                  "SourceRef": {
-                    "Entity": "dCalendar"
-                  }
-                },
-                "Property": "Date"
-              }
-            },
-            "direction": "Ascending"
-          }
-        ],
         "isDefaultSort": true
       }
     },
@@ -165,6 +150,27 @@
             }
           }
         }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.3
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Rolling 30d Avg Volume"
+          }
+        }
       ]
     },
     "visualContainerObjects": {
@@ -198,6 +204,13 @@
                   "Value": "'Arial'"
                 }
               }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Volume (30d avg)'"
+                }
+              }
             }
           }
         }
@@ -208,7 +221,7 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             }

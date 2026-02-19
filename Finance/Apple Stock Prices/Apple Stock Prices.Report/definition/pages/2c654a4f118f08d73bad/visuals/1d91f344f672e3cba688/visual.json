@@ -783,7 +783,7 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "All time high price"
+                  "Property": "Max closing price"
                 }
               }
             }

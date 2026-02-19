@@ -141,9 +141,6 @@ table _Measures
 
 		annotation PBI_FormatHint = {"isDecimal":true}
 
-	measure Teste = "Teste"
-		lineageTag: 80de55b8-cc4e-4eb8-84f2-e6cb285b25e6
-
 	measure 'Previous Latest Close Price' =
 			
 			CALCULATE(
@@ -176,7 +173,7 @@ table _Measures
 			```
 		lineageTag: 21e2a612-7ce2-40a0-a2d4-e92d5004fec9
 
-	measure 'All time high price' = MAX(fPrices[Close])
+	measure 'Max closing price' = MAX(fPrices[Close])
 		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
 		lineageTag: 5bd4b5b2-8d9a-448a-9a00-8fff96247ec4
 

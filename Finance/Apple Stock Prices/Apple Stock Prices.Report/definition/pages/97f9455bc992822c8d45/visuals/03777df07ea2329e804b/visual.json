@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "903071e58278da8b1ca5",
+  "name": "03777df07ea2329e804b",
   "position": {
-    "x": 9.3103448275862064,
-    "y": 5.862068965517242,
-    "z": 8502,
+    "x": 4.4444444444443434,
+    "y": 0,
+    "z": 7001,
     "height": 30,
-    "width": 30,
-    "tabOrder": 4000
+    "width": 25.555555555555554,
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "image",
@@ -20,7 +20,7 @@
                 "name": {
                   "expr": {
                     "Literal": {
-                      "Value": "'apple_logo.svg'"
+                      "Value": "'filter_white.svg'"
                     }
                   }
                 },
@@ -29,7 +29,7 @@
                     "ResourcePackageItem": {
                       "PackageName": "RegisteredResources",
                       "PackageType": 1,
-                      "ItemName": "apple_logo630690977300587.svg"
+                      "ItemName": "filter_white6498745053785595.svg"
                     }
                   }
                 },
@@ -41,46 +41,22 @@
                   }
                 }
               }
+            },
+            "fit": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Stretch'"
+                }
+              }
             }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ]
     },
     "visualContainerObjects": {
-      "padding": [
-        {
-          "properties": {
-            "top": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "left": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "bottom": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            },
-            "right": {
-              "expr": {
-                "Literal": {
-                  "Value": "0D"
-                }
-              }
-            }
-          }
-        }
-      ],
       "lockAspect": [
         {
           "properties": {
@@ -93,9 +69,36 @@
             }
           }
         }
+      ],
+      "visualLink": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Bookmark'"
+                }
+              }
+            },
+            "bookmark": {
+              "expr": {
+                "Literal": {
+                  "Value": "'dfe0e4418e360f8cb30b'"
+                }
+              }
+            }
+          }
+        }
       ]
     },
     "drillFilterOtherVisuals": true
   },
-  "parentGroupName": "299b9dc935afc9b3966f"
+  "parentGroupName": "66661e5491ca50ca2250"
 }
