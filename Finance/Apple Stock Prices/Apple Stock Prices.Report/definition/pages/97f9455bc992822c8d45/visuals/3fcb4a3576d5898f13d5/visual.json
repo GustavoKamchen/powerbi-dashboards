@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "c8dee1ec2c892ca479ee",
+  "name": "3fcb4a3576d5898f13d5",
   "position": {
-    "x": 285,
-    "y": 60,
-    "z": 2000,
-    "height": 440,
-    "width": 985,
-    "tabOrder": 2000
+    "x": 773.90444810543659,
+    "y": 61.15321252059308,
+    "z": 3,
+    "height": 215.09060955518945,
+    "width": 506.09555189456341,
+    "tabOrder": 1003
   },
   "visual": {
     "visualType": "stackedAreaChart",
@@ -42,11 +42,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Close Price"
+                  "Property": "Rolling 12M Return %"
                 }
               },
-              "queryRef": "_Measures.Close Price",
-              "nativeQueryRef": "Close Price"
+              "queryRef": "_Measures.Rolling 12M Return %",
+              "nativeQueryRef": "Rolling 12M Return %"
             }
           ]
         }
@@ -185,49 +185,9 @@
               }
             }
           }
-        },
-        {
-          "properties": {
-            "lineStyle": {
-              "expr": {
-                "Literal": {
-                  "Value": "'solid'"
-                }
-              }
-            },
-            "strokeLineJoin": {
-              "expr": {
-                "Literal": {
-                  "Value": "'round'"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Close Price"
-          }
         }
       ],
       "dataPoint": [
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 0,
-                      "Percent": -0.3
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "_Measures.Close Price"
-          }
-        },
         {
           "properties": {}
         }
@@ -309,7 +269,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Close Price History'"
+                  "Value": "'Rolling 12M return %'"
                 }
               }
             },

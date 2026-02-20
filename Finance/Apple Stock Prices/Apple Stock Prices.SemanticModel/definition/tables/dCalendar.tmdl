@@ -1166,6 +1166,13 @@ table dCalendar
 
 		annotation SummarizationSetBy = Automatic
 
+	column Coluna = CALCULATE(COUNTROWS(fPrices))
+		formatString: 0
+		lineageTag: b6ee5488-e2fa-401a-aee2-cf0dcb3a8e9d
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dCalendar = m
 		mode: import
 		source = ```

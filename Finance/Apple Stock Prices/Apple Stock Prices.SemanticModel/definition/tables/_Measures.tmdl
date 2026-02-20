@@ -14,34 +14,41 @@ table _Measures
 
 	measure 'Daily Return %' =
 			
-			VAR PreviousClose =
+			VAR _PrevClose =
 			    CALCULATE(
 			        MAX(fPrices[Close]),
 			        DATEADD(dCalendar[Date], -1, DAY)
 			    )
-			
 			RETURN
-			
-			DIVIDE(
-			    MAX(fPrices[Close]) - PreviousClose,
-			    PreviousClose
+			IF(
+			    NOT ISBLANK(_PrevClose),
+			    DIVIDE(MAX(fPrices[Close]) - _PrevClose, _PrevClose)
 			)
-		formatString: #,0.00%;-#,0.00%;#,0.00%
 		lineageTag: 4e43598e-aea3-46d1-825e-00ce6fe6c17d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Cumulative Return %' =
 			
-			VAR FirstPrice =
+			VAR _FirstDate =
 			    CALCULATE(
-			        FIRSTNONBLANK(fPrices[Close], 1),
-			        ALL(dCalendar)
+			        MIN(fPrices[Date]),
+			        ALL(fPrices)
 			    )
 			
-			RETURN
+			VAR FirstPrice =
+			    CALCULATE(
+			        MAX(fPrices[Close]),
+			        fPrices[Date] = _FirstDate
+			    )
 			
-			DIVIDE(
-			    MAX(fPrices[Close]) - FirstPrice,
-			    FirstPrice
+			VAR CurrentPrice =
+			    MAX(fPrices[Close])
+			
+			RETURN
+			IF(
+			    NOT ISBLANK(FirstPrice),
+			    DIVIDE(CurrentPrice - FirstPrice, FirstPrice)
 			)
 		formatString: #,0.0%;-#,0.0%;#,0.0%
 		lineageTag: ae7e1775-e13c-4756-b8aa-0bbc8f4aa8b8
@@ -178,6 +185,160 @@ table _Measures
 		lineageTag: 5bd4b5b2-8d9a-448a-9a00-8fff96247ec4
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
+
+	measure 'Monthly Return %' =
+			
+			VAR CurrentMonthEnd =
+			    EOMONTH(MAX(fPrices[Date]), 0)
+			
+			VAR PreviousMonthEnd =
+			    EOMONTH(MAX(fPrices[Date]), -1)
+			
+			VAR CurrentClose =
+			    CALCULATE(
+			        MAX(fPrices[Close]),
+			        FILTER(
+			            ALL(fPrices),
+			            fPrices[Date] <= CurrentMonthEnd
+			                && MONTH(fPrices[Date]) = MONTH(CurrentMonthEnd)
+			                && YEAR(fPrices[Date]) = YEAR(CurrentMonthEnd)
+			        )
+			    )
+			
+			VAR PreviousClose =
+			    CALCULATE(
+			        MAX(fPrices[Close]),
+			        FILTER(
+			            ALL(fPrices),
+			            fPrices[Date] <= PreviousMonthEnd
+			                && MONTH(fPrices[Date]) = MONTH(PreviousMonthEnd)
+			                && YEAR(fPrices[Date]) = YEAR(PreviousMonthEnd)
+			        )
+			    )
+			
+			RETURN
+			IF(
+			    NOT ISBLANK(PreviousClose),
+			    DIVIDE(CurrentClose - PreviousClose, PreviousClose)
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 1c12f414-313a-4176-83db-061f874e26cf
+
+	measure 'Annual Return %' = ```
+			
+			VAR _FirstDate = 
+			    CALCULATE(
+			        MIN(fPrices[Date]),
+			        YEAR(fPrices[Date]) = SELECTEDVALUE(dCalendar[Year])
+			    )
+			
+			VAR _FirstPriceYear =
+			    CALCULATE(
+			        FIRSTNONBLANK(fPrices[Close], 1),
+			        fPrices[Date] = _FirstDate
+			    )
+			
+			VAR _LastDate = 
+			    CALCULATE(
+			        MAX(fPrices[Date]),
+			        YEAR(fPrices[Date]) = SELECTEDVALUE(dCalendar[Year])
+			    )
+			
+			VAR _LastPriceYear =
+			    CALCULATE(
+			        FIRSTNONBLANK(fPrices[Close], 1),
+			        fPrices[Date] = _LastDate
+			    )
+			
+			RETURN
+			IF(
+			    NOT ISBLANK(_FirstPriceYear),
+			    DIVIDE(_LastPriceYear - _FirstPriceYear, _FirstPriceYear)
+			)
+			```
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 64caa450-a02a-4def-b0b9-30a2ba57c206
+
+	measure 'Rolling 12M Return %' =
+			
+			VAR CurrentPrice =
+			    MAX(fPrices[Close])
+			
+			VAR Price12Mago =
+			    CALCULATE(
+			        MAX(fPrices[Close]),
+			        DATEADD(dCalendar[Date], -12, MONTH)
+			    )
+			
+			RETURN
+			
+			IF(
+			    COUNTROWS(fPrices) > 0,
+			    DIVIDE(CurrentPrice - Price12Mago, Price12Mago)
+			)
+		lineageTag: abd007c2-35bb-4448-8306-d9771463ec9c
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'CAGR %' =
+			
+			VAR _FirstDate =
+			    CALCULATE(
+			        MIN(fPrices[Date]),
+			        ALL(fPrices)
+			    )
+			
+			VAR _LastDate =
+			    CALCULATE(
+			        MAX(fPrices[Date]),
+			        ALL(fPrices)
+			    )
+			
+			VAR _FirstPrice =
+			    CALCULATE(
+			        MAX(fPrices[Close]),
+			        fPrices[Date] = _FirstDate
+			    )
+			
+			VAR _LastPrice =
+			    CALCULATE(
+			        MAX(fPrices[Close]),
+			        fPrices[Date] = _LastDate
+			    )
+			
+			VAR _Years =
+			    DIVIDE(
+			        DATEDIFF(_FirstDate, _LastDate, DAY),
+			        365
+			    )
+			
+			RETURN
+			IF(
+			    _Years > 0,
+			    POWER(_LastPrice / _FirstPrice, 1 / _Years) - 1
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 39b23e04-d01d-4d7e-a62f-31efa0bff5f8
+
+	measure 'Return Frequency' =
+			
+			VAR BinStart = SELECTEDVALUE('Return Bins'[Value])
+			VAR BinEnd = BinStart + 0.01
+			
+			RETURN
+			CALCULATE(
+			    COUNTROWS(fPrices),
+			    FILTER(
+			        ADDCOLUMNS(
+			            ALL(fPrices[Date]),
+			            "Return", [Daily Return %]
+			        ),
+			        [Return] >= BinStart &&
+			        [Return] < BinEnd
+			    )
+			)
+		formatString: 0
+		lineageTag: 2c159814-981f-4a92-a57e-82cc72fbd763
 
 	partition _Measures = m
 		mode: import

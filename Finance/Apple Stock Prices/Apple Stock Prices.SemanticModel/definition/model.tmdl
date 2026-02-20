@@ -15,6 +15,7 @@ annotation PBI_ProTooling = ["DevMode","TMDLView_Desktop"]
 ref table fPrices
 ref table dCalendar
 ref table _Measures
+ref table 'Return bins'
 
 ref cultureInfo pt-BR
 

@@ -1,0 +1,19 @@
+table 'Return bins'
+	lineageTag: e91e78b4-5a0d-4fad-8d61-52dce3052086
+
+	column Value
+		lineageTag: 89d25956-b04f-4e2e-ba94-5e0e5d1ae55e
+		summarizeBy: sum
+		isNameInferred
+		sourceColumn: [Value]
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition 'Return bins' = calculated
+		mode: import
+		source = GENERATESERIES(-0.1, 0.1, 0.01)
+
+	annotation PBI_Id = f4ecf24d71454771a8ad766c8ad995b0
+
