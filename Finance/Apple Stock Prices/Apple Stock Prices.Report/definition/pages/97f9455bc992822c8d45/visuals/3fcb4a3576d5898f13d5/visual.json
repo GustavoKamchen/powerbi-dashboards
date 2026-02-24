@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "3fcb4a3576d5898f13d5",
   "position": {
-    "x": 773.90444810543659,
-    "y": 61.15321252059308,
+    "x": 760,
+    "y": 240,
     "z": 3,
-    "height": 215.09060955518945,
-    "width": 506.09555189456341,
+    "height": 230,
+    "width": 510,
     "tabOrder": 1003
   },
   "visual": {
@@ -269,7 +269,7 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Rolling 12M return %'"
+                  "Value": "'Rolling 12M return'"
                 }
               }
             },

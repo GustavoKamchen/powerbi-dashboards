@@ -24,9 +24,8 @@ table _Measures
 			    NOT ISBLANK(_PrevClose),
 			    DIVIDE(MAX(fPrices[Close]) - _PrevClose, _PrevClose)
 			)
+		formatString: 0.000
 		lineageTag: 4e43598e-aea3-46d1-825e-00ce6fe6c17d
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'Cumulative Return %' =
 			
@@ -251,10 +250,8 @@ table _Measures
 			    )
 			
 			RETURN
-			IF(
-			    NOT ISBLANK(_FirstPriceYear),
-			    DIVIDE(_LastPriceYear - _FirstPriceYear, _FirstPriceYear)
-			)
+			
+			DIVIDE(_LastPriceYear - _FirstPriceYear, _FirstPriceYear)
 			```
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 64caa450-a02a-4def-b0b9-30a2ba57c206
@@ -276,9 +273,8 @@ table _Measures
 			    COUNTROWS(fPrices) > 0,
 			    DIVIDE(CurrentPrice - Price12Mago, Price12Mago)
 			)
+		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: abd007c2-35bb-4448-8306-d9771463ec9c
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	measure 'CAGR %' =
 			
@@ -320,23 +316,32 @@ table _Measures
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 39b23e04-d01d-4d7e-a62f-31efa0bff5f8
 
-	measure 'Return Frequency' =
+	measure 'Return Frequency' = ```
 			
 			VAR BinStart = SELECTEDVALUE('Return Bins'[Value])
 			VAR BinEnd = BinStart + 0.01
 			
-			RETURN
-			CALCULATE(
-			    COUNTROWS(fPrices),
-			    FILTER(
-			        ADDCOLUMNS(
-			            ALL(fPrices[Date]),
-			            "Return", [Daily Return %]
-			        ),
-			        [Return] >= BinStart &&
-			        [Return] < BinEnd
+			VAR ReturnsTable = 
+			    ADDCOLUMNS(
+			        ALL(fPrices),
+			        "Return Value",
+			        VAR CurrentDate = fPrices[Date]
+			        VAR PrevClose =
+			            CALCULATE(
+			                MAX(fPrices[Close]),
+			                FILTER(
+			                    ALL(fPrices),
+			                    fPrices[Date] < CurrentDate
+			                )
+			            )
+			        RETURN
+			            DIVIDE(fPrices[Close] - PrevClose, PrevClose)
 			    )
-			)
+			
+			RETURN
+			
+			COUNTROWS(FILTER(ReturnsTable, [Return Value] >= BinStart && [Return Value] < BinEnd))
+			```
 		formatString: 0
 		lineageTag: 2c159814-981f-4a92-a57e-82cc72fbd763
 
