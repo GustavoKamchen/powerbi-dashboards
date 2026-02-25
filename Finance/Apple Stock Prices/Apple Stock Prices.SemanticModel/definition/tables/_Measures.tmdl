@@ -14,15 +14,8 @@ table _Measures
 
 	measure 'Daily Return %' =
 			
-			VAR _PrevClose =
-			    CALCULATE(
-			        MAX(fPrices[Close]),
-			        DATEADD(dCalendar[Date], -1, DAY)
-			    )
-			RETURN
-			IF(
-			    NOT ISBLANK(_PrevClose),
-			    DIVIDE(MAX(fPrices[Close]) - _PrevClose, _PrevClose)
+			CALCULATE(
+			    MAX(fPrices[Daily_Return])
 			)
 		formatString: 0.000
 		lineageTag: 4e43598e-aea3-46d1-825e-00ce6fe6c17d
@@ -316,34 +309,30 @@ table _Measures
 		formatString: 0.00%;-0.00%;0.00%
 		lineageTag: 39b23e04-d01d-4d7e-a62f-31efa0bff5f8
 
-	measure 'Return Frequency' = ```
+	measure 'Return Frequency' =
 			
 			VAR BinStart = SELECTEDVALUE('Return Bins'[Value])
-			VAR BinEnd = BinStart + 0.01
-			
-			VAR ReturnsTable = 
-			    ADDCOLUMNS(
-			        ALL(fPrices),
-			        "Return Value",
-			        VAR CurrentDate = fPrices[Date]
-			        VAR PrevClose =
-			            CALCULATE(
-			                MAX(fPrices[Close]),
-			                FILTER(
-			                    ALL(fPrices),
-			                    fPrices[Date] < CurrentDate
-			                )
-			            )
-			        RETURN
-			            DIVIDE(fPrices[Close] - PrevClose, PrevClose)
-			    )
+			VAR BinEnd = BinStart + 0.05
 			
 			RETURN
 			
-			COUNTROWS(FILTER(ReturnsTable, [Return Value] >= BinStart && [Return Value] < BinEnd))
-			```
+			CALCULATE(
+			    COUNTROWS(fPrices)//,
+			    //fPrices[Daily_Return] >= BinStart,
+			    //fPrices[Daily_Return] < BinEnd
+			)
 		formatString: 0
 		lineageTag: 2c159814-981f-4a92-a57e-82cc72fbd763
+
+	measure 'FC Annual return' =
+			
+			SWITCH(
+			    TRUE,
+			    [Annual Return %] > 0.05, "#64FF64",
+			    [Annual Return %] > 0, "#FFFF64",
+			    "#FF6464"
+			)
+		lineageTag: 6c1cf4e5-44d8-4396-9ef2-ee31140d0bcd
 
 	partition _Measures = m
 		mode: import

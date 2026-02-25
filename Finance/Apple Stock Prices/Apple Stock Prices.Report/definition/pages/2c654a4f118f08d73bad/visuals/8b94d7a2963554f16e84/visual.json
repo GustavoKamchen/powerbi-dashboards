@@ -6,7 +6,8 @@
     "y": 10,
     "z": 7502,
     "height": 30,
-    "width": 90
+    "width": 90,
+    "tabOrder": 3000
   },
   "visualGroup": {
     "displayName": "Filter menu button",

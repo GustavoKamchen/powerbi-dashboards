@@ -4,10 +4,10 @@
   "position": {
     "x": 285,
     "y": 60,
-    "z": 2000,
+    "z": 1000,
     "height": 440,
     "width": 985,
-    "tabOrder": 2000
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "stackedAreaChart",
@@ -460,37 +460,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "139561c7004ce71b8ae9",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dCalendar"
-              }
-            },
-            "Property": "Date"
-          }
-        },
-        "type": "Categorical"
-      },
-      {
-        "name": "528c707ab701d1d96aa0",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Close Price"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

@@ -3,11 +3,11 @@
   "name": "3fcb4a3576d5898f13d5",
   "position": {
     "x": 760,
-    "y": 240,
-    "z": 3,
-    "height": 230,
+    "y": 260,
+    "z": 3000,
+    "height": 220,
     "width": 510,
-    "tabOrder": 1003
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "stackedAreaChart",
@@ -115,6 +115,20 @@
                   "Value": "false"
                 }
               }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
             }
           }
         }
@@ -147,6 +161,20 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             }
@@ -190,6 +218,24 @@
       "dataPoint": [
         {
           "properties": {}
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#B3B3B3'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Rolling 12M Return %"
+          }
         }
       ],
       "plotArea": [
@@ -217,6 +263,19 @@
         }
       ],
       "legend": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
         {
           "properties": {
             "show": {

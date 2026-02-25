@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
   "name": "d101cd26fbc582adb0a7",
   "position": {
-    "x": 440,
+    "x": 420,
     "y": 60,
-    "z": 1,
-    "height": 170,
-    "width": 830,
-    "tabOrder": 1001
+    "z": 1000,
+    "height": 190,
+    "width": 850,
+    "tabOrder": 0
   },
   "visual": {
     "visualType": "pivotTable",
@@ -136,7 +136,7 @@
                                   },
                                   "Right": {
                                     "Literal": {
-                                      "Value": "-99999999999D"
+                                      "Value": "-9999999999D"
                                     }
                                   }
                                 }
@@ -165,7 +165,7 @@
                           },
                           "Value": {
                             "Literal": {
-                              "Value": "'#FF5B67'"
+                              "Value": "'#FF6464'"
                             }
                           }
                         },
@@ -207,6 +207,57 @@
                                   },
                                   "Right": {
                                     "Literal": {
+                                      "Value": "0.05D"
+                                    }
+                                  }
+                                }
+                              }
+                            }
+                          },
+                          "Value": {
+                            "Literal": {
+                              "Value": "'#FFFF64'"
+                            }
+                          }
+                        },
+                        {
+                          "Condition": {
+                            "And": {
+                              "Left": {
+                                "Comparison": {
+                                  "ComparisonKind": 2,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_Measures"
+                                        }
+                                      },
+                                      "Property": "Monthly Return %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
+                                      "Value": "0.05D"
+                                    }
+                                  }
+                                }
+                              },
+                              "Right": {
+                                "Comparison": {
+                                  "ComparisonKind": 3,
+                                  "Left": {
+                                    "Measure": {
+                                      "Expression": {
+                                        "SourceRef": {
+                                          "Entity": "_Measures"
+                                        }
+                                      },
+                                      "Property": "Monthly Return %"
+                                    }
+                                  },
+                                  "Right": {
+                                    "Literal": {
                                       "Value": "9999999D"
                                     }
                                   }
@@ -216,7 +267,7 @@
                           },
                           "Value": {
                             "Literal": {
-                              "Value": "'#1AFF5B'"
+                              "Value": "'#64FF64'"
                             }
                           }
                         }
@@ -246,6 +297,25 @@
                   "Value": "'Arial'"
                 }
               }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
+            },
+            "backColorSecondary": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
             }
           }
         }
@@ -256,13 +326,42 @@
             "value": {
               "expr": {
                 "Literal": {
-                  "Value": "67.932674728165D"
+                  "Value": "49.78939999555589D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "dCalendar.Year"
+          }
+        },
+        {
+          "properties": {},
+          "selector": {
+            "data": [
+              {
+                "scopeId": {
+                  "Comparison": {
+                    "ComparisonKind": 0,
+                    "Left": {
+                      "Column": {
+                        "Expression": {
+                          "SourceRef": {
+                            "Entity": "dCalendar"
+                          }
+                        },
+                        "Property": "MonthNameShort"
+                      }
+                    },
+                    "Right": {
+                      "Literal": {
+                        "Value": "'Jan'"
+                      }
+                    }
+                  }
+                }
+              }
+            ]
           }
         }
       ],
@@ -273,6 +372,13 @@
               "expr": {
                 "Literal": {
                   "Value": "'Arial'"
+                }
+              }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
                 }
               }
             }
@@ -295,6 +401,13 @@
                   "Value": "10D"
                 }
               }
+            },
+            "outlineStyle": {
+              "expr": {
+                "Literal": {
+                  "Value": "0D"
+                }
+              }
             }
           }
         }
@@ -305,10 +418,82 @@
             "rowPadding": {
               "expr": {
                 "Literal": {
+                  "Value": "5D"
+                }
+              }
+            },
+            "gridHorizontal": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridHorizontalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "gridHorizontalWeight": {
+              "expr": {
+                "Literal": {
                   "Value": "3D"
                 }
               }
+            },
+            "gridVertical": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "gridVerticalColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            },
+            "gridVerticalWeight": {
+              "expr": {
+                "Literal": {
+                  "Value": "3D"
+                }
+              }
+            },
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
             }
+          }
+        }
+      ],
+      "columnFormatting": [
+        {
+          "properties": {},
+          "selector": {
+            "metadata": "_Measures.Monthly Return %"
           }
         }
       ]
@@ -439,6 +624,13 @@
               }
             },
             "right": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "left": {
               "expr": {
                 "Literal": {
                   "Value": "10D"

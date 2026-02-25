@@ -4,10 +4,10 @@
   "position": {
     "x": 0,
     "y": 0,
-    "z": 8503,
+    "z": 4000,
     "height": 50,
     "width": 1280,
-    "tabOrder": 6001
+    "tabOrder": 4000
   },
   "visualGroup": {
     "displayName": "Header",

@@ -3,11 +3,11 @@
   "name": "e6f945f2721db9378d1b",
   "position": {
     "x": 760.39900249376558,
-    "y": 480,
-    "z": 2,
-    "height": 230,
+    "y": 490,
+    "z": 2000,
+    "height": 220,
     "width": 510,
-    "tabOrder": 1002
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "clusteredColumnChart",
@@ -20,14 +20,14 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "Return bins"
+                      "Entity": "fPrices"
                     }
                   },
-                  "Property": "Value"
+                  "Property": "Daily_return_bin"
                 }
               },
-              "queryRef": "Return bins.Value",
-              "nativeQueryRef": "Soma de Value",
+              "queryRef": "fPrices.Daily_return_bin",
+              "nativeQueryRef": "Daily_return_bin",
               "active": true
             }
           ]
@@ -46,7 +46,8 @@
                 }
               },
               "queryRef": "_Measures.Return Frequency",
-              "nativeQueryRef": "Return Frequency"
+              "nativeQueryRef": "Days",
+              "displayName": "Days"
             }
           ]
         }
@@ -80,6 +81,34 @@
                   "Value": "false"
                 }
               }
+            },
+            "axisType": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Scalar'"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            },
+            "invertAxis": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         }
@@ -91,6 +120,50 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            },
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#B3B3B3'"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "labels": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }
