@@ -77,7 +77,7 @@
             "Property": "Date"
           }
         },
-        "type": "Advanced",
+        "type": "Categorical",
         "howCreated": "User"
       }
     ],

@@ -12,40 +12,10 @@ table fPrices
 
 		annotation UnderlyingDateTimeDataType = Date
 
-	column Open
-		dataType: double
-		lineageTag: 7e7ff1d7-1312-4547-9948-5add5c6aa5db
-		summarizeBy: sum
-		sourceColumn: Open
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column High
-		dataType: double
-		lineageTag: 13797a08-1075-49d0-a415-fee2df079d6e
-		summarizeBy: sum
-		sourceColumn: High
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Low
-		dataType: double
-		lineageTag: 142e88cf-3f65-427b-8133-f75c3076c8dc
-		summarizeBy: sum
-		sourceColumn: Low
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Close
-		dataType: double
+		dataType: decimal
 		lineageTag: 74dfc5b7-63f7-4a15-976d-7f364736c9dd
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Close
 
 		annotation SummarizationSetBy = Automatic
@@ -56,62 +26,33 @@ table fPrices
 		dataType: int64
 		formatString: 0
 		lineageTag: 14ebdf75-b4f2-43a5-a94e-1a0c3bcb1d73
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Volume
 
 		annotation SummarizationSetBy = Automatic
 
 	column Daily_Return
-		dataType: double
+		dataType: decimal
 		formatString: 0.0000000000%;-0.0000000000%;0.0000000000%
 		lineageTag: 8960afa5-261a-4681-9bca-dc22c133c585
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Daily_Return
 
 		annotation SummarizationSetBy = Automatic
 
-	column Price_Range
-		dataType: double
-		lineageTag: f85f5a51-0daa-42e8-95c5-c582f6b8b7de
-		summarizeBy: sum
-		sourceColumn: Price_Range
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
-	column Price_Change
-		dataType: double
-		lineageTag: b2ec5c3b-23cf-45a7-9d57-4c50172523b9
-		summarizeBy: sum
-		sourceColumn: Price_Change
-
-		annotation SummarizationSetBy = Automatic
-
-		annotation PBI_FormatHint = {"isGeneralNumber":true}
-
 	column Daily_return_bin
-		dataType: double
+		dataType: decimal
 		formatString: 0%;-0%;0%
 		lineageTag: c45bb748-102e-4075-b786-455f90d953e6
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Daily_return_bin
 
 		annotation SummarizationSetBy = Automatic
 
-	column Index
-		dataType: int64
-		formatString: 0
-		lineageTag: bc544c09-c71c-40dc-b4ba-698600b0a897
-		summarizeBy: sum
-		sourceColumn: Index
-
-		annotation SummarizationSetBy = Automatic
-
 	column 'Running Max Price'
-		dataType: double
+		dataType: decimal
 		lineageTag: 1b1a7161-2a03-4d50-a7c3-7dbc1064a9ee
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Running Max Price
 
 		annotation SummarizationSetBy = Automatic
@@ -138,9 +79,10 @@ table fPrices
 				            "Running Max Price",
 				            each List.Max(List.FirstN(CloseList, [Index] + 1)),
 				            type number
-				        )
+				        ),
+				    #"Columns removed by Measure Killer"= Table.SelectColumns(AddRunningMax,{"Daily_Return","Date","Volume","Close","Daily_return_bin","Running Max Price"})
 				in
-				    AddRunningMax
+				    #"Columns removed by Measure Killer"
 
 	annotation PBI_NavigationStepName = Navegação
 

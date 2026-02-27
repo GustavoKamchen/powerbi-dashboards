@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "ffe57c28e13048e13855",
   "position": {
     "x": 10.459652706843718,
     "y": 430,
-    "z": 2,
+    "z": 2000,
     "height": 280,
     "width": 620,
-    "tabOrder": 2002
+    "tabOrder": 1000
   },
   "visual": {
     "visualType": "lineChart",
@@ -119,6 +119,19 @@
               "expr": {
                 "Literal": {
                   "Value": "false"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "lineStyles": [
+        {
+          "properties": {
+            "strokeWidth": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
                 }
               }
             }

@@ -1,13 +1,13 @@
 {
-  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.6.0/schema.json",
   "name": "faed92501bb84c5b1bb0",
   "position": {
     "x": 10.459652706843718,
     "y": 60.143003064351376,
-    "z": 4,
+    "z": 3000,
     "height": 360,
     "width": 1260,
-    "tabOrder": 2004
+    "tabOrder": 2000
   },
   "visual": {
     "visualType": "scatterChart",
@@ -1091,79 +1091,5 @@
       ]
     },
     "drillFilterOtherVisuals": true
-  },
-  "filterConfig": {
-    "filters": [
-      {
-        "name": "5befc1b247aee070c7e7",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Volatility %"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "3fdcc2480690a45a092b",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dCalendar"
-              }
-            },
-            "Property": "Year"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "ea9a0e5ba6664a7a4104",
-        "field": {
-          "Column": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "dCalendar"
-              }
-            },
-            "Property": "Decade"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "a551927f737e2d9736d8",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Annual Return %"
-          }
-        },
-        "type": "Advanced"
-      },
-      {
-        "name": "f0a004a68d2e1d732b9a",
-        "field": {
-          "Measure": {
-            "Expression": {
-              "SourceRef": {
-                "Entity": "_Measures"
-              }
-            },
-            "Property": "Annual Sharpe"
-          }
-        },
-        "type": "Advanced"
-      }
-    ]
   }
 }

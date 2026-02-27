@@ -110,10 +110,6 @@ table _Measures
 
 		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
 
-	measure Volume = SUM(fPrices[Volume])
-		formatString: #,0
-		lineageTag: 3ebf9713-c8f7-4591-8c1f-20a047672287
-
 	measure 'Rolling 30d Avg Volume' =
 			
 			AVERAGEX(
@@ -309,11 +305,18 @@ table _Measures
 
 	measure 'FC Annual return' =
 			
+			VAR _MAX = MAXX(ALLSELECTED(dCalendar[Year]), [Annual Return %])
+			
+			VAR _MIN = MINX(ALLSELECTED(dCalendar[Year]), [Annual Return %])
+			
+			RETURN
+			
 			SWITCH(
 			    TRUE,
-			    [Annual Return %] > 0.05, "#64FF64",
-			    [Annual Return %] > 0, "#FFFF64",
-			    "#FF6464"
+			    [Annual Return %] = _MAX, "RGBA(100, 255, 100, 1)",
+			    [Annual Return %] > 0, "RGBA(100, 255, 100, 0.5)",
+			    [Annual Return %] = _MIN, "RGBA(255, 100, 100, 1)",
+			    "RGBA(255, 100, 100, 0.5)"
 			)
 		lineageTag: 6c1cf4e5-44d8-4396-9ef2-ee31140d0bcd
 
