@@ -3,10 +3,10 @@
   "name": "75fcfae559451c3927d5",
   "position": {
     "x": 10,
-    "y": 260,
+    "y": 60.3220316795392,
     "z": 4000,
-    "height": 450,
-    "width": 740,
+    "height": 370.37727451237072,
+    "width": 840.88912161277653,
     "tabOrder": 3000
   },
   "visual": {
@@ -295,6 +295,38 @@
               "expr": {
                 "Literal": {
                   "Value": "10D"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "subTitle": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "CAGR subtitle"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Arial'"
                 }
               }
             }

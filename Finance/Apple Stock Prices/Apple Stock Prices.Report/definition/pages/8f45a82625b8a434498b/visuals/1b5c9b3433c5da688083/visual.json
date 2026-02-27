@@ -1,16 +1,16 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.5.0/schema.json",
-  "name": "e6f945f2721db9378d1b",
+  "name": "1b5c9b3433c5da688083",
   "position": {
-    "x": 860.192171750229,
-    "y": 60.3220316795392,
-    "z": 2000,
-    "height": 370.37727451237072,
-    "width": 410.18981542086658,
-    "tabOrder": 1000
+    "x": 640,
+    "y": 430.15321756894787,
+    "z": 1,
+    "height": 280,
+    "width": 630,
+    "tabOrder": 2001
   },
   "visual": {
-    "visualType": "clusteredColumnChart",
+    "visualType": "lineChart",
     "query": {
       "queryState": {
         "Category": {
@@ -20,16 +20,15 @@
                 "Column": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fPrices"
+                      "Entity": "dCalendar"
                     }
                   },
-                  "Property": "Daily_return_bin"
+                  "Property": "Date"
                 }
               },
-              "queryRef": "fPrices.Daily_return_bin",
-              "nativeQueryRef": "Daily return interval (5% range)",
-              "active": true,
-              "displayName": "Daily return interval (5% range)"
+              "queryRef": "dCalendar.Date",
+              "nativeQueryRef": "Date",
+              "active": true
             }
           ]
         },
@@ -43,12 +42,11 @@
                       "Entity": "_Measures"
                     }
                   },
-                  "Property": "Return Frequency"
+                  "Property": "Drawdown %"
                 }
               },
-              "queryRef": "_Measures.Return Frequency",
-              "nativeQueryRef": "Days",
-              "displayName": "Days"
+              "queryRef": "_Measures.Drawdown %",
+              "nativeQueryRef": "Drawdown %"
             }
           ]
         }
@@ -57,54 +55,47 @@
         "sort": [
           {
             "field": {
-              "Measure": {
+              "Column": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "_Measures"
+                    "Entity": "dCalendar"
                   }
                 },
-                "Property": "Return Frequency"
+                "Property": "Date"
               }
             },
-            "direction": "Descending"
+            "direction": "Ascending"
           }
         ],
         "isDefaultSort": true
       }
     },
     "objects": {
+      "dataPoint": [
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": -0.3
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Drawdown %"
+          }
+        }
+      ],
       "categoryAxis": [
         {
           "properties": {
             "showAxisTitle": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "axisType": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Scalar'"
-                }
-              }
-            },
-            "fontFamily": {
-              "expr": {
-                "Literal": {
-                  "Value": "'Arial'"
-                }
-              }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "invertAxis": {
               "expr": {
                 "Literal": {
                   "Value": "false"
@@ -123,50 +114,6 @@
                   "Value": "false"
                 }
               }
-            },
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "dataPoint": [
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#B3B3B3'"
-                    }
-                  }
-                }
-              }
-            }
-          }
-        }
-      ],
-      "labels": [
-        {
-          "properties": {
-            "show": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
             }
           }
         }
@@ -179,28 +126,34 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Daily return distribution'"
+                  "Value": "'Drawdown'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "padding": [
+        {
+          "properties": {
+            "top": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
                 }
               }
             },
-            "fontFamily": {
+            "left": {
               "expr": {
                 "Literal": {
-                  "Value": "'Arial'"
+                  "Value": "10D"
                 }
               }
             },
-            "fontSize": {
+            "right": {
               "expr": {
                 "Literal": {
-                  "Value": "12D"
-                }
-              }
-            },
-            "bold": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
+                  "Value": "10D"
                 }
               }
             }
@@ -223,7 +176,7 @@
                   "expr": {
                     "ThemeDataColor": {
                       "ColorId": 0,
-                      "Percent": -0.1
+                      "Percent": 0
                     }
                   }
                 }
@@ -267,40 +220,6 @@
               "expr": {
                 "Literal": {
                   "Value": "85D"
-                }
-              }
-            }
-          }
-        }
-      ],
-      "padding": [
-        {
-          "properties": {
-            "top": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "left": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "bottom": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            },
-            "right": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
                 }
               }
             }

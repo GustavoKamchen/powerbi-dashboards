@@ -99,6 +99,25 @@ table fPrices
 
 		annotation SummarizationSetBy = Automatic
 
+	column Index
+		dataType: int64
+		formatString: 0
+		lineageTag: bc544c09-c71c-40dc-b4ba-698600b0a897
+		summarizeBy: sum
+		sourceColumn: Index
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Running Max Price'
+		dataType: double
+		lineageTag: 1b1a7161-2a03-4d50-a7c3-7dbc1064a9ee
+		summarizeBy: sum
+		sourceColumn: Running Max Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition fPrices = m
 		mode: import
 		source =
@@ -109,9 +128,19 @@ table fPrices
 				    #"Tipo Alterado" = Table.TransformColumnTypes(#"Tipo Alterado com Localidade",{{"Volume", Int64.Type}, {"Date", type date}}),
 				    #"Divided Column" = Table.TransformColumns(#"Tipo Alterado", {{"Daily_Return", each _ / 100, type number}}),
 				    #"Changed Type" = Table.TransformColumnTypes(#"Divided Column",{{"Daily_Return", Percentage.Type}}),
-				    #"Inserted Rounding" = Table.AddColumn(#"Changed Type", "Daily_return_bin", each Number.IntegerDivide([Daily_Return], 0.05) * 0.05, Percentage.Type)
+				    #"Inserted Rounding" = Table.AddColumn(#"Changed Type", "Daily_return_bin", each Number.IntegerDivide([Daily_Return], 0.05) * 0.05, Percentage.Type),
+				    Sorted = Table.Buffer(Table.Sort(#"Inserted Rounding", {{"Date", Order.Ascending}})),
+				    Indexed = Table.AddIndexColumn(Sorted, "Index", 0, 1, Int64.Type),
+				    CloseList = Indexed[Close],
+				    AddRunningMax =
+				        Table.AddColumn(
+				            Indexed,
+				            "Running Max Price",
+				            each List.Max(List.FirstN(CloseList, [Index] + 1)),
+				            type number
+				        )
 				in
-				    #"Inserted Rounding"
+				    AddRunningMax
 
 	annotation PBI_NavigationStepName = Navegação
 

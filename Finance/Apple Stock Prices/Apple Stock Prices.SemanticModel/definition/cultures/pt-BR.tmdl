@@ -10779,134 +10779,6 @@ cultureInfo pt-BR
 			        }
 			      ]
 			    },
-			    "entity__measure.running_max_price": {
-			      "Definition": {
-			        "Binding": {
-			          "ConceptualEntity": "_Measures",
-			          "ConceptualProperty": "Running Max Price"
-			        }
-			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "running max price": {
-			            "State": "Generated"
-			          }
-			        },
-			        {
-			          "price": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "max price": {
-			            "State": "Generated",
-			            "Weight": 0.97
-			          }
-			        },
-			        {
-			          "running maximum price": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.591
-			          }
-			        },
-			        {
-			          "maximum price": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.582
-			          }
-			        },
-			        {
-			          "running max value": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "running max worth": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "running max fee": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "running max charge": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "running max amount": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "running max bill": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "running max rate": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        },
-			        {
-			          "running max expense": {
-			            "Type": "Noun",
-			            "State": "Suggested",
-			            "Source": {
-			              "Agent": "Thesaurus"
-			            },
-			            "Weight": 0.492
-			          }
-			        }
-			      ]
-			    },
 			    "entity__measure.drawdown_": {
 			      "Definition": {
 			        "Binding": {
@@ -12489,16 +12361,6 @@ cultureInfo pt-BR
 			            },
 			            "Weight": 0.452
 			          }
-			        },
-			        {
-			          "Daily return": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
 			        }
 			      ]
 			    },
@@ -13367,9 +13229,336 @@ cultureInfo pt-BR
 			          }
 			        }
 			      ]
+			    },
+			    "entity__measure.CAGR_subtitle": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "CAGR subtitle"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "CAGR subtitle": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "subtitle": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "cagr slogan": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "cagr description": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "cagr legend": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "cagr header": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "cagr footer": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "cagr surtitle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "cagr supertitle": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.5
+			          }
+			        },
+			        {
+			          "slogan": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "description": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "legend": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        }
+			      ]
+			    },
+			    "f_price.daily_return_bin": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fPrices",
+			          "ConceptualProperty": "Daily_return_bin"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "daily return bin": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "Daily_return_bin": {
+			            "Type": "Noun",
+			            "State": "Generated",
+			            "Weight": 0.99
+			          }
+			        },
+			        {
+			          "bin": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "daily return basket": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "daily return container": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "daily return holder": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.508
+			          }
+			        },
+			        {
+			          "daily return box": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "daily return silo": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "daily return tub": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "daily return case": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "daily return vat": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "basket": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "container": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.491
+			          }
+			        },
+			        {
+			          "Daily return interval (5% range)": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
+			    "f_price_has_daily_return": {
+			      "Binding": {
+			        "ConceptualEntity": "fPrices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_price": {
+			          "Target": {
+			            "Entity": "f_price"
+			          }
+			        },
+			        "f_price.daily_return": {
+			          "Target": {
+			            "Entity": "f_price.daily_return"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_price"
+			            },
+			            "Object": {
+			              "Role": "f_price.daily_return"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_prices_have_daily_returns"
+			        }
+			      ]
+			    },
+			    "f_price_has_volume": {
+			      "Binding": {
+			        "ConceptualEntity": "fPrices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_price": {
+			          "Target": {
+			            "Entity": "f_price"
+			          }
+			        },
+			        "f_price.volume": {
+			          "Target": {
+			            "Entity": "f_price.volume"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_price"
+			            },
+			            "Object": {
+			              "Role": "f_price.volume"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_prices_have_volumes"
+			        }
+			      ]
+			    },
 			    "f_price_has_close": {
 			      "Binding": {
 			        "ConceptualEntity": "fPrices"
@@ -18242,72 +18431,6 @@ cultureInfo pt-BR
 			        }
 			      ]
 			    },
-			    "f_price_has_volume": {
-			      "Binding": {
-			        "ConceptualEntity": "fPrices"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_price": {
-			          "Target": {
-			            "Entity": "f_price"
-			          }
-			        },
-			        "f_price.volume": {
-			          "Target": {
-			            "Entity": "f_price.volume"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_price"
-			            },
-			            "Object": {
-			              "Role": "f_price.volume"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_prices_have_volumes"
-			        }
-			      ]
-			    },
-			    "f_price_has_daily_return": {
-			      "Binding": {
-			        "ConceptualEntity": "fPrices"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_price": {
-			          "Target": {
-			            "Entity": "f_price"
-			          }
-			        },
-			        "f_price.daily_return": {
-			          "Target": {
-			            "Entity": "f_price.daily_return"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_price"
-			            },
-			            "Object": {
-			              "Role": "f_price.daily_return"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_prices_have_daily_returns"
-			        }
-			      ]
-			    },
 			    "f_price_has_price_range": {
 			      "Binding": {
 			        "ConceptualEntity": "fPrices"
@@ -18371,6 +18494,72 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "f_prices_have_price_changes"
+			        }
+			      ]
+			    },
+			    "entity__measure_has_CAGR_subtitle": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__measure": {
+			          "Target": {
+			            "Entity": "entity__measure"
+			          }
+			        },
+			        "entity__measure.CAGR_subtitle": {
+			          "Target": {
+			            "Entity": "entity__measure.CAGR_subtitle"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__measure"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.CAGR_subtitle"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_CAGR_subtitle"
+			        }
+			      ]
+			    },
+			    "f_price_has_daily_return_bin": {
+			      "Binding": {
+			        "ConceptualEntity": "fPrices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_price": {
+			          "Target": {
+			            "Entity": "f_price"
+			          }
+			        },
+			        "f_price.daily_return_bin": {
+			          "Target": {
+			            "Entity": "f_price.daily_return_bin"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_price"
+			            },
+			            "Object": {
+			              "Role": "f_price.daily_return_bin"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_prices_have_daily_return_bins"
 			        }
 			      ]
 			    },

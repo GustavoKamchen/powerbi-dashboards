@@ -59,25 +59,15 @@ table _Measures
 		formatString: #,0.00%;-#,0.00%;#,0.00%
 		lineageTag: 8b3802bb-fe9a-4c7a-8d81-9aeca5cbc332
 
-	measure 'Running Max Price' =
-			
-			CALCULATE(
-			    MAX(fPrices[Close]),
-			    FILTER(
-			        ALL(dCalendar),
-			        dCalendar[Date] <= MAX(dCalendar[Date])
-			    )
-			)
-		formatString: \$#,0.00;(\$#,0.00);\$#,0.00
-		lineageTag: 0ad7ba6c-0950-41fd-b691-e15f4afebcdf
-
-		annotation PBI_FormatHint = {"currencyCulture":"en-US"}
-
 	measure 'Drawdown %' =
 			
+			VAR _RUNNING_MAX_PRICE = MAX(fPrices[Running Max Price])
+			
+			RETURN
+			
 			DIVIDE(
-			    MAX(fPrices[Close]) - [Running Max Price],
-			    [Running Max Price]
+			    MAX(fPrices[Close]) - _RUNNING_MAX_PRICE,
+			    _RUNNING_MAX_PRICE
 			)
 		formatString: #,0.00%;-#,0.00%;#,0.00%
 		lineageTag: 5e4e5ea8-4ecc-4e01-8739-cbae807f92ac
@@ -274,13 +264,13 @@ table _Measures
 			VAR _FirstDate =
 			    CALCULATE(
 			        MIN(fPrices[Date]),
-			        ALL(fPrices)
+			        ALL(fPrices[Date])
 			    )
 			
 			VAR _LastDate =
 			    CALCULATE(
 			        MAX(fPrices[Date]),
-			        ALL(fPrices)
+			        ALL(fPrices[Date])
 			    )
 			
 			VAR _FirstPrice =
@@ -311,17 +301,10 @@ table _Measures
 
 	measure 'Return Frequency' =
 			
-			VAR BinStart = SELECTEDVALUE('Return Bins'[Value])
-			VAR BinEnd = BinStart + 0.05
-			
-			RETURN
-			
 			CALCULATE(
-			    COUNTROWS(fPrices)//,
-			    //fPrices[Daily_Return] >= BinStart,
-			    //fPrices[Daily_Return] < BinEnd
+			    COUNTROWS(fPrices)
 			)
-		formatString: 0
+		formatString: #,0
 		lineageTag: 2c159814-981f-4a92-a57e-82cc72fbd763
 
 	measure 'FC Annual return' =
@@ -333,6 +316,67 @@ table _Measures
 			    "#FF6464"
 			)
 		lineageTag: 6c1cf4e5-44d8-4396-9ef2-ee31140d0bcd
+
+	measure 'CAGR subtitle' = "CAGR: " & FORMAT([CAGR %], "#.##%")
+		lineageTag: 356c3c8b-05b8-47f5-b1f8-87222d01f7ab
+
+	measure 'Volatility %' =
+			
+			STDEVX.P(
+			    VALUES(dCalendar[Date]),
+			    [Daily Return %]
+			) * SQRT(252)
+		formatString: 0.00%;-0.00%;0.00%
+		lineageTag: 51758f1f-1767-4428-85bf-42e37c760dc1
+
+	measure 'Annual Sharpe' =
+			
+			VAR RiskFreeAnnual = 0.05
+			VAR DailyRF = RiskFreeAnnual / 252
+			
+			VAR AvgDailyReturn =
+			    AVERAGEX(
+			        VALUES(dCalendar[Date]),
+			        [Daily Return %]
+			    )
+			
+			VAR DailyVol =
+			    STDEVX.P(
+			        VALUES(dCalendar[Date]),
+			        [Daily Return %]
+			    )
+			
+			RETURN
+			IF(
+			    NOT ISBLANK(DailyVol) && DailyVol > 0,
+			    DIVIDE(
+			        AvgDailyReturn - DailyRF,
+			        DailyVol
+			    ) * SQRT(252)
+			)
+		lineageTag: 0615594b-0ff8-4b3a-a728-5785f8261e23
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average annual volatility' =
+			
+			AVERAGEX(
+			    VALUES(dCalendar[Year]),
+			    [Volatility %]
+			)
+		lineageTag: 9298fe1e-9bb4-4ffd-9815-b77e903b03c4
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Average annual return' =
+			
+			AVERAGEX(
+			    VALUES(dCalendar[Year]),
+			    [Annual Return %]
+			)
+		lineageTag: 5b3c0db7-27a9-4d89-97d1-decd99a4136e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
 	partition _Measures = m
 		mode: import

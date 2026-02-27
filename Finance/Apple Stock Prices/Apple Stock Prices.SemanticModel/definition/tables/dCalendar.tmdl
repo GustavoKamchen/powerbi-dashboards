@@ -1166,6 +1166,13 @@ table dCalendar
 
 		annotation SummarizationSetBy = Automatic
 
+	column Decade = INT(YEAR(dCalendar[Date]) / 10) * 10
+		formatString: 0
+		lineageTag: cde8e89d-cc48-41c8-952a-dfb465a19494
+		summarizeBy: none
+
+		annotation SummarizationSetBy = Automatic
+
 	partition dCalendar = m
 		mode: import
 		source = ```

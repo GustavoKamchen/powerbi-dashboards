@@ -1,0 +1,8 @@
+{
+  "name": "Custom",
+  "textClasses": {
+    "label": {
+      "fontFace": "Arial"
+    }
+  }
+}

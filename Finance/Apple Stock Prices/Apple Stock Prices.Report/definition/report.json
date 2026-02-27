@@ -9,6 +9,15 @@
         "page": "1.3.97"
       },
       "type": "SharedResources"
+    },
+    "customTheme": {
+      "name": "Custom9271511036001944.json",
+      "reportVersionAtImport": {
+        "visual": "2.5.0",
+        "report": "3.1.0",
+        "page": "2.3.0"
+      },
+      "type": "RegisteredResources"
     }
   },
   "filterConfig": {
@@ -127,6 +136,11 @@
           "name": "filter_white6498745053785595.svg",
           "path": "filter_white6498745053785595.svg",
           "type": "Image"
+        },
+        {
+          "name": "Custom9271511036001944.json",
+          "path": "Custom9271511036001944.json",
+          "type": "CustomTheme"
         }
       ]
     }
