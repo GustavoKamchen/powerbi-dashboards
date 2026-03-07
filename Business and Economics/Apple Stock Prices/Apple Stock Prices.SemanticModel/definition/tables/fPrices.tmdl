@@ -13,9 +13,9 @@ table fPrices
 		annotation UnderlyingDateTimeDataType = Date
 
 	column Close
-		dataType: decimal
+		dataType: double
 		lineageTag: 74dfc5b7-63f7-4a15-976d-7f364736c9dd
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Close
 
 		annotation SummarizationSetBy = Automatic
@@ -32,27 +32,27 @@ table fPrices
 		annotation SummarizationSetBy = Automatic
 
 	column Daily_Return
-		dataType: decimal
+		dataType: double
 		formatString: 0.0000000000%;-0.0000000000%;0.0000000000%
 		lineageTag: 8960afa5-261a-4681-9bca-dc22c133c585
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Daily_Return
 
 		annotation SummarizationSetBy = Automatic
 
 	column Daily_return_bin
-		dataType: decimal
+		dataType: double
 		formatString: 0%;-0%;0%
 		lineageTag: c45bb748-102e-4075-b786-455f90d953e6
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Daily_return_bin
 
 		annotation SummarizationSetBy = Automatic
 
 	column 'Running Max Price'
-		dataType: decimal
+		dataType: double
 		lineageTag: 1b1a7161-2a03-4d50-a7c3-7dbc1064a9ee
-		summarizeBy: none
+		summarizeBy: sum
 		sourceColumn: Running Max Price
 
 		annotation SummarizationSetBy = Automatic

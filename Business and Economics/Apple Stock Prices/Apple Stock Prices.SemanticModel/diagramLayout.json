@@ -36,18 +36,6 @@
         },
         {
           "location": {
-            "x": 576,
-            "y": 67.75
-          },
-          "nodeIndex": "Return bins",
-          "size": {
-            "height": 200,
-            "width": 234
-          },
-          "zIndex": 0
-        },
-        {
-          "location": {
             "x": 253.39999389648438,
             "y": 196
           },
