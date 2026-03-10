@@ -47,17 +47,6 @@
               },
               "queryRef": "_Measures.Rolling 30d Avg Volume",
               "nativeQueryRef": "Rolling 30d Avg Volume"
-            },
-            {
-              "field": {
-                "NativeVisualCalculation": {
-                  "Language": "dax",
-                  "Expression": "\nVAR _MAX = MAXX(ROWS, [Rolling 30d Avg Volume])\n\nRETURN\n\nIF(\n    [Rolling 30d Avg Volume] = _MAX,\n    _MAX\n)",
-                  "Name": "Max volume"
-                }
-              },
-              "queryRef": "select",
-              "nativeQueryRef": "Max volume"
             }
           ]
         }
@@ -175,38 +164,6 @@
               }
             }
           }
-        },
-        {
-          "properties": {
-            "showMarker": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "strokeShow": {
-              "expr": {
-                "Literal": {
-                  "Value": "false"
-                }
-              }
-            },
-            "markerColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#00FF00'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "select"
-          }
         }
       ],
       "dataPoint": [
@@ -227,40 +184,6 @@
           },
           "selector": {
             "metadata": "_Measures.Rolling 30d Avg Volume"
-          }
-        },
-        {
-          "properties": {
-            "fill": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#00FF00'"
-                    }
-                  }
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "select"
-          }
-        }
-      ],
-      "markers": [
-        {
-          "properties": {
-            "transparency": {
-              "expr": {
-                "Literal": {
-                  "Value": "50D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "select"
           }
         }
       ],
