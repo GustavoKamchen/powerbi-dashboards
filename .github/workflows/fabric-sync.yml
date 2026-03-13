@@ -28,7 +28,6 @@ jobs:
           PBI_CONNECTION_ID: ${{ secrets.PBI_CONNECTION_ID }}
           PBI_TENANT_ID: ${{ secrets.PBI_TENANT_ID }}
           PBI_CLIENT_ID: ${{ secrets.PBI_CLIENT_ID }}
-          PBI_USERNAME: ${{ secrets.PBI_USERNAME }}
-          PBI_PASSWORD: ${{ secrets.PBI_PASSWORD }}
+          PBI_CLIENT_SECRET: ${{ secrets.PBI_CLIENT_SECRET }}
         run: |
           python scripts/sync_workspace.py
