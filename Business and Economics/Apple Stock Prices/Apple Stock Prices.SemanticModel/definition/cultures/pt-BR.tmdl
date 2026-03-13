@@ -3496,187 +3496,267 @@ cultureInfo pt-BR
 			          }
 			        }
 			      ]
+			    },
+			    "entity__measure.max_close_price": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Max close price"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "max close price": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "price": {
+			            "State": "Generated",
+			            "Weight": 0.97
+			          }
+			        },
+			        {
+			          "maximum close price": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.591
+			          }
+			        },
+			        {
+			          "max close value": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "max close worth": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "max close fee": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "max close charge": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "max close amount": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "max close bill": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "max close rate": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "max close expense": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "max close cost": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.492
+			          }
+			        },
+			        {
+			          "Max": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "entity__measure.max_rolling_30d_avg_volume": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "_Measures",
+			          "ConceptualProperty": "Max Rolling 30d Avg Volume"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "max rolling 30d avg volume": {
+			            "State": "Generated"
+			          }
+			        },
+			        {
+			          "maximum rolling 30d avg volume": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "max rolling 30d average volume": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.605
+			          }
+			        },
+			        {
+			          "max rolling 30d avg capacity": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "max rolling 30d avg size": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "max rolling 30d avg bulk": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.504
+			          }
+			        },
+			        {
+			          "max rolling 30d avg tome": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.494
+			          }
+			        },
+			        {
+			          "max rolling 30d avg book": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.479
+			          }
+			        },
+			        {
+			          "max rolling 30d avg work": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.479
+			          }
+			        },
+			        {
+			          "max rolling 30d avg edition": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.469
+			          }
+			        },
+			        {
+			          "max rolling 30d avg part": {
+			            "Type": "Noun",
+			            "State": "Suggested",
+			            "Source": {
+			              "Agent": "Thesaurus"
+			            },
+			            "Weight": 0.455
+			          }
+			        },
+			        {
+			          "Max": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
 			    }
 			  },
 			  "Relationships": {
-			    "f_price_has_d_calendar": {
-			      "Binding": {
-			        "ConceptualEntity": "fPrices"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_price": {
-			          "Target": {
-			            "Entity": "f_price"
-			          }
-			        },
-			        "d_calendar": {
-			          "Target": {
-			            "Entity": "d_calendar"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_price"
-			            },
-			            "Object": {
-			              "Role": "d_calendar"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_prices_have_d_calendars"
-			        },
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_calendar"
-			            },
-			            "Object": {
-			              "Role": "f_price"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_calendars_have_f_prices"
-			        }
-			      ]
-			    },
-			    "f_price_has_entity__measure_average_annual_return": {
-			      "Binding": {
-			        "ConceptualEntity": "fPrices"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_price": {
-			          "Target": {
-			            "Entity": "f_price"
-			          }
-			        },
-			        "entity__measure.average_annual_return": {
-			          "Target": {
-			            "Entity": "entity__measure.average_annual_return"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_price"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_annual_return"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_prices_have_average_annual_return"
-			        }
-			      ]
-			    },
-			    "d_calendar_has_entity__measure_average_annual_return": {
-			      "Binding": {
-			        "ConceptualEntity": "dCalendar"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "d_calendar": {
-			          "Target": {
-			            "Entity": "d_calendar"
-			          }
-			        },
-			        "entity__measure.average_annual_return": {
-			          "Target": {
-			            "Entity": "entity__measure.average_annual_return"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_calendar"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_annual_return"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_calendars_have_average_annual_return"
-			        }
-			      ]
-			    },
-			    "f_price_has_entity__measure_average_annual_volatility": {
-			      "Binding": {
-			        "ConceptualEntity": "fPrices"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "f_price": {
-			          "Target": {
-			            "Entity": "f_price"
-			          }
-			        },
-			        "entity__measure.average_annual_volatility": {
-			          "Target": {
-			            "Entity": "entity__measure.average_annual_volatility"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "f_price"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_annual_volatility"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "f_prices_have_average_annual_volatility"
-			        }
-			      ]
-			    },
-			    "d_calendar_has_entity__measure_average_annual_volatility": {
-			      "Binding": {
-			        "ConceptualEntity": "dCalendar"
-			      },
-			      "State": "Generated",
-			      "Roles": {
-			        "d_calendar": {
-			          "Target": {
-			            "Entity": "d_calendar"
-			          }
-			        },
-			        "entity__measure.average_annual_volatility": {
-			          "Target": {
-			            "Entity": "entity__measure.average_annual_volatility"
-			          }
-			        }
-			      },
-			      "Phrasings": [
-			        {
-			          "Attribute": {
-			            "Subject": {
-			              "Role": "d_calendar"
-			            },
-			            "Object": {
-			              "Role": "entity__measure.average_annual_volatility"
-			            }
-			          },
-			          "State": "Generated",
-			          "Weight": 0.99,
-			          "ID": "d_calendars_have_average_annual_volatility"
-			        }
-			      ]
-			    },
 			    "f_price_has_entity__measure_annual_sharpe": {
 			      "Binding": {
 			        "ConceptualEntity": "fPrices"
@@ -5063,6 +5143,277 @@ cultureInfo pt-BR
 			          "State": "Generated",
 			          "Weight": 0.99,
 			          "ID": "d_calendars_have_dates"
+			        }
+			      ]
+			    },
+			    "f_price_is_expensive5": {
+			      "Binding": {
+			        "ConceptualEntity": "fPrices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_price": {
+			          "Target": {
+			            "Entity": "f_price"
+			          }
+			        },
+			        "entity__measure.max_close_price": {
+			          "Target": {
+			            "Entity": "entity__measure.max_close_price"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Adjective": {
+			            "Subject": {
+			              "Role": "f_price"
+			            },
+			            "Adjectives": [
+			              {
+			                "expensive": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Antonyms": [
+			              {
+			                "cheap": {
+			                  "State": "Generated"
+			                }
+			              }
+			            ],
+			            "Measurement": {
+			              "Role": "entity__measure.max_close_price"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "max_close_price_indicates_how_expensive_f_prices_are"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_price"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.max_close_price"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_prices_have_max_close_price"
+			        }
+			      ]
+			    },
+			    "d_calendar_has_entity__measure_average_annual_volatility": {
+			      "Binding": {
+			        "ConceptualEntity": "dCalendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendar": {
+			          "Target": {
+			            "Entity": "d_calendar"
+			          }
+			        },
+			        "entity__measure.average_annual_volatility": {
+			          "Target": {
+			            "Entity": "entity__measure.average_annual_volatility"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendar"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.average_annual_volatility"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendars_have_average_annual_volatility"
+			        }
+			      ]
+			    },
+			    "f_price_has_entity__measure_average_annual_volatility": {
+			      "Binding": {
+			        "ConceptualEntity": "fPrices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_price": {
+			          "Target": {
+			            "Entity": "f_price"
+			          }
+			        },
+			        "entity__measure.average_annual_volatility": {
+			          "Target": {
+			            "Entity": "entity__measure.average_annual_volatility"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_price"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.average_annual_volatility"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_prices_have_average_annual_volatility"
+			        }
+			      ]
+			    },
+			    "d_calendar_has_entity__measure_average_annual_return": {
+			      "Binding": {
+			        "ConceptualEntity": "dCalendar"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "d_calendar": {
+			          "Target": {
+			            "Entity": "d_calendar"
+			          }
+			        },
+			        "entity__measure.average_annual_return": {
+			          "Target": {
+			            "Entity": "entity__measure.average_annual_return"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendar"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.average_annual_return"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendars_have_average_annual_return"
+			        }
+			      ]
+			    },
+			    "f_price_has_entity__measure_average_annual_return": {
+			      "Binding": {
+			        "ConceptualEntity": "fPrices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_price": {
+			          "Target": {
+			            "Entity": "f_price"
+			          }
+			        },
+			        "entity__measure.average_annual_return": {
+			          "Target": {
+			            "Entity": "entity__measure.average_annual_return"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_price"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.average_annual_return"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_prices_have_average_annual_return"
+			        }
+			      ]
+			    },
+			    "entity__measure_has_max_rolling_30d_avg_volume": {
+			      "Binding": {
+			        "ConceptualEntity": "_Measures"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "entity__measure": {
+			          "Target": {
+			            "Entity": "entity__measure"
+			          }
+			        },
+			        "entity__measure.max_rolling_30d_avg_volume": {
+			          "Target": {
+			            "Entity": "entity__measure.max_rolling_30d_avg_volume"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "entity__measure"
+			            },
+			            "Object": {
+			              "Role": "entity__measure.max_rolling_30d_avg_volume"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "Phrasing_measures_have_max_rolling_30d_avg_volume"
+			        }
+			      ]
+			    },
+			    "f_price_has_d_calendar": {
+			      "Binding": {
+			        "ConceptualEntity": "fPrices"
+			      },
+			      "State": "Generated",
+			      "Roles": {
+			        "f_price": {
+			          "Target": {
+			            "Entity": "f_price"
+			          }
+			        },
+			        "d_calendar": {
+			          "Target": {
+			            "Entity": "d_calendar"
+			          }
+			        }
+			      },
+			      "Phrasings": [
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "f_price"
+			            },
+			            "Object": {
+			              "Role": "d_calendar"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "f_prices_have_d_calendars"
+			        },
+			        {
+			          "Attribute": {
+			            "Subject": {
+			              "Role": "d_calendar"
+			            },
+			            "Object": {
+			              "Role": "f_price"
+			            }
+			          },
+			          "State": "Generated",
+			          "Weight": 0.99,
+			          "ID": "d_calendars_have_f_prices"
 			        }
 			      ]
 			    }

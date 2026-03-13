@@ -50,14 +50,18 @@
             },
             {
               "field": {
-                "NativeVisualCalculation": {
-                  "Language": "dax",
-                  "Expression": "\nVAR _MAX = CALCULATE(MAX([Close Price]), ALL())\n\nRETURN\n\nIF(\n    [Close Price] = _MAX,\n    _MAX\n)",
-                  "Name": "Max close price"
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Max close price"
                 }
               },
-              "queryRef": "select",
-              "nativeQueryRef": "Max close price"
+              "queryRef": "_Measures.Max close price",
+              "nativeQueryRef": "Max",
+              "displayName": "Max"
             }
           ]
         }
@@ -237,7 +241,7 @@
             "strokeShow": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
@@ -247,21 +251,10 @@
                   "Value": "true"
                 }
               }
-            },
-            "markerColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "Literal": {
-                      "Value": "'#00FF55'"
-                    }
-                  }
-                }
-              }
             }
           },
           "selector": {
-            "metadata": "select"
+            "metadata": "_Measures.Max close price"
           }
         }
       ],
@@ -303,7 +296,7 @@
             }
           },
           "selector": {
-            "metadata": "select"
+            "metadata": "_Measures.Max close price"
           }
         }
       ],

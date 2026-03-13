@@ -381,6 +381,44 @@ table _Measures
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Max close price' = ```
+			
+			VAR _MAX = 
+			    CALCULATE(
+			        [Max closing price],
+			        ALL()
+			    )
+			
+			RETURN
+			
+			IF(
+			    [Close Price] = _MAX,
+			    [Close Price]
+			)
+			```
+		lineageTag: 81bc0296-d7fa-4efc-86ef-bfa5d2938a87
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Max Rolling 30d Avg Volume' = ```
+			
+			VAR _MAX = 
+			    CALCULATE(
+			        MAXX(dCalendar, [Rolling 30d Avg Volume]),
+			        ALL()
+			    )
+			
+			RETURN
+			
+			IF(
+			    [Rolling 30d Avg Volume] = _MAX,
+			    _MAX
+			)
+			```
+		lineageTag: dca1e3fb-91ec-48b4-8c98-d4d83afc65f7
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	partition _Measures = m
 		mode: import
 		source =
