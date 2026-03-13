@@ -47,6 +47,17 @@
               },
               "queryRef": "_Measures.Close Price",
               "nativeQueryRef": "Close Price"
+            },
+            {
+              "field": {
+                "NativeVisualCalculation": {
+                  "Language": "dax",
+                  "Expression": "\nVAR _MAX = CALCULATE(MAX([Close Price]), ALL())\n\nRETURN\n\nIF(\n    [Close Price] = _MAX,\n    _MAX\n)",
+                  "Name": "Max close price"
+                }
+              },
+              "queryRef": "select",
+              "nativeQueryRef": "Max close price"
             }
           ]
         }
@@ -190,6 +201,13 @@
                   "Value": "100D"
                 }
               }
+            },
+            "showMarker": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
             }
           }
         },
@@ -212,6 +230,38 @@
           },
           "selector": {
             "metadata": "_Measures.Close Price"
+          }
+        },
+        {
+          "properties": {
+            "strokeShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "showMarker": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "markerColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#00FF55'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "select"
           }
         }
       ],
@@ -237,6 +287,24 @@
         },
         {
           "properties": {}
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#00FF55'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "select"
+          }
         }
       ],
       "plotArea": [
