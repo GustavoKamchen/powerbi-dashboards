@@ -9,6 +9,9 @@ jobs:
   sync-workspace:
     runs-on: ubuntu-latest
 
+    env:
+      FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
@@ -24,10 +27,10 @@ jobs:
 
       - name: Run Fabric workspace sync
         env:
-          PBI_WORKSPACE_ID: ${{ secrets.PBI_WORKSPACE_ID }}
-          PBI_CONNECTION_ID: ${{ secrets.PBI_CONNECTION_ID }}
-          PBI_TENANT_ID: ${{ secrets.PBI_TENANT_ID }}
-          PBI_CLIENT_ID: ${{ secrets.PBI_CLIENT_ID }}
+          PBI_WORKSPACE_ID: ${{ vars.PBI_WORKSPACE_ID }}
+          PBI_CONNECTION_ID: ${{ vars.PBI_CONNECTION_ID }}
+          PBI_TENANT_ID: ${{ vars.PBI_TENANT_ID }}
+          PBI_CLIENT_ID: ${{ vars.PBI_CLIENT_ID }}
           PBI_CLIENT_SECRET: ${{ secrets.PBI_CLIENT_SECRET }}
         run: |
           python scripts/sync_workspace.py
