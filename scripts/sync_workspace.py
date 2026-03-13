@@ -3,7 +3,7 @@ import sys
 import json
 import urllib3
 from typing import Any, Iterable
-from msal import PublicClientApplication
+from msal import ConfidentialClientApplication
 
 # Desabilita aviso de certificado, já que cert_reqs='CERT_NONE' está sendo usado
 urllib3.disable_warnings(urllib3.exceptions.InsecureRequestWarning)
@@ -41,25 +41,24 @@ def get_env_or_exit(var_name: str) -> str:
 
 def get_access_token(authentication: dict) -> str:
     """
-    Obtém o access token via ROPC (username/password) usando MSAL.
+    Obtém access token via Client Credentials (Service Principal).
+    Compatível com CI/CD e MFA.
     """
     authority = f"https://login.microsoftonline.com/{authentication['tenant_id']}"
 
-    app = PublicClientApplication(
+    app = ConfidentialClientApplication(
         client_id=authentication["client_id"],
+        client_credential=authentication["client_secret"],
         authority=authority,
     )
 
-    token_response = app.acquire_token_by_username_password(
-        username=authentication["username"],
-        password=authentication["password"],
-        scopes=PBI_SCOPE,
+    token_response = app.acquire_token_for_client(
+        scopes=["https://api.fabric.microsoft.com/.default"]
     )
 
     access_token = token_response.get("access_token")
     if not access_token:
-        error_description = token_response.get("error_description") or token_response
-        print(f"Erro ao obter token: {error_description}")
+        print(f"Erro ao obter token: {token_response}")
         sys.exit(1)
 
     return access_token
@@ -229,8 +228,7 @@ def main() -> None:
     authentication = {
         "tenant_id": get_env_or_exit("PBI_TENANT_ID"),
         "client_id": get_env_or_exit("PBI_CLIENT_ID"),
-        "username": get_env_or_exit("PBI_USERNAME"),
-        "password": get_env_or_exit("PBI_PASSWORD"),
+        "client_secret": get_env_or_exit("PBI_CLIENT_SECRET"),
     }
 
     sync_pbi_workspace(workspace_id, connection_id, authentication)
