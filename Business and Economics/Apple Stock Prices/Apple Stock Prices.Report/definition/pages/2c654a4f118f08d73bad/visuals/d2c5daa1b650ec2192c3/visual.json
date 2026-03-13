@@ -47,6 +47,21 @@
               },
               "queryRef": "_Measures.Rolling 30d Avg Volume",
               "nativeQueryRef": "Rolling 30d Avg Volume"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "_Measures"
+                    }
+                  },
+                  "Property": "Max Rolling 30d Avg Volume"
+                }
+              },
+              "queryRef": "_Measures.Max Rolling 30d Avg Volume",
+              "nativeQueryRef": "Max",
+              "displayName": "Max"
             }
           ]
         }
@@ -164,6 +179,27 @@
               }
             }
           }
+        },
+        {
+          "properties": {
+            "strokeShow": {
+              "expr": {
+                "Literal": {
+                  "Value": "false"
+                }
+              }
+            },
+            "showMarker": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Max Rolling 30d Avg Volume"
+          }
         }
       ],
       "dataPoint": [
@@ -184,6 +220,24 @@
           },
           "selector": {
             "metadata": "_Measures.Rolling 30d Avg Volume"
+          }
+        },
+        {
+          "properties": {
+            "fill": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#00FF55'"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "_Measures.Max Rolling 30d Avg Volume"
           }
         }
       ],
