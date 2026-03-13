@@ -1,0 +1,34 @@
+name: Sync Power BI Workspace with Git
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  sync-workspace:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install msal urllib3
+
+      - name: Run Fabric workspace sync
+        env:
+          PBI_WORKSPACE_ID: ${{ secrets.PBI_WORKSPACE_ID }}
+          PBI_CONNECTION_ID: ${{ secrets.PBI_CONNECTION_ID }}
+          PBI_TENANT_ID: ${{ secrets.PBI_TENANT_ID }}
+          PBI_CLIENT_ID: ${{ secrets.PBI_CLIENT_ID }}
+          PBI_USERNAME: ${{ secrets.PBI_USERNAME }}
+          PBI_PASSWORD: ${{ secrets.PBI_PASSWORD }}
+        run: |
+          python scripts/sync_workspace.py
